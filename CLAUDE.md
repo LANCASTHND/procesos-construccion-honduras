@@ -46,70 +46,85 @@ claude code procesos-construccion-honduras
 
 ```
 procesos-construccion-honduras/
-├── README.md                    # Documentación principal
-├── LICENSE                      # CC BY 4.0
-├── CLAUDE.md                    # Este archivo
-├── RESUMEN-EJECUTIVO-FINAL.md   # Resumen completo
+├── README.md                           # Documentación principal
+├── LICENSE                             # CC BY 4.0
+├── CLAUDE.md                           # Este archivo
+├── RESUMEN-EJECUTIVO-FINAL.md          # Resumen completo
 │
 ├── .claude/
-│   └── launch.json              # Configuración Claude Code
+│   └── launch.json                     # Configuración Claude Code
 │
 ├── data/
-│   ├── licitaciones.json        # 25 procesos (L. 121.7M)
-│   └── compras-menores.json     # 30 procesos (L. 3.65M)
+│   ├── licitaciones.json               # Procesos licitación (actualizable)
+│   ├── compras-menores.json            # Compras menores (actualizable)
+│   └── instituciones.json              # Directorio de instituciones
 │
 ├── reportes/
-│   ├── licitaciones.html        # Tabla interactiva
-│   └── compras-menores.html     # Tabla interactiva
+│   ├── licitaciones.html               # Tabla interactiva licitaciones
+│   └── compras-menores.html            # Tabla interactiva compras menores
 │
 ├── scripts/
-│   └── actualizar-diario.ps1    # Script de actualización
+│   ├── README.md                       # Documentación de scripts
+│   ├── extractor_honduras_compras.py   # 🔄 Extrae datos de SICC
+│   ├── generar_reportes.py             # 📊 Genera HTML desde JSON
+│   ├── actualizar.sh                   # ⚙️  Orquestador completo
+│   └── requirements.txt                # Dependencias Python
 │
 └── docs/
-    └── SETUP-GITHUB.md          # Guía de configuración
+    └── SETUP-GITHUB.md                 # Guía de configuración
 ```
 
 ---
 
 ## 🚀 TAREAS COMUNES
 
-### 1. Generar Reportes Actualizados
+### 1. Actualizar Reportes con Datos Reales
 
+**Opción A: Script Completo (Recomendado)**
 ```bash
-# Desde Claude Code
-/run Procesos Construccion Honduras
+# Ejecuta: extracción + generación HTML + sincronización Git
+bash scripts/actualizar.sh
+```
 
-# Resultado: Actualiza datos y sube a GitHub
+**Opción B: Pasos Individuales**
+```bash
+# Instalar dependencias (primera vez)
+pip install -r scripts/requirements.txt
+
+# Extraer datos de Honduras Compras
+python3 scripts/extractor_honduras_compras.py
+
+# Generar reportes HTML
+python3 scripts/generar_reportes.py
 ```
 
 ### 2. Visualizar Licitaciones
 
 ```bash
-# Opción A: Abrir archivo local
-/run Abrir Licitaciones HTML
-
-# Opción B: Ver en línea
-# https://claude.ai/code/artifact/9ecb6c99-21d1-4ae9-8d71-29485d085f41
+# Abrir archivo local en navegador
+open reportes/licitaciones.html  # macOS
+xdg-open reportes/licitaciones.html  # Linux
+start reportes/licitaciones.html  # Windows
 ```
 
 ### 3. Visualizar Compras Menores
 
 ```bash
-# Opción A: Abrir archivo local
-/run Abrir Compras Menores HTML
-
-# Opción B: Ver en línea
-# https://claude.ai/code/artifact/aaf4da24-5210-40be-82e8-8d07e824bd0a
+# Abrir archivo local en navegador
+open reportes/compras-menores.html
 ```
 
 ### 4. Acceder a Datos JSON
 
 ```bash
-# Licitaciones
+# Ver todas licitaciones
 cat data/licitaciones.json
 
-# Compras Menores
+# Ver todas compras menores
 cat data/compras-menores.json
+
+# Ver directorio de instituciones
+cat data/instituciones.json
 ```
 
 ### 5. Verificar Estado de Git
@@ -117,6 +132,7 @@ cat data/compras-menores.json
 ```bash
 git status
 git log --oneline
+git branch -a
 ```
 
 ---
@@ -229,42 +245,117 @@ TOTAL: 55 procesos | L. 125.35M | Vigentes
 
 ---
 
+## 🔄 FLUJO DE ACTUALIZACIÓN DE DATOS
+
+### Cómo Funciona el Sistema de Scripts
+
+```
+Honduras Compras SICC
+        ↓
+extractor_honduras_compras.py  (Extrae datos reales)
+        ↓
+data/licitaciones.json
+data/compras-menores.json
+        ↓
+generar_reportes.py  (Crea HTML interactivo)
+        ↓
+reportes/licitaciones.html
+reportes/compras-menores.html
+        ↓
+Git Push (Sincroniza cambios)
+```
+
+### Scripts Disponibles
+
+| Script | Función | Uso |
+|--------|---------|-----|
+| `actualizar.sh` | Ejecuta flujo completo | `bash scripts/actualizar.sh` |
+| `extractor_honduras_compras.py` | Extrae datos de SICC | `python3 scripts/extractor_honduras_compras.py` |
+| `generar_reportes.py` | Crea HTML desde JSON | `python3 scripts/generar_reportes.py` |
+
+**Ver documentación completa:** `scripts/README.md`
+
+---
+
 ## ⏰ ACTUALIZACIÓN AUTOMÁTICA
 
-### Opción 1: Rutina con Claude (/schedule)
+### Opción 1: Rutina con Claude (/schedule) ⭐ RECOMENDADO
 
 ```
 /schedule
 
-Prompt: Regenerar reportes procesos construcción Honduras
-Cron: 0 23 * * * (5:00 PM Honduras)
+Nombre: Actualizar procesos Honduras
+Prompt: Ejecutar bash scripts/actualizar.sh
+Cron: 0 23 * * * (5:00 PM Honduras = 11:00 PM UTC)
 Modelo: claude-sonnet-5
 ```
 
-### Opción 2: Rutina Local (Task Scheduler)
+### Opción 2: Cron Local (Linux/macOS)
+
+```bash
+# Editar crontab
+crontab -e
+
+# Agregar línea (cada día a las 11:00 PM UTC)
+0 23 * * * cd /ruta/procesos-construccion-honduras && bash scripts/actualizar.sh >> logs/actualizar.log 2>&1
+```
+
+### Opción 3: Task Scheduler (Windows)
 
 ```powershell
-# Crear tarea: Ejecutar actualizar-diario.ps1
-# Cada día a las 5:00 PM Honduras (11:00 PM UTC)
+# Crear tarea programada que ejecute:
+# bash scripts/actualizar.sh
+# Horario: 5:00 PM Honduras (11:00 PM UTC)
 ```
 
 ---
 
-## 💡 TIPS
+## 💡 TIPS Y CARACTERÍSTICAS
 
-- **Reportes HTML:** Abren en navegador con filtros interactivos
-- **Datos JSON:** Para integrar en otros sistemas
-- **GitHub:** Sincronización automática con `/run`
-- **Contactos:** Click en email para contactar directamente
+### Reportes Interactivos
+- ✅ Búsqueda en tiempo real por expediente
+- ✅ Filtro por institución
+- ✅ Links clickeables a procesos SICC
+- ✅ Contactos con mailto: integrado
+- ✅ Estadísticas de inversión
+- ✅ Responsive en mobile
+
+### Datos en JSON
+- ✅ Estructura estandarizada
+- ✅ Metadata completa
+- ✅ Integrable con otros sistemas
+- ✅ Actualizable automáticamente
+
+### Extracción de Datos
+- ✅ Conexión a SICC Honduras Compras
+- ✅ Extrae datos reales y vigentes
+- ✅ Fallback a plantilla si SICC no disponible
+- ✅ Calcula días para cierre
+- ✅ Asocia contactos automáticamente
+
+### Automatización
+- ✅ Scripts Python/Bash modulares
+- ✅ Actualización programada
+- ✅ Sincronización con Git
+- ✅ Logs de ejecución
+- ✅ Manejo de errores
+
+### Contacto Directo
+- 📧 Click en email para enviar mensaje
+- 📞 Teléfonos incluidos en instituciones.json
+- 🌐 Links a sitios web institucionales
 
 ---
 
 ## 📚 DOCUMENTACIÓN ADICIONAL
 
-- `README.md` - Información completa
-- `RESUMEN-EJECUTIVO-FINAL.md` - Resumen ejecutivo
-- `docs/SETUP-GITHUB.md` - Guía de configuración
-- `data/` - Archivos JSON con todos los datos
+| Archivo | Descripción |
+|---------|-------------|
+| `README.md` | Información general y estadísticas |
+| `RESUMEN-EJECUTIVO-FINAL.md` | Resumen ejecutivo del proyecto |
+| `scripts/README.md` | Documentación completa de scripts |
+| `docs/SETUP-GITHUB.md` | Guía de configuración inicial |
+| `data/instituciones.json` | Directorio completo de instituciones |
 
 ---
 
@@ -278,19 +369,33 @@ Modelo: claude-sonnet-5
 
 ---
 
-**Versión:** 2.0  
-**Última actualización:** 2026-08-08  
-**Estado:** ✅ Operativo  
+**Versión:** 3.0  
+**Última actualización:** 2026-08-21  
+**Estado:** ✅ Operativo con Extracción Automática  
 **Licencia:** CC BY 4.0
 
 ---
 
-## 🎯 PRÓXIMAS MEJORAS
+## 🎯 CARACTERÍSTICAS v3.0 (NUEVO)
 
-- [ ] Agregar procesos de UNGM
-- [ ] Integrar SAM.gov
-- [ ] Dashboard consolidado
-- [ ] Filtros avanzados
-- [ ] Gráficos de inversión
+- ✅ Scripts Python para extracción automática de SICC
+- ✅ Generador de reportes HTML mejorado
+- ✅ Orquestador de flujo completo (actualizar.sh)
+- ✅ Directorio de instituciones con contactos completos
+- ✅ Soporte para filtros y búsqueda en tiempo real
+- ✅ Sincronización automática con Git
+- ✅ Manejo de errores y fallbacks
 
-**¿Dudas? Revisa README.md o RESUMEN-EJECUTIVO-FINAL.md**
+## 🔜 PRÓXIMAS MEJORAS
+
+- [ ] Dashboard con gráficos de inversión
+- [ ] Exportar a Excel/CSV
+- [ ] Integración con email notifications
+- [ ] API REST para datos
+- [ ] Alertas de procesos próximos a cerrar
+- [ ] Integración UNGM y SAM.gov
+
+**¿Dudas? Revisa:**
+- `README.md` - Visión general
+- `scripts/README.md` - Documentación técnica
+- `RESUMEN-EJECUTIVO-FINAL.md` - Resumen ejecutivo

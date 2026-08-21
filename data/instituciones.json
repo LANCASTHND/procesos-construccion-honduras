@@ -1,0 +1,154 @@
+{
+  "instituciones": [
+    {
+      "sigla": "UNAH",
+      "nombre": "Universidad Nacional Autónoma de Honduras",
+      "contacto": "unah-compras@unah.edu.hn",
+      "telefono": "+504 2239-8000",
+      "sitio": "www.unah.hn",
+      "tipo": "Universidad Pública",
+      "departamento": "Francisco Morazán",
+      "ciudad": "Tegucigalpa"
+    },
+    {
+      "sigla": "UNA",
+      "nombre": "Universidad Nacional Agrícola",
+      "contacto": "compras@una.hn",
+      "telefono": "+504 2785-3000",
+      "sitio": "www.una.hn",
+      "tipo": "Universidad Pública",
+      "departamento": "La Paz",
+      "ciudad": "La Paz"
+    },
+    {
+      "sigla": "UNACIFOR",
+      "nombre": "Universidad Nacional de Ciencias Forestales",
+      "contacto": "compras@unacifor.hn",
+      "telefono": "+504 2244-3000",
+      "sitio": "www.unacifor.hn",
+      "tipo": "Universidad Pública",
+      "departamento": "Cortés",
+      "ciudad": "Siguatepeque"
+    },
+    {
+      "sigla": "SIT",
+      "nombre": "Servicio de Implementación Técnica de Telecomunicaciones",
+      "contacto": "licitaciones@sit.gob.hn",
+      "telefono": "+504 2239-0000",
+      "sitio": "www.sit.gob.hn",
+      "tipo": "Entidad Pública",
+      "departamento": "Francisco Morazán",
+      "ciudad": "Tegucigalpa"
+    },
+    {
+      "sigla": "SEDENA",
+      "nombre": "Secretaría de Defensa Nacional",
+      "contacto": "compras@sedena.mil.hn",
+      "telefono": "+504 2239-2000",
+      "sitio": "www.sedena.gob.hn",
+      "tipo": "Entidad Pública",
+      "departamento": "Francisco Morazán",
+      "ciudad": "Tegucigalpa"
+    },
+    {
+      "sigla": "SESEGU",
+      "nombre": "Secretaría de Seguridad",
+      "contacto": "compras@sesegu.gob.hn",
+      "telefono": "+504 2239-5000",
+      "sitio": "www.sesegu.gob.hn",
+      "tipo": "Entidad Pública",
+      "departamento": "Francisco Morazán",
+      "ciudad": "Tegucigalpa"
+    },
+    {
+      "sigla": "IHT",
+      "nombre": "Instituto Hondureño de Turismo",
+      "contacto": "compras@iht.hn",
+      "telefono": "+504 2222-2000",
+      "sitio": "www.iht.hn",
+      "tipo": "Entidad Pública",
+      "departamento": "Francisco Morazán",
+      "ciudad": "Tegucigalpa"
+    },
+    {
+      "sigla": "TEGUCIGALPA",
+      "nombre": "Municipalidad de Tegucigalpa",
+      "contacto": "compras@tegucigalpa.gob.hn",
+      "telefono": "+504 2200-5000",
+      "sitio": "www.tegucigalpa.gob.hn",
+      "tipo": "Municipalidad",
+      "departamento": "Francisco Morazán",
+      "ciudad": "Tegucigalpa"
+    },
+    {
+      "sigla": "SAN PEDRO SULA",
+      "nombre": "Municipalidad de San Pedro Sula",
+      "contacto": "compras@sanpedrosula.gob.hn",
+      "telefono": "+504 2550-1000",
+      "sitio": "www.sanpedrosula.gob.hn",
+      "tipo": "Municipalidad",
+      "departamento": "Cortés",
+      "ciudad": "San Pedro Sula"
+    },
+    {
+      "sigla": "LA CEIBA",
+      "nombre": "Municipalidad de La Ceiba",
+      "contacto": "compras@laceiba.gob.hn",
+      "telefono": "+504 2443-1000",
+      "sitio": "www.laceiba.gob.hn",
+      "tipo": "Municipalidad",
+      "departamento": "Atlántida",
+      "ciudad": "La Ceiba"
+    },
+    {
+      "sigla": "DANLI",
+      "nombre": "Municipalidad de Danlí",
+      "contacto": "compras@danli.gob.hn",
+      "telefono": "+504 2763-2000",
+      "sitio": "www.danli.gob.hn",
+      "tipo": "Municipalidad",
+      "departamento": "El Paraíso",
+      "ciudad": "Danlí"
+    },
+    {
+      "sigla": "EL RAMA",
+      "nombre": "Municipalidad de El Rama",
+      "contacto": "compras@elrama.gob.hn",
+      "telefono": "+504 2948-0000",
+      "sitio": "www.elrama.gob.hn",
+      "tipo": "Municipalidad",
+      "departamento": "Gracias a Dios",
+      "ciudad": "El Rama"
+    },
+    {
+      "sigla": "COMAYAGUA",
+      "nombre": "Municipalidad de Comayagua",
+      "contacto": "compras@comayagua.gob.hn",
+      "telefono": "+504 2772-0000",
+      "sitio": "www.comayagua.gob.hn",
+      "tipo": "Municipalidad",
+      "departamento": "Comayagua",
+      "ciudad": "Comayagua"
+    },
+    {
+      "sigla": "CHOLOMA",
+      "nombre": "Municipalidad de Choloma",
+      "contacto": "compras@munichol.hn",
+      "telefono": "+504 2559-0000",
+      "sitio": "www.munichol.hn",
+      "tipo": "Municipalidad",
+      "departamento": "Cortés",
+      "ciudad": "Choloma"
+    }
+  ],
+  "metadata": {
+    "total_instituciones": 14,
+    "tipos": [
+      "Universidad Pública",
+      "Entidad Pública",
+      "Municipalidad"
+    ],
+    "fecha_actualizacion": "2026-08-21",
+    "fuente": "SICC Honduras Compras"
+  }
+}
