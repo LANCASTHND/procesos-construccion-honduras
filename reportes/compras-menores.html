@@ -3,252 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hondumpras - Compras Menores 2026</title>
+    <title>Honduras Compras - Compras Menores 2026</title>
     <style>
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #ff6b35 0%, #d62828 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
-        .header { background: linear-gradient(135deg, #ff6b35 0%, #d62828 100%); color: white; padding: 40px 30px; text-align: center; }
-        .header h1 { font-size: 32px; margin-bottom: 10px; }
-        .header p { font-size: 14px; opacity: 0.95; }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 30px; background: #f8f9fa; border-bottom: 1px solid #e0e0e0; }
-        .stat-box { background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #ff6b35; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .stat-box h3 { font-size: 24px; color: #ff6b35; margin-bottom: 5px; }
-        .stat-box p { font-size: 12px; color: #666; text-transform: uppercase; }
-        .info-badge { display: inline-block; background: #fff3e0; border-left: 4px solid #ff6b35; padding: 12px; margin: 20px 30px; border-radius: 4px; font-size: 13px; color: #e65100; }
-        .filters-section { padding: 30px; background: #f8f9fa; border-bottom: 1px solid #e0e0e0; }
-        .filters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .filter-group { display: flex; flex-direction: column; }
-        .filter-group label { font-size: 12px; font-weight: 600; margin-bottom: 8px; color: #555; text-transform: uppercase; }
-        .filter-group input, .filter-group select { padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; transition: all 0.3s ease; }
-        .filter-group input:focus, .filter-group select:focus { outline: none; border-color: #ff6b35; box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1); }
-        .button-group { display: flex; gap: 10px; align-items: flex-end; }
-        .btn { padding: 10px 20px; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; }
-        .btn-primary { background: #ff6b35; color: white; flex: 1; }
-        .btn-primary:hover { background: #e55a24; box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4); }
-        .btn-secondary { background: #e0e0e0; color: #333; }
-        .btn-secondary:hover { background: #d0d0d0; }
-        .btn-export { background: #4caf50; color: white; padding: 10px 15px; font-size: 12px; }
-        .table-section { padding: 30px; overflow-x: auto; }
-        .table-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; gap: 15px; }
-        .results-info { font-size: 14px; color: #666; font-weight: 500; }
-        table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        thead { background: #ff6b35; color: white; position: sticky; top: 0; z-index: 10; }
-        th { padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #e55a24; }
-        td { padding: 14px 16px; border-bottom: 1px solid #e0e0e0; }
-        tbody tr { background: white; transition: all 0.2s ease; }
-        tbody tr:hover { background: #fff8f5; box-shadow: inset 0 1px 3px rgba(255, 107, 53, 0.1); }
-        tbody tr:nth-child(even) { background: #f9f9fb; }
-        .nro { color: #ff6b35; font-weight: 600; }
-        .expediente { font-family: monospace; font-weight: 600; color: #ff6b35; font-size: 12px; }
-        .iht-row { background: #fff3e0 !important; border-left: 4px solid #ff6b00; }
-        .iht-row:hover { background: #ffe0b2 !important; }
-        .monto { font-weight: 600; color: #d62828; font-family: monospace; }
-        .link-honduras { color: #ff6b35; text-decoration: none; font-weight: 600; padding: 5px 10px; border-radius: 4px; transition: all 0.3s ease; }
-        .link-honduras:hover { background: rgba(255, 107, 53, 0.1); text-decoration: underline; }
-        @media (max-width: 768px) { .filters-grid { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; padding: 20px; }
+        .container { max-width: 1600px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%); color: white; padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 10px; font-weight: 600; }
+        .header p { font-size: 16px; opacity: 0.95; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 30px; background: linear-gradient(to bottom, #f8f9fa, #fff); border-bottom: 1px solid #e0e0e0; }
+        .stat-box { background: white; padding: 20px; border-radius: 8px; border-left: 5px solid #1a73e8; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .stat-box h3 { color: #1a73e8; font-size: 24px; font-weight: 700; margin-bottom: 5px; }
+        .stat-box p { font-size: 13px; color: #666; font-weight: 500; }
+        .filters { padding: 20px 30px; background: #f8f9fa; border-bottom: 1px solid #ddd; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+        .filters input, .filters select { padding: 10px 15px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+        .filters button { padding: 10px 20px; background: #1a73e8; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        .filters button:hover { background: #0d47a1; }
+        .filters button.limpiar { background: #999; }
+        .filters button.limpiar:hover { background: #666; }
+        .table-wrapper { padding: 30px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        thead { background: #1a73e8; color: white; position: sticky; top: 0; }
+        th { padding: 15px; text-align: left; font-weight: 600; border-bottom: 2px solid #0d47a1; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:hover { background: #f0f4ff; }
+        .nro { color: #1a73e8; font-weight: 700; text-align: center; width: 50px; }
+        .expediente { font-family: 'Courier New', monospace; font-weight: 600; color: #0d47a1; font-size: 12px; }
+        .monto { color: #0d47a1; font-weight: 700; text-align: right; }
+        .link-btn { display: inline-block; padding: 6px 12px; background: #1a73e8; color: white; text-decoration: none; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .link-btn:hover { background: #0d47a1; }
+        .email-link { color: #1a73e8; text-decoration: none; font-weight: 500; }
+        .email-link:hover { text-decoration: underline; }
+        .results-info { padding: 15px 30px; background: #f8f9fa; font-size: 14px; color: #666; border-bottom: 1px solid #ddd; }
+        .vigente { color: #059669; font-weight: 600; }
+        .cerrada { color: #dc2626; font-weight: 600; }
+        .footer { padding: 20px 30px; background: #f8f9fa; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #ddd; }
+        .oculto { display: none; }
+        
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>⚡ Hondumpras - Compras Menores 2026</h1>
-            <p>Procesos de Menor Cuantía | Mantenimiento y Reparación Ágil</p>
+            <h1>📦 Honduras Compras - Compras Menores</h1>
+            <p>Procesos de Menor Cuantía | Instituciones Públicas 2026</p>
         </div>
 
         <div class="stats">
             <div class="stat-box">
-                <h3>30</h3>
+                <h3>1</h3>
                 <p>Total Procesos</p>
             </div>
             <div class="stat-box">
-                <h3>L. 3.65M</h3>
+                <h3>L. 0.00M</h3>
                 <p>Inversión Total</p>
             </div>
             <div class="stat-box">
-                <h3>L. 122K</h3>
-                <p>Monto Promedio</p>
+                <h3>L. 0K</h3>
+                <p>Promedio por Proceso</p>
             </div>
             <div class="stat-box">
-                <h3>8</h3>
-                <p>Cierres Próximos</p>
+                <h3>1</h3>
+                <p>Procesos Vigentes</p>
             </div>
         </div>
 
-        <div class="info-badge">
-            ℹ️ <strong>Nota:</strong> Instituto Hondureño de Turismo (IHT) tiene 1 compra menor para mantenimiento de centros turísticos - proceso más ágil que licitaciones normales.
+        <div class="filters">
+            <input type="text" id="search" placeholder="🔍 Buscar expediente, descripción..." style="flex: 1; min-width: 250px;">
+            <select id="institucion">
+                <option value="">📦 Todas las instituciones</option>
+                <option value="[UNAH, SIT, Municipalidad...]">[UNAH, SIT, Municipalidad...]</option>
+            </select>
+            <button onclick="filtrar()">🔎 Filtrar</button>
+            <button class="limpiar" onclick="limpiar()">✕ Limpiar</button>
         </div>
 
-        <div class="filters-section">
-            <div style="font-size: 16px; font-weight: 600; margin-bottom: 20px; color: #333;">🔍 Filtros de Búsqueda</div>
-            <div class="filters-grid">
-                <div class="filter-group">
-                    <label>Búsqueda General</label>
-                    <input type="text" id="searchInput" placeholder="Buscar por expediente, institución...">
-                </div>
-                <div class="filter-group">
-                    <label>Institución</label>
-                    <select id="institucionFilter"></select>
-                </div>
-                <div class="filter-group">
-                    <label>Rango de Inversión</label>
-                    <select id="montoFilter">
-                        <option value="">Todo rango</option>
-                        <option value="0-100000">L. 80K a L. 100K</option>
-                        <option value="100000-150000">L. 100K a L. 150K</option>
-                        <option value="150000-250000">L. 150K a L. 250K</option>
-                    </select>
-                </div>
-                <div class="button-group">
-                    <button class="btn btn-primary" onclick="aplicarFiltros()">🔎 Buscar</button>
-                    <button class="btn btn-secondary" onclick="limpiarFiltros()">Limpiar</button>
-                    <button class="btn btn-export" onclick="descargarExcel()">📥 Excel</button>
-                </div>
-            </div>
+        <div class="results-info">
+            Mostrando <strong id="count">1</strong> de <strong>1</strong> procesos
         </div>
 
-        <div class="table-section">
-            <div class="table-controls">
-                <div class="results-info">Mostrando <strong id="results-count">30</strong> de <strong>30</strong> procesos</div>
-            </div>
+        <div class="table-wrapper">
             <table>
                 <thead>
                     <tr>
                         <th style="width: 50px;">Nro</th>
-                        <th style="width: 180px;">Expediente</th>
-                        <th style="width: 280px;">Descripción</th>
-                        <th style="width: 150px;">Institución</th>
+                        <th style="width: 160px;">Expediente</th>
+                        <th style="width: 250px;">Descripción</th>
+                        <th style="width: 130px;">Institución</th>
                         <th style="width: 100px;">Cierre</th>
-                        <th style="width: 120px;">Inversión</th>
-                        <th style="width: 130px;">Contacto</th>
-                        <th style="width: 80px;">Link</th>
+                        <th style="width: 120px;">Monto</th>
+                        <th style="width: 180px;">Contacto</th>
+                        <th style="width: 120px;">Link SICC</th>
                     </tr>
                 </thead>
-                <tbody id="tableBody"></tbody>
+                <tbody id="datos"></tbody>
             </table>
+        </div>
+
+        <div class="footer">
+            <p>Datos actualizados: 2026-08-21 | Fuente: SICC Honduras Compras | Rango: L. 75K - L. 250K</p>
         </div>
     </div>
 
     <script>
-        const datos = [
-            {nro: '01', expediente: 'CM-UNAH-MAN-001-2026', desc: 'Reparación techos edificio académico', inst: 'UNAH', cierre: '2026-08-10', monto: 150000, contacto: 'unah-compras@unah.edu.hn'},
-            {nro: '02', expediente: 'CM-UNAH-MAN-002-2026', desc: 'Pintura aulas y pasillos', inst: 'UNAH', cierre: '2026-08-12', monto: 200000, contacto: 'unah-compras@unah.edu.hn'},
-            {nro: '03', expediente: 'CM-UNAH-REM-001-2026', desc: 'Remodelación sanitarios', inst: 'UNAH', cierre: '2026-08-18', monto: 180000, contacto: 'unah-compras@unah.edu.hn'},
-            {nro: '04', expediente: 'CM-UNAH-REM-002-2026', desc: 'Reparación puertas y marcos', inst: 'UNAH', cierre: '2026-08-14', monto: 120000, contacto: 'unah-compras@unah.edu.hn'},
-            {nro: '05', expediente: 'CM-SIT-OC-001-2026', desc: 'Reparación puertas y ventanas', inst: 'SIT', cierre: '2026-08-08', monto: 120000, contacto: 'licitaciones@sit.gob.hn'},
-            {nro: '06', expediente: 'CM-SIT-OC-002-2026', desc: 'Remodelación oficinas administrativas', inst: 'SIT', cierre: '2026-08-15', monto: 180000, contacto: 'licitaciones@sit.gob.hn'},
-            {nro: '07', expediente: 'CM-UNA-MAN-001-2026', desc: 'Reparación pisos y estructuras', inst: 'UNA', cierre: '2026-08-13', monto: 100000, contacto: 'compras@una.hn'},
-            {nro: '08', expediente: 'CM-UNA-REM-001-2026', desc: 'Remodelación laboratorios', inst: 'UNA', cierre: '2026-08-19', monto: 140000, contacto: 'compras@una.hn'},
-            {nro: '09', expediente: 'CM-UNACIFOR-MAN-001-2026', desc: 'Pintura y mantenimiento instalaciones', inst: 'UNACIFOR', cierre: '2026-08-12', monto: 90000, contacto: 'compras@unacifor.hn'},
-            {nro: '10', expediente: 'CM-UNACIFOR-REM-001-2026', desc: 'Reparación techos y estructuras', inst: 'UNACIFOR', cierre: '2026-08-17', monto: 110000, contacto: 'compras@unacifor.hn'},
-            {nro: '11', expediente: 'CM-SEDENA-MAN-001-2026', desc: 'Pintura y mantenimiento barracas', inst: 'SEDENA', cierre: '2026-08-11', monto: 250000, contacto: 'compras@sedena.mil.hn'},
-            {nro: '12', expediente: 'CM-SEDENA-REM-001-2026', desc: 'Remodelación cocina comedor', inst: 'SEDENA', cierre: '2026-08-16', monto: 200000, contacto: 'compras@sedena.mil.hn'},
-            {nro: '13', expediente: 'CM-SESEGU-MAN-001-2026', desc: 'Reparación y pintura comisarías', inst: 'SESEGU', cierre: '2026-08-09', monto: 130000, contacto: 'compras@sesegu.gob.hn'},
-            {nro: '14', expediente: 'CM-SESEGU-REM-001-2026', desc: 'Remodelación celdas de retención', inst: 'SESEGU', cierre: '2026-08-13', monto: 160000, contacto: 'compras@sesegu.gob.hn'},
-            {nro: '15', expediente: 'CM-TGU-MUN-001-2026', desc: 'Reparación infraestructura municipal', inst: 'Municipalidad de Tegucigalpa', cierre: '2026-08-11', monto: 95000, contacto: 'compras@tegucigalpa.gob.hn'},
-            {nro: '16', expediente: 'CM-TGU-MUN-002-2026', desc: 'Remodelación parques públicos', inst: 'Municipalidad de Tegucigalpa', cierre: '2026-08-17', monto: 125000, contacto: 'compras@tegucigalpa.gob.hn'},
-            {nro: '17', expediente: 'CM-SPS-MUN-001-2026', desc: 'Reparación vías y aceras', inst: 'Municipalidad de San Pedro Sula', cierre: '2026-08-10', monto: 110000, contacto: 'compras@sanpedrosula.gob.hn'},
-            {nro: '18', expediente: 'CM-SPS-MUN-002-2026', desc: 'Remodelación mercado municipal', inst: 'Municipalidad de San Pedro Sula', cierre: '2026-08-14', monto: 140000, contacto: 'compras@sanpedrosula.gob.hn'},
-            {nro: '19', expediente: 'CM-LCB-MUN-001-2026', desc: 'Reparación y pintura edificios', inst: 'Municipalidad de La Ceiba', cierre: '2026-08-12', monto: 85000, contacto: 'compras@laceiba.gob.hn'},
-            {nro: '20', expediente: 'CM-LCB-MUN-002-2026', desc: 'Remodelación salón comunal', inst: 'Municipalidad de La Ceiba', cierre: '2026-08-15', monto: 100000, contacto: 'compras@laceiba.gob.hn'},
-            {nro: '21', expediente: 'CM-DNL-MUN-001-2026', desc: 'Reparación mercadal municipal', inst: 'Municipalidad de Danlí', cierre: '2026-08-09', monto: 75000, contacto: 'compras@danli.gob.hn'},
-            {nro: '22', expediente: 'CM-DNL-MUN-002-2026', desc: 'Remodelación puesto de policía', inst: 'Municipalidad de Danlí', cierre: '2026-08-16', monto: 95000, contacto: 'compras@danli.gob.hn'},
-            {nro: '23', expediente: 'CM-ELR-MUN-001-2026', desc: 'Reparación infraestructura vial', inst: 'Municipalidad de El Rama', cierre: '2026-08-08', monto: 120000, contacto: 'compras@elrama.gob.hn'},
-            {nro: '24', expediente: 'CM-ELR-MUN-002-2026', desc: 'Remodelación escuela municipal', inst: 'Municipalidad de El Rama', cierre: '2026-08-18', monto: 140000, contacto: 'compras@elrama.gob.hn'},
-            {nro: '25', expediente: 'CM-COM-MUN-001-2026', desc: 'Reparación caminos y puentes', inst: 'Municipalidad de Comayagua', cierre: '2026-08-07', monto: 90000, contacto: 'compras@comayagua.gob.hn'},
-            {nro: '26', expediente: 'CM-COM-MUN-002-2026', desc: 'Remodelación centro comunitario', inst: 'Municipalidad de Comayagua', cierre: '2026-08-19', monto: 130000, contacto: 'compras@comayagua.gob.hn'},
-            {nro: '27', expediente: 'CM-CHOLOMA-MUN-001-2026', desc: 'Reparación infraestructura municipal', inst: 'Municipalidad Choloma', cierre: '2026-08-16', monto: 80000, contacto: 'compras@munichol.hn'},
-            {nro: '28', expediente: 'CM-CHOLOMA-MUN-002-2026', desc: 'Remodelación puestos de salud', inst: 'Municipalidad Choloma', cierre: '2026-08-20', monto: 110000, contacto: 'compras@munichol.hn'},
-            {nro: '29', expediente: 'CM-IHT-TUR-MAN-2026', desc: 'Mantenimiento y reparación centros turísticos', inst: 'Instituto Hondureño de Turismo', cierre: '2026-08-14', monto: 180000, contacto: 'compras@iht.hn', especial: true},
-            {nro: '30', expediente: 'CM-IHT-TUR-REM-2026', desc: 'Remodelación áreas de visitantes', inst: 'Instituto Hondureño de Turismo', cierre: '2026-08-21', monto: 160000, contacto: 'compras@iht.hn', especial: true}
-        ];
+        const procesos = [{"nro": 1, "expediente": "CM-INST-TIPO-001-2026", "descripcion": "[Descripción del trabajo menor]", "institucion": "[UNAH, SIT, Municipalidad...]", "monto": 0, "cierre": "YYYY-MM-DD", "contacto": "[email de institución]", "link": "[URL del proceso]", "dias_para_cierre": 0, "tipo_licitacion": "compra_menor", "estado_proceso": "vigente", "fecha_extraccion": "2026-08-21", "departamento": "[Departamento]", "tipo_proyecto": "[reparacion, pintura, mantenimiento, otros]"}];
 
-        let datosFiltrados = [...datos];
+        function renderTable(items = procesos) {
+            const tbody = document.getElementById('datos');
+            tbody.innerHTML = '';
 
-        function formatoMonto(monto) {
-            return 'L. ' + (monto / 1000).toFixed(0) + 'K';
-        }
-
-        function generarTabla(datosMostrar) {
-            const tableBody = document.getElementById('tableBody');
-            tableBody.innerHTML = '';
-
-            datosMostrar.forEach(fila => {
-                const tr = document.createElement('tr');
-                if (fila.especial) tr.classList.add('iht-row');
-                tr.innerHTML = `
-                    <td class="nro">${fila.nro}</td>
-                    <td><span class="expediente">${fila.expediente}</span></td>
-                    <td>${fila.desc}</td>
-                    <td><strong>${fila.inst}</strong></td>
-                    <td>${fila.cierre}</td>
-                    <td class="monto">${formatoMonto(fila.monto)}</td>
-                    <td style="font-size: 11px;"><a href="mailto:${fila.contacto}" style="color: #ff6b35; text-decoration: none;">${fila.contacto}</a></td>
-                    <td><a href="https://hondumpras.gob.hn/" class="link-honduras" target="_blank">🔗 Ver</a></td>
+            items.forEach((p, idx) => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td class="nro">${idx + 1}</td>
+                    <td class="expediente">${p.expediente}</td>
+                    <td>${p.descripcion}</td>
+                    <td><strong>${p.institucion}</strong></td>
+                    <td>${p.cierre}</td>
+                    <td class="monto">L. ${p.monto.toLocaleString('es-HN')}</td>
+                    <td><a href="mailto:${p.contacto}" class="email-link">📧 ${p.contacto}</a></td>
+                    <td>${p.link ? `<a href="${p.link}" target="_blank" class="link-btn">Ir a SICC</a>` : '-'}</td>
                 `;
-                tableBody.appendChild(tr);
+                tbody.appendChild(fila);
             });
 
-            document.getElementById('results-count').textContent = datosMostrar.length;
+            document.getElementById('count').textContent = items.length;
         }
 
-        function llenarFiltros() {
-            const instituciones = [...new Set(datos.map(d => d.inst))].sort();
-            const select = document.getElementById('institucionFilter');
-            select.innerHTML = '<option value="">Todas</option>';
-            instituciones.forEach(inst => {
-                const option = document.createElement('option');
-                option.value = inst;
-                option.textContent = inst;
-                select.appendChild(option);
-            });
-        }
+        function filtrar() {
+            const search = document.getElementById('search').value.toLowerCase();
+            const institucion = document.getElementById('institucion').value;
 
-        function aplicarFiltros() {
-            const search = document.getElementById('searchInput').value.toLowerCase();
-            const institucion = document.getElementById('institucionFilter').value;
-            const monto = document.getElementById('montoFilter').value;
-
-            datosFiltrados = datos.filter(fila => {
-                const matchSearch = !search || fila.expediente.toLowerCase().includes(search) || fila.inst.toLowerCase().includes(search);
-                const matchInstitucion = !institucion || fila.inst === institucion;
-                let matchMonto = true;
-                if (monto) {
-                    const [min, max] = monto.split('-').map(Number);
-                    matchMonto = fila.monto >= min && fila.monto <= max;
-                }
-                return matchSearch && matchInstitucion && matchMonto;
+            const filtrados = procesos.filter(p => {
+                const matchSearch = p.expediente.toLowerCase().includes(search) ||
+                                   p.descripcion.toLowerCase().includes(search);
+                const matchInst = !institucion || p.institucion === institucion;
+                return matchSearch && matchInst;
             });
 
-            generarTabla(datosFiltrados);
+            renderTable(filtrados);
         }
 
-        function limpiarFiltros() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('institucionFilter').value = '';
-            document.getElementById('montoFilter').value = '';
-            datosFiltrados = [...datos];
-            generarTabla(datosFiltrados);
+        function limpiar() {
+            document.getElementById('search').value = '';
+            document.getElementById('institucion').value = '';
+            renderTable();
         }
 
-        function descargarExcel() {
-            let csv = 'Nro,Expediente,Descripción,Institución,Cierre,Inversión,Contacto\n';
-            datosFiltrados.forEach(fila => {
-                csv += `${fila.nro},"${fila.expediente}","${fila.desc}","${fila.inst}","${fila.cierre}",${fila.monto},"${fila.contacto}"\n`;
-            });
-            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = `Hondumpras_Compras_Menores_${new Date().toISOString().split('T')[0]}.csv`;
-            link.click();
-        }
+        // Inicializar tabla
+        renderTable();
 
-        document.getElementById('searchInput').addEventListener('keyup', aplicarFiltros);
-        document.getElementById('institucionFilter').addEventListener('change', aplicarFiltros);
-        document.getElementById('montoFilter').addEventListener('change', aplicarFiltros);
-
-        llenarFiltros();
-        generarTabla(datosFiltrados);
+        // Buscar en tiempo real
+        document.getElementById('search').addEventListener('keyup', filtrar);
+        document.getElementById('institucion').addEventListener('change', filtrar);
     </script>
 </body>
 </html>
