@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Procesos Construccion Honduras",
+      "description": "Sistema de reportes - Licitaciones y Compras Menores 2026",
+      "runtimeExecutable": "powershell.exe",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-File",
+        "./scripts/actualizar-diario.ps1"
+      ]
+    },
+    {
+      "name": "Abrir Licitaciones HTML",
+      "description": "Abre el reporte de licitaciones en navegador",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": [
+        "/c",
+        "start",
+        "./reportes/licitaciones.html"
+      ]
+    },
+    {
+      "name": "Abrir Compras Menores HTML",
+      "description": "Abre el reporte de compras menores en navegador",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": [
+        "/c",
+        "start",
+        "./reportes/compras-menores.html"
+      ]
+    }
+  ]
+}
