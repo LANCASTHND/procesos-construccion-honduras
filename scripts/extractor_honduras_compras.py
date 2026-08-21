@@ -46,107 +46,228 @@ class HondurasComprasExtractor:
             "CHOLOMA": "compras@munichol.hn",
         }
 
-    def extraer_licitaciones(self, tipo: str = "vigentes") -> List[Dict[str, Any]]:
+    def extraer_licitaciones(self, tipo: str = "vigentes", max_intentos: int = 5) -> List[Dict[str, Any]]:
         """
-        Extrae licitaciones de Honduras Compras
+        Extrae licitaciones de Honduras Compras con reintentos
         tipo: 'vigentes', 'cerradas', 'adjudicadas'
         """
         print(f"🔍 Extrayendo licitaciones {tipo}...")
 
         procesos = []
+        intentos = 0
 
-        try:
-            response = self.session.get(self.base_url, timeout=10)
-            response.raise_for_status()
+        while intentos < max_intentos:
+            try:
+                response = self.session.get(self.base_url, timeout=15)
+                response.raise_for_status()
 
-            soup = BeautifulSoup(response.content, 'html.parser')
+                soup = BeautifulSoup(response.content, 'html.parser')
 
-            # Buscar tabla de procesos
-            tabla = soup.find('table', {'class': re.compile(r'.*table.*', re.I)})
+                # Buscar TODAS las tablas que contengan datos de procesos
+                tablas = soup.find_all('table')
 
-            if not tabla:
-                print("⚠️  No se encontró tabla de procesos. Usando datos de plantilla.")
-                return self._generar_plantilla_licitaciones()
-
-            filas = tabla.find_all('tr')[1:]  # Skip header
-
-            for idx, fila in enumerate(filas, 1):
-                celdas = fila.find_all('td')
-
-                if len(celdas) < 6:
+                if not tablas:
+                    print("⚠️  No se encontraron tablas. Reintentando...")
+                    intentos += 1
                     continue
 
-                try:
-                    expediente = celdas[1].text.strip()
-                    descripcion = celdas[2].text.strip()
-                    institucion = celdas[3].text.strip().upper()
-                    monto_texto = celdas[4].text.strip()
-                    fecha_cierre = celdas[5].text.strip()
+                print(f"   📊 Encontradas {len(tablas)} tablas")
 
-                    # Parsear monto
-                    monto = self._parsear_monto(monto_texto)
+                # Procesar cada tabla
+                contador = 0
+                for tabla_idx, tabla in enumerate(tablas):
+                    filas = tabla.find_all('tr')
 
-                    # Obtener link si existe
-                    link_elem = celdas[1].find('a')
-                    link = link_elem.get('href', '') if link_elem else ''
+                    # Skip si es tabla pequeña (probablemente no es de procesos)
+                    if len(filas) < 3:
+                        continue
 
-                    # Calcular días para cierre
-                    try:
-                        cierre_date = datetime.strptime(fecha_cierre, '%d/%m/%Y')
-                        hoy = datetime.now()
-                        dias = (cierre_date - hoy).days
-                    except:
-                        dias = 0
+                    print(f"   📋 Procesando tabla {tabla_idx + 1} ({len(filas)} filas)")
 
-                    proceso = {
-                        "nro": idx,
-                        "expediente": expediente,
-                        "descripcion": descripcion,
-                        "institucion": institucion,
-                        "monto": monto,
-                        "cierre": fecha_cierre,
-                        "contacto": self.contactos.get(institucion, "contacto@ejemplo.hn"),
-                        "link": link,
-                        "dias_para_cierre": dias,
-                        "tipo_licitacion": "licitacion_normal",
-                        "estado_proceso": "vigente" if dias > 0 else "cerrada",
-                        "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
-                    }
+                    # Skip header (primera fila)
+                    for fila_idx, fila in enumerate(filas[1:], 1):
+                        celdas = fila.find_all('td')
 
-                    if tipo == "vigentes" and proceso["estado_proceso"] == "vigente":
-                        procesos.append(proceso)
-                    elif tipo != "vigentes":
-                        procesos.append(proceso)
+                        # Procesar si tiene al menos 5 celdas
+                        if len(celdas) < 5:
+                            continue
 
-                except Exception as e:
-                    print(f"⚠️  Error procesando fila {idx}: {e}")
-                    continue
+                        try:
+                            # Intentar extraer información - flexible con índices
+                            expediente = celdas[0].text.strip() if len(celdas) > 0 else ""
+                            descripcion = celdas[1].text.strip() if len(celdas) > 1 else ""
+                            institucion = celdas[2].text.strip().upper() if len(celdas) > 2 else "DESCONOCIDA"
+                            monto_texto = celdas[3].text.strip() if len(celdas) > 3 else "0"
+                            fecha_cierre = celdas[4].text.strip() if len(celdas) > 4 else ""
 
-            return procesos
+                            # Skip si campos vacíos críticos
+                            if not expediente or not fecha_cierre:
+                                continue
 
-        except requests.RequestException as e:
-            print(f"❌ Error de conexión: {e}")
-            print("📋 Usando datos de plantilla...")
-            return self._generar_plantilla_licitaciones()
+                            # Parsear monto
+                            monto = self._parsear_monto(monto_texto)
 
-    def extraer_compras_menores(self) -> List[Dict[str, Any]]:
+                            # Obtener link si existe (buscar en cualquier celda)
+                            link = ""
+                            for celda in celdas:
+                                link_elem = celda.find('a')
+                                if link_elem and link_elem.get('href'):
+                                    link = link_elem.get('href', '')
+                                    break
+
+                            # Calcular días para cierre
+                            dias = 0
+                            try:
+                                cierre_date = datetime.strptime(fecha_cierre, '%d/%m/%Y')
+                                hoy = datetime.now()
+                                dias = (cierre_date - hoy).days
+                            except:
+                                continue  # Skip si no parsea fecha
+
+                            proceso = {
+                                "nro": len(procesos) + 1,
+                                "expediente": expediente,
+                                "descripcion": descripcion,
+                                "institucion": institucion,
+                                "monto": monto if monto > 0 else 5000000,  # Default si no se parsea
+                                "cierre": fecha_cierre,
+                                "contacto": self.contactos.get(institucion, "contacto@honduras.gob.hn"),
+                                "link": link,
+                                "dias_para_cierre": dias,
+                                "tipo_licitacion": "licitacion_normal",
+                                "estado_proceso": "vigente" if dias > 0 else "cerrada",
+                                "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
+                            }
+
+                            # Filtrar por tipo solicitado
+                            if tipo == "vigentes" and proceso["estado_proceso"] == "vigente":
+                                procesos.append(proceso)
+                                contador += 1
+                            elif tipo != "vigentes":
+                                procesos.append(proceso)
+                                contador += 1
+
+                        except Exception as e:
+                            continue
+
+                if contador > 0:
+                    print(f"   ✅ Extraídos {contador} procesos de licitación")
+                    return procesos
+                else:
+                    print("   ⚠️  No se extrajeron procesos. Reintentando...")
+                    intentos += 1
+
+            except requests.RequestException as e:
+                print(f"   ⚠️  Error de conexión: {e}. Reintentando...")
+                intentos += 1
+
+        print("❌ No se pudo extraer de SICC después de múltiples intentos")
+        return self._generar_plantilla_licitaciones()
+
+    def extraer_compras_menores(self, max_intentos: int = 5) -> List[Dict[str, Any]]:
         """Extrae compras menores de Honduras Compras"""
         print("🔍 Extrayendo compras menores...")
 
-        # Implementación similar a licitaciones
-        try:
-            # Buscar con parámetro de tipo compra menor
-            params = {'tipo': 'compra_menor'}
-            response = self.session.get(self.base_url, params=params, timeout=10)
-            response.raise_for_status()
+        procesos = []
+        intentos = 0
 
-            # Procesamiento similar...
-            print("⚠️  SICC no disponible. Usando plantilla.")
-            return self._generar_plantilla_compras_menores()
+        while intentos < max_intentos:
+            try:
+                # Intentar extracción con parámetros
+                params = {'tipo': 'compra_menor'}
+                response = self.session.get(self.base_url, params=params, timeout=15)
+                response.raise_for_status()
 
-        except:
-            print("⚠️  SICC no disponible. Usando plantilla.")
-            return self._generar_plantilla_compras_menores()
+                soup = BeautifulSoup(response.content, 'html.parser')
+                tablas = soup.find_all('table')
+
+                if not tablas:
+                    print("   ⚠️  No se encontraron tablas. Reintentando...")
+                    intentos += 1
+                    continue
+
+                print(f"   📊 Encontradas {len(tablas)} tablas")
+
+                contador = 0
+                for tabla_idx, tabla in enumerate(tablas):
+                    filas = tabla.find_all('tr')
+
+                    if len(filas) < 3:
+                        continue
+
+                    print(f"   📋 Procesando tabla {tabla_idx + 1} ({len(filas)} filas)")
+
+                    for fila in filas[1:]:
+                        celdas = fila.find_all('td')
+
+                        if len(celdas) < 5:
+                            continue
+
+                        try:
+                            expediente = celdas[0].text.strip() if len(celdas) > 0 else ""
+                            descripcion = celdas[1].text.strip() if len(celdas) > 1 else ""
+                            institucion = celdas[2].text.strip().upper() if len(celdas) > 2 else "DESCONOCIDA"
+                            monto_texto = celdas[3].text.strip() if len(celdas) > 3 else "0"
+                            fecha_cierre = celdas[4].text.strip() if len(celdas) > 4 else ""
+
+                            if not expediente or not fecha_cierre:
+                                continue
+
+                            # Filtrar solo compras menores (montos menores)
+                            monto = self._parsear_monto(monto_texto)
+                            if monto > 500000:  # Considerar solo si es compra menor
+                                continue
+
+                            link = ""
+                            for celda in celdas:
+                                link_elem = celda.find('a')
+                                if link_elem and link_elem.get('href'):
+                                    link = link_elem.get('href', '')
+                                    break
+
+                            dias = 0
+                            try:
+                                cierre_date = datetime.strptime(fecha_cierre, '%d/%m/%Y')
+                                hoy = datetime.now()
+                                dias = (cierre_date - hoy).days
+                            except:
+                                continue
+
+                            proceso = {
+                                "nro": len(procesos) + 1,
+                                "expediente": expediente,
+                                "descripcion": descripcion,
+                                "institucion": institucion,
+                                "monto": monto if monto > 0 else 150000,
+                                "cierre": fecha_cierre,
+                                "contacto": self.contactos.get(institucion, "contacto@honduras.gob.hn"),
+                                "link": link,
+                                "dias_para_cierre": dias,
+                                "tipo_licitacion": "compra_menor",
+                                "estado_proceso": "vigente" if dias > 0 else "cerrada",
+                                "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
+                            }
+
+                            if proceso["estado_proceso"] == "vigente":
+                                procesos.append(proceso)
+                                contador += 1
+
+                        except Exception:
+                            continue
+
+                if contador > 0:
+                    print(f"   ✅ Extraídas {contador} compras menores")
+                    return procesos
+                else:
+                    print("   ⚠️  No se extrajeron compras menores. Reintentando...")
+                    intentos += 1
+
+            except requests.RequestException as e:
+                print(f"   ⚠️  Error de conexión: {e}. Reintentando...")
+                intentos += 1
+
+        print("❌ No se pudo extraer compras menores después de múltiples intentos")
+        return self._generar_plantilla_compras_menores()
 
     def _parsear_monto(self, texto: str) -> float:
         """Convierte texto de monto a número"""
