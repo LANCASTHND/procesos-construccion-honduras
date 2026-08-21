@@ -1,42 +1,30 @@
 {
   "metadata": {
     "tipo": "licitaciones_normales",
-    "total_procesos": 2,
-    "inversion_total": 70000000,
+    "total_procesos": 1,
+    "inversion_total": 0,
     "moneda": "Lempiras (L.)",
     "fecha_actualizacion": "2026-08-21",
     "estado": "vigentes",
     "cobertura": "Honduras",
-    "fuente": "Importación Manual desde SICC"
+    "fuente": "SICC Honduras Compras"
   },
   "procesos": [
     {
       "nro": 1,
-      "expediente": "LPN No. 08-2026-SEAPI-UNAH",
-      "descripcion": "Mejoramiento Edificio No. 1 y Construcción de Aulas",
-      "institucion": "UNAH",
-      "monto": 25000000,
-      "cierre": "20/10/2026",
-      "contacto": "unah-compras@unah.edu.hn",
-      "link": "http://sicc.honducompras.gob.hn/HC/procesos/detalles/12345",
-      "dias_para_cierre": 59,
+      "expediente": "LPN-INST-TIPO-001-2026",
+      "descripcion": "[Descripción del proyecto - Ej: Construcción edificio, Remodelación...]",
+      "institucion": "[UNAH, SIT, UNA, SEDENA, IHT, Municipalidad...]",
+      "monto": 0,
+      "cierre": "YYYY-MM-DD",
+      "contacto": "[email de institución]",
+      "link": "[URL del proceso en SICC]",
+      "dias_para_cierre": 0,
       "tipo_licitacion": "licitacion_normal",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-08-21"
-    },
-    {
-      "nro": 2,
-      "expediente": "Construcción y Equipamiento de Hospital de Traumatología",
-      "descripcion": "Construcción y Equipamiento Hospital",
-      "institucion": "SESALUD",
-      "monto": 45000000,
-      "cierre": "13/10/2026",
-      "contacto": "compras@sesalud.gob.hn",
-      "link": "http://sicc.honducompras.gob.hn/HC/procesos/detalles/12346",
-      "dias_para_cierre": 52,
-      "tipo_licitacion": "licitacion_normal",
-      "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-08-21"
+      "fecha_extraccion": "2026-08-21",
+      "departamento": "[Departamento]",
+      "tipo_proyecto": "[construccion, remodelacion, ampliacion, reparacion, otros]"
     }
   ]
 }
