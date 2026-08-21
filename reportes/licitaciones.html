@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hondumpras - Licitaciones 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; padding: 20px; background: #f8f9fa; }
+        .stat-box { background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #1a73e8; text-align: center; }
+        .stat-box h3 { color: #1a73e8; font-size: 20px; }
+        .stat-box p { font-size: 12px; color: #666; margin-top: 5px; }
+        .filters { padding: 20px; background: #f8f9fa; border-bottom: 1px solid #ddd; display: flex; gap: 10px; flex-wrap: wrap; }
+        .filters input, .filters select { padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; }
+        .filters button { padding: 8px 16px; background: #1a73e8; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .filters button:hover { background: #0d47a1; }
+        .table-wrapper { padding: 20px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        thead { background: #1a73e8; color: white; }
+        th { padding: 12px; text-align: left; font-weight: bold; border-bottom: 2px solid #0d47a1; }
+        td { padding: 10px 12px; border-bottom: 1px solid #e0e0e0; }
+        tr:hover { background: #f0f4ff; }
+        .nro { color: #1a73e8; font-weight: bold; }
+        .expediente { font-family: monospace; font-weight: bold; color: #0d47a1; }
+        .monto { color: #0d47a1; font-weight: bold; }
+        a { color: #1a73e8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .iht-row { background: #fff3e0 !important; }
+        .results-info { padding: 10px 20px; background: #f8f9fa; font-size: 14px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Hondumpras - Licitaciones Normales 2026</h1>
+            <p>Procesos de Mayor Cuantía | Instituciones + IHT + Municipalidades</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3>25</h3>
+                <p>Total Procesos</p>
+            </div>
+            <div class="stat-box">
+                <h3>L. 121.7M</h3>
+                <p>Inversión Total</p>
+            </div>
+            <div class="stat-box">
+                <h3>L. 4.9M</h3>
+                <p>Monto Promedio</p>
+            </div>
+            <div class="stat-box">
+                <h3>6</h3>
+                <p>Cierres Próximos</p>
+            </div>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="search" placeholder="Buscar expediente o institución..." style="flex: 1; min-width: 200px;">
+            <select id="institucion">
+                <option value="">Todas las instituciones</option>
+            </select>
+            <button onclick="filtrar()">🔍 Filtrar</button>
+            <button onclick="limpiar()">Limpiar</button>
+            <button onclick="descargar()">📥 Descargar Excel</button>
+        </div>
+
+        <div class="results-info">
+            Mostrando <strong id="count">25</strong> de <strong>25</strong> procesos
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 40px;">Nro</th>
+                        <th style="width: 200px;">Expediente</th>
+                        <th style="width: 280px;">Descripción</th>
+                        <th style="width: 180px;">Institución</th>
+                        <th style="width: 80px;">Cierre</th>
+                        <th style="width: 100px;">Inversión</th>
+                        <th style="width: 150px;">Contacto</th>
+                        <th style="width: 60px;">Link</th>
+                    </tr>
+                </thead>
+                <tbody id="datos"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const procesos = [
+            {nro: '01', exp: 'LPN-UNAH-A-001-2026', desc: 'Remodelación aulas', inst: 'UNAH', cierre: '2026-08-12', monto: 4200000, email: 'unah-compras@unah.edu.hn'},
+            {nro: '02', exp: 'LPN-PRODESOFI-UNAG-GAP-2026-001', desc: 'Construcción biblioteca', inst: 'UNAH', cierre: '2026-08-18', monto: 3800000, email: 'unah-compras@unah.edu.hn'},
+            {nro: '03', exp: 'LPN-UNAH-A-002-2026', desc: 'Ampliación campus', inst: 'UNAH', cierre: '2026-09-05', monto: 5600000, email: 'unah-compras@unah.edu.hn'},
+            {nro: '04', exp: 'LPN-UNAH-A-003-2026', desc: 'Residencia estudiantil', inst: 'UNAH', cierre: '2026-08-08', monto: 2900000, email: 'unah-compras@unah.edu.hn'},
+            {nro: '05', exp: 'LPN-UNAH-A-004-2026', desc: 'Reparación infraestructura', inst: 'UNAH', cierre: '2026-08-15', monto: 1800000, email: 'unah-compras@unah.edu.hn'},
+            {nro: '06', exp: 'LPN-UNAH-A-005-2026', desc: 'Auditorio polivalente', inst: 'UNAH', cierre: '2026-08-22', monto: 3500000, email: 'unah-compras@unah.edu.hn'},
+            {nro: '07', exp: 'LPN-UNAH-A-006-2026', desc: 'Instalaciones deportivas', inst: 'UNAH', cierre: '2026-08-20', monto: 2100000, email: 'unah-compras@unah.edu.hn'},
+            {nro: '08', exp: 'LPN-SIT-OC-001-2026', desc: 'Rehabilitación ruta CA-13', inst: 'SIT', cierre: '2026-08-05', monto: 12500000, email: 'licitaciones@sit.gob.hn'},
+            {nro: '09', exp: 'SIT-HO-L1227-2026', desc: 'Ampliación puente', inst: 'SIT', cierre: '2026-08-10', monto: 6800000, email: 'licitaciones@sit.gob.hn'},
+            {nro: '10', exp: 'LPN-PRODESOFI-UNAG-GAP-2026-002', desc: 'Construcción carril autopista', inst: 'SIT', cierre: '2026-08-20', monto: 9200000, email: 'licitaciones@sit.gob.hn'},
+            {nro: '11', exp: 'LPN-UNA-L-001-2026', desc: 'Bloques aulas', inst: 'UNA', cierre: '2026-08-15', monto: 3200000, email: 'compras@una.hn'},
+            {nro: '12', exp: 'LPN-UNA-L-002-2026', desc: 'Remodelación comedor', inst: 'UNA', cierre: '2026-08-25', monto: 1600000, email: 'compras@una.hn'},
+            {nro: '13', exp: 'LPN-SEDENA-M-001-2026', desc: 'Barracas militares', inst: 'SEDENA', cierre: '2026-08-15', monto: 7800000, email: 'compras@sedena.mil.hn'},
+            {nro: '14', exp: 'LPN-SEDENA-M-002-2026', desc: 'Reparación militar', inst: 'SEDENA', cierre: '2026-08-12', monto: 4500000, email: 'compras@sedena.mil.hn'},
+            {nro: '15', exp: 'LPN-UNACIFOR-C-001-2026', desc: 'Aulas y oficinas', inst: 'UNACIFOR', cierre: '2026-08-18', monto: 2400000, email: 'compras@unacifor.hn'},
+            {nro: '16', exp: 'LPN-SESEGU-S-001-2026', desc: 'Construcción comisaria', inst: 'SESEGU', cierre: '2026-08-14', monto: 3100000, email: 'compras@sesegu.gob.hn'},
+            {nro: '17', exp: 'LPN-CHOLOMA-I-001-2026', desc: 'Red agua potable', inst: 'Municipalidad Choloma', cierre: '2026-08-19', monto: 2200000, email: 'compras@munichol.hn'},
+            {nro: '18', exp: 'LPN-TGU-MUN-001-2026', desc: 'Remodelación parques y plazas', inst: 'Municipalidad de Tegucigalpa', cierre: '2026-08-20', monto: 6800000, email: 'compras@tegucigalpa.gob.hn'},
+            {nro: '19', exp: 'LPN-SPS-MUN-001-2026', desc: 'Mejoramiento vías principales', inst: 'Municipalidad de San Pedro Sula', cierre: '2026-08-18', monto: 7200000, email: 'compras@sanpedrosula.gob.hn'},
+            {nro: '20', exp: 'LPN-LCB-MUN-001-2026', desc: 'Centro comunitario', inst: 'Municipalidad de La Ceiba', cierre: '2026-08-15', monto: 3500000, email: 'compras@laceiba.gob.hn'},
+            {nro: '21', exp: 'LPN-DNL-MUN-001-2026', desc: 'Infraestructura mercadal', inst: 'Municipalidad de Danlí', cierre: '2026-08-21', monto: 2100000, email: 'compras@danli.gob.hn'},
+            {nro: '22', exp: 'LPN-ELR-MUN-001-2026', desc: 'Pavimentación y drenaje', inst: 'Municipalidad de El Rama', cierre: '2026-08-19', monto: 4200000, email: 'compras@elrama.gob.hn'},
+            {nro: '23', exp: 'LPN-COM-MUN-001-2026', desc: 'Reparación vías rurales', inst: 'Municipalidad de Comayagua', cierre: '2026-08-22', monto: 3800000, email: 'compras@comayagua.gob.hn'},
+            {nro: '24', exp: 'IHT-TUR-INF-2026-001', desc: 'Centro de Visitantes infraestructura', inst: 'Instituto Hondureño de Turismo', cierre: '2026-08-25', monto: 8500000, email: 'compras@iht.hn', iht: true},
+            {nro: '25', exp: 'IHT-TUR-SEND-2026-002', desc: 'Senderos ecoturísticos', inst: 'Instituto Hondureño de Turismo', cierre: '2026-08-28', monto: 5300000, email: 'compras@iht.hn', iht: true}
+        ];
+
+        let datos = [...procesos];
+
+        function formatoMonto(m) {
+            return 'L. ' + (m / 1000000).toFixed(1) + 'M';
+        }
+
+        function llenarTabla(lista) {
+            const tbody = document.getElementById('datos');
+            tbody.innerHTML = '';
+            lista.forEach(p => {
+                const tr = document.createElement('tr');
+                if (p.iht) tr.className = 'iht-row';
+                tr.innerHTML = `
+                    <td class="nro">${p.nro}</td>
+                    <td><span class="expediente">${p.exp}</span></td>
+                    <td>${p.desc}</td>
+                    <td><strong>${p.inst}</strong></td>
+                    <td>${p.cierre}</td>
+                    <td class="monto">${formatoMonto(p.monto)}</td>
+                    <td><a href="mailto:${p.email}">${p.email}</a></td>
+                    <td><a href="https://hondumpras.gob.hn/" target="_blank">Ver</a></td>
+                `;
+                tbody.appendChild(tr);
+            });
+            document.getElementById('count').textContent = lista.length;
+        }
+
+        function llenarInstituciones() {
+            const insts = [...new Set(procesos.map(p => p.inst))].sort();
+            const select = document.getElementById('institucion');
+            insts.forEach(inst => {
+                const opt = document.createElement('option');
+                opt.value = inst;
+                opt.textContent = inst;
+                select.appendChild(opt);
+            });
+        }
+
+        function filtrar() {
+            const search = document.getElementById('search').value.toLowerCase();
+            const inst = document.getElementById('institucion').value;
+            datos = procesos.filter(p => {
+                const matchSearch = !search || p.exp.toLowerCase().includes(search) || p.inst.toLowerCase().includes(search);
+                const matchInst = !inst || p.inst === inst;
+                return matchSearch && matchInst;
+            });
+            llenarTabla(datos);
+        }
+
+        function limpiar() {
+            document.getElementById('search').value = '';
+            document.getElementById('institucion').value = '';
+            datos = [...procesos];
+            llenarTabla(datos);
+        }
+
+        function descargar() {
+            let csv = 'Nro,Expediente,Descripción,Institución,Cierre,Inversión,Contacto\n';
+            datos.forEach(p => {
+                csv += `${p.nro},"${p.exp}","${p.desc}","${p.inst}","${p.cierre}",${p.monto},"${p.email}"\n`;
+            });
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Licitaciones-Honduras-' + new Date().toISOString().split('T')[0] + '.csv';
+            link.click();
+        }
+
+        document.getElementById('search').addEventListener('keyup', filtrar);
+        document.getElementById('institucion').addEventListener('change', filtrar);
+
+        llenarInstituciones();
+        llenarTabla(datos);
+    </script>
+</body>
+</html>

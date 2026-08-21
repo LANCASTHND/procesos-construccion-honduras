@@ -1,0 +1,89 @@
+# IDE y Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Archivos generados
+/dist/
+/build/
+*.zip
+*.tar.gz
+
+# Credenciales y secretos
+.env
+.env.local
+credentials.json
+secrets.json
+*.key
+*.pem
+
+# Bases de datos locales
+*.sqlite
+*.db
+*.sqlite3
+
+# Caché
+.cache/
+.pytest_cache/
+
+# OS específico
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos personales
+personal-notes.md
+test-local/
+sandbox/
+
+# Compilados
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
