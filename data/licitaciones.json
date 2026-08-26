@@ -4,7 +4,7 @@
     "total_procesos": 1,
     "inversion_total": 0,
     "moneda": "Lempiras (L.)",
-    "fecha_actualizacion": "2026-08-25",
+    "fecha_actualizacion": "2026-08-26",
     "estado": "vigentes",
     "cobertura": "Honduras",
     "fuente": "SICC Honduras Compras"
@@ -22,7 +22,7 @@
       "dias_para_cierre": 0,
       "tipo_licitacion": "licitacion_normal",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-08-25",
+      "fecha_extraccion": "2026-08-26",
       "departamento": "[Departamento]",
       "tipo_proyecto": "[construccion, remodelacion, ampliacion, reparacion, otros]"
     }
