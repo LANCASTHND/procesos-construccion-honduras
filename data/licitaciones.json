@@ -1,30 +1,13 @@
 {
   "metadata": {
     "tipo": "licitaciones_normales",
-    "total_procesos": 1,
+    "total_procesos": 0,
     "inversion_total": 0,
     "moneda": "Lempiras (L.)",
-    "fecha_actualizacion": "2026-08-26",
+    "fecha_actualizacion": "2026-08-27",
     "estado": "vigentes",
     "cobertura": "Honduras",
     "fuente": "SICC Honduras Compras"
   },
-  "procesos": [
-    {
-      "nro": 1,
-      "expediente": "LPN-INST-TIPO-001-2026",
-      "descripcion": "[Descripción del proyecto - Ej: Construcción edificio, Remodelación...]",
-      "institucion": "[UNAH, SIT, UNA, SEDENA, IHT, Municipalidad...]",
-      "monto": 0,
-      "cierre": "YYYY-MM-DD",
-      "contacto": "[email de institución]",
-      "link": "[URL del proceso en SICC]",
-      "dias_para_cierre": 0,
-      "tipo_licitacion": "licitacion_normal",
-      "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-08-26",
-      "departamento": "[Departamento]",
-      "tipo_proyecto": "[construccion, remodelacion, ampliacion, reparacion, otros]"
-    }
-  ]
+  "procesos": []
 }
