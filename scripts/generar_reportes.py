@@ -113,12 +113,12 @@ class GeneradorReportes:
                     <tr>
                         <th style="width: 50px;">Nro</th>
                         <th style="width: 160px;">Expediente</th>
-                        <th style="width: 250px;">Descripción</th>
-                        <th style="width: 130px;">Institución</th>
-                        <th style="width: 100px;">Cierre</th>
-                        <th style="width: 120px;">Inversión</th>
-                        <th style="width: 180px;">Contacto</th>
-                        <th style="width: 120px;">Link SICC</th>
+                        <th style="width: 200px;">Descripción</th>
+                        <th style="width: 110px;">Institución</th>
+                        <th style="width: 85px;">Inicio</th>
+                        <th style="width: 85px;">Cierre</th>
+                        <th style="width: 100px;">Inversión</th>
+                        <th style="width: 120px;">Contacto</th>
                     </tr>
                 </thead>
                 <tbody id="datos"></tbody>
@@ -143,11 +143,11 @@ class GeneradorReportes:
                     <td class="nro">${{idx + 1}}</td>
                     <td class="expediente">${{p.expediente}}</td>
                     <td>${{p.descripcion}}</td>
-                    <td><strong>${{p.institucion}}</strong></td>
-                    <td>${{p.cierre}}</td>
+                    <td><strong>${{p.institucion || 'VARIAS'}}</strong></td>
+                    <td><small>${{p.fecha_inicio || 'N/A'}}</small></td>
+                    <td><small>${{p.cierre}}</small></td>
                     <td class="monto">L. ${{p.monto.toLocaleString('es-HN')}}</td>
-                    <td><a href="mailto:${{p.contacto}}" class="email-link">📧 ${{p.contacto}}</a></td>
-                    <td>${{p.link ? `<a href="${{p.link}}" target="_blank" class="link-btn">Ir a SICC</a>` : '-'}}</td>
+                    <td>${{p.contacto ? `<a href="mailto:${{p.contacto}}" class="email-link">📧</a>` : '-'}}</td>
                 `;
                 tbody.appendChild(fila);
             }});
@@ -284,11 +284,11 @@ class GeneradorReportes:
                     <td class="nro">${{idx + 1}}</td>
                     <td class="expediente">${{p.expediente}}</td>
                     <td>${{p.descripcion}}</td>
-                    <td><strong>${{p.institucion}}</strong></td>
-                    <td>${{p.cierre}}</td>
+                    <td><strong>${{p.institucion || 'VARIAS'}}</strong></td>
+                    <td><small>${{p.fecha_inicio || 'N/A'}}</small></td>
+                    <td><small>${{p.cierre}}</small></td>
                     <td class="monto">L. ${{p.monto.toLocaleString('es-HN')}}</td>
-                    <td><a href="mailto:${{p.contacto}}" class="email-link">📧 ${{p.contacto}}</a></td>
-                    <td>${{p.link ? `<a href="${{p.link}}" target="_blank" class="link-btn">Ir a SICC</a>` : '-'}}</td>
+                    <td>${{p.contacto ? `<a href="mailto:${{p.contacto}}" class="email-link">📧</a>` : '-'}}</td>
                 `;
                 tbody.appendChild(fila);
             }});

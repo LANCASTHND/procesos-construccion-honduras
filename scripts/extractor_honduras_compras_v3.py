@@ -42,6 +42,23 @@ class SICCExtractorV3:
         }
         self.instituciones_buscar = list(self.contactos.keys())
 
+    def _extraer_institucion(self, expediente: str) -> str:
+        """Extrae institución del texto del expediente"""
+        expediente_upper = expediente.upper()
+
+        # Buscar siglas de instituciones
+        for sigla in self.contactos.keys():
+            if sigla.upper() in expediente_upper:
+                return sigla
+
+        # Fallback: buscar por nombres comunes
+        if "BOMBEROS" in expediente_upper or "CUERPO" in expediente_upper:
+            return "CUERPO DE BOMBEROS"
+        elif "MUNICIPAL" in expediente_upper or "MUNICIPALI" in expediente_upper:
+            return "VARIAS MUNICIPALIDADES"
+
+        return "VARIAS"
+
     def extraer_licitaciones(self) -> List[Dict[str, Any]]:
         """Extrae TODAS las licitaciones vigentes"""
         print("🔍 Extrayendo TODAS las licitaciones vigentes...\n")
@@ -101,12 +118,12 @@ class SICCExtractorV3:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
-            page.set_default_timeout(30000)
+            page.set_default_timeout(60000)  # Aumentado a 60s
 
             try:
                 page.goto(self.base_url, wait_until='load')
                 print("   ✅ Página SICC cargada\n")
-                time.sleep(2)
+                time.sleep(3)
 
                 # Seleccionar modalidad: Compra Menor (2)
                 selector_modalidad = '#ctl00_cphCuerpo_wpParametros_ddlModalidad'
@@ -119,8 +136,11 @@ class SICCExtractorV3:
                 # Hacer búsqueda
                 print("   🔍 Iniciando búsqueda...")
                 btn_buscar = '#ctl00_cphCuerpo_wpParametros_btnBuscar'
-                page.click(btn_buscar)
-                page.wait_for_load_state('networkidle')
+                try:
+                    page.click(btn_buscar)
+                    page.wait_for_load_state('networkidle', timeout=45000)
+                except:
+                    print("   ⚠️  Timeout en búsqueda, continuando...")
                 print("   ✅ Búsqueda completada\n")
 
                 time.sleep(2)
@@ -224,14 +244,18 @@ class SICCExtractorV3:
                     except:
                         continue
 
+                    # Extraer institución del expediente
+                    # Buscar patrones comunes: "UNAH", "UNA", "SIT", "SEDENA", etc.
+                    institucion = self._extraer_institucion(expediente)
+
                     # Crear proceso
                     proceso = {
-                        "expediente": expediente[:50],  # Limitar longitud
+                        "expediente": expediente[:80],  # Limitar longitud
                         "descripcion": modalidad,
-                        "institucion": "",  # SICC no muestra institución en tabla general
+                        "institucion": institucion,
                         "monto": 0,
                         "cierre": cierre_estimado.strftime('%d/%m/%Y'),
-                        "contacto": "",
+                        "contacto": self.contactos.get(institucion, ""),
                         "link": "",
                         "dias_para_cierre": dias,
                         "tipo_licitacion": tipo,
