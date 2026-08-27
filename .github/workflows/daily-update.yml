@@ -1,0 +1,68 @@
+name: 📊 Daily Honduras Procurement Report Update
+
+on:
+  schedule:
+    # Daily at 11:00 PM UTC (5:00 PM Honduras time)
+    - cron: '0 23 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-procurements:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          branch: claude/honduras-procurement-report-hv200y
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Extract Honduras procurement data
+        run: |
+          python3 scripts/extractor_honduras_compras.py
+        continue-on-error: true
+
+      - name: Generate interactive reports
+        run: |
+          python3 scripts/generar_reportes.py
+        continue-on-error: true
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Honduras Procurement Bot"
+          git config user.email "procesos@lancast.biz"
+          git add -A
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "📊 Daily automated procurement update - $(date +'%Y-%m-%d %H:%M:%S')"
+            git push origin claude/honduras-procurement-report-hv200y
+            echo "✅ Changes committed and pushed successfully"
+          else
+            echo "✅ No changes detected - data already current"
+          fi
+
+      - name: Log execution status
+        run: |
+          echo "🔍 Extraction Summary:"
+          echo "- Data files updated"
+          echo "- Reports generated"
+          echo "- Changes synced to GitHub"
+          echo "⏰ Execution time: $(date)"
+
+      - name: Upload logs as artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: extraction-logs
+          path: |
+            data/licitaciones.json
+            data/compras-menores.json

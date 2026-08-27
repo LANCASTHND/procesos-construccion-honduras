@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-08-27T04:56:26.423435",
+  "overall_status": "🟢 HEALTHY",
+  "checks": {
+    "data_files": {
+      "licitaciones_json": {
+        "status": "✅ OK",
+        "size_kb": 0.9306640625,
+        "procesos": 1,
+        "inversion": "L. 0"
+      },
+      "compras_menores_json": {
+        "status": "✅ OK",
+        "size_kb": 0.8369140625,
+        "procesos": 1,
+        "inversion": "L. 0"
+      }
+    },
+    "report_files": {
+      "licitaciones.html": {
+        "status": "✅ OK",
+        "size_kb": 8.33203125,
+        "last_modified": "2026-08-27T04:08:58.421702"
+      },
+      "compras-menores.html": {
+        "status": "✅ OK",
+        "size_kb": 8.216796875,
+        "last_modified": "2026-08-27T04:08:58.421960"
+      }
+    },
+    "data_freshness": {
+      "data_freshness": {
+        "status": "✅ Datos actuales",
+        "last_update": "2026-08-27",
+        "hours_old": 4.9
+      }
+    }
+  }
+}
