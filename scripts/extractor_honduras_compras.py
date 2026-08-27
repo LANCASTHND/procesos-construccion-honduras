@@ -46,135 +46,20 @@ class HondurasComprasExtractor:
             "CHOLOMA": "compras@munichol.hn",
         }
 
-    def extraer_licitaciones(self, tipo: str = "vigentes", max_intentos: int = 5) -> List[Dict[str, Any]]:
-        """
-        Extrae licitaciones de Honduras Compras con reintentos
-        tipo: 'vigentes', 'cerradas', 'adjudicadas'
-        """
-        print(f"🔍 Extrayendo licitaciones {tipo}...")
+        # Lista de instituciones a buscar (SICC con filtro por institución)
+        self.instituciones_buscar = list(self.contactos.keys())
 
+    def extraer_licitaciones_por_institucion(self, institucion: str, max_intentos: int = 3) -> List[Dict[str, Any]]:
+        """Extrae licitaciones de una institución específica"""
         procesos = []
-        intentos = 0
 
-        while intentos < max_intentos:
+        for intento in range(max_intentos):
             try:
-                response = self.session.get(self.base_url, timeout=15)
-                response.raise_for_status()
+                # Parámetros de búsqueda por institución
+                params = {
+                    'ctl00$ContentPlaceHolder1$ddlInstitucion': institucion,
+                }
 
-                soup = BeautifulSoup(response.content, 'html.parser')
-
-                # Buscar TODAS las tablas que contengan datos de procesos
-                tablas = soup.find_all('table')
-
-                if not tablas:
-                    print("⚠️  No se encontraron tablas. Reintentando...")
-                    intentos += 1
-                    continue
-
-                print(f"   📊 Encontradas {len(tablas)} tablas")
-
-                # Procesar cada tabla
-                contador = 0
-                for tabla_idx, tabla in enumerate(tablas):
-                    filas = tabla.find_all('tr')
-
-                    # Skip si es tabla pequeña (probablemente no es de procesos)
-                    if len(filas) < 3:
-                        continue
-
-                    print(f"   📋 Procesando tabla {tabla_idx + 1} ({len(filas)} filas)")
-
-                    # Skip header (primera fila)
-                    for fila_idx, fila in enumerate(filas[1:], 1):
-                        celdas = fila.find_all('td')
-
-                        # Procesar si tiene al menos 5 celdas
-                        if len(celdas) < 5:
-                            continue
-
-                        try:
-                            # Intentar extraer información - flexible con índices
-                            expediente = celdas[0].text.strip() if len(celdas) > 0 else ""
-                            descripcion = celdas[1].text.strip() if len(celdas) > 1 else ""
-                            institucion = celdas[2].text.strip().upper() if len(celdas) > 2 else "DESCONOCIDA"
-                            monto_texto = celdas[3].text.strip() if len(celdas) > 3 else "0"
-                            fecha_cierre = celdas[4].text.strip() if len(celdas) > 4 else ""
-
-                            # Skip si campos vacíos críticos
-                            if not expediente or not fecha_cierre:
-                                continue
-
-                            # Parsear monto
-                            monto = self._parsear_monto(monto_texto)
-
-                            # Obtener link si existe (buscar en cualquier celda)
-                            link = ""
-                            for celda in celdas:
-                                link_elem = celda.find('a')
-                                if link_elem and link_elem.get('href'):
-                                    link = link_elem.get('href', '')
-                                    break
-
-                            # Calcular días para cierre
-                            dias = 0
-                            try:
-                                cierre_date = datetime.strptime(fecha_cierre, '%d/%m/%Y')
-                                hoy = datetime.now()
-                                dias = (cierre_date - hoy).days
-                            except:
-                                continue  # Skip si no parsea fecha
-
-                            proceso = {
-                                "nro": len(procesos) + 1,
-                                "expediente": expediente,
-                                "descripcion": descripcion,
-                                "institucion": institucion,
-                                "monto": monto if monto > 0 else 5000000,  # Default si no se parsea
-                                "cierre": fecha_cierre,
-                                "contacto": self.contactos.get(institucion, "contacto@honduras.gob.hn"),
-                                "link": link,
-                                "dias_para_cierre": dias,
-                                "tipo_licitacion": "licitacion_normal",
-                                "estado_proceso": "vigente" if dias > 0 else "cerrada",
-                                "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
-                            }
-
-                            # Filtrar por tipo solicitado
-                            if tipo == "vigentes" and proceso["estado_proceso"] == "vigente":
-                                procesos.append(proceso)
-                                contador += 1
-                            elif tipo != "vigentes":
-                                procesos.append(proceso)
-                                contador += 1
-
-                        except Exception as e:
-                            continue
-
-                if contador > 0:
-                    print(f"   ✅ Extraídos {contador} procesos de licitación")
-                    return procesos
-                else:
-                    print("   ⚠️  No se extrajeron procesos. Reintentando...")
-                    intentos += 1
-
-            except requests.RequestException as e:
-                print(f"   ⚠️  Error de conexión: {e}. Reintentando...")
-                intentos += 1
-
-        print("❌ No se pudo extraer de SICC después de múltiples intentos")
-        return self._generar_plantilla_licitaciones()
-
-    def extraer_compras_menores(self, max_intentos: int = 5) -> List[Dict[str, Any]]:
-        """Extrae compras menores de Honduras Compras"""
-        print("🔍 Extrayendo compras menores...")
-
-        procesos = []
-        intentos = 0
-
-        while intentos < max_intentos:
-            try:
-                # Intentar extracción con parámetros
-                params = {'tipo': 'compra_menor'}
                 response = self.session.get(self.base_url, params=params, timeout=15)
                 response.raise_for_status()
 
@@ -182,21 +67,16 @@ class HondurasComprasExtractor:
                 tablas = soup.find_all('table')
 
                 if not tablas:
-                    print("   ⚠️  No se encontraron tablas. Reintentando...")
-                    intentos += 1
                     continue
 
-                print(f"   📊 Encontradas {len(tablas)} tablas")
-
-                contador = 0
-                for tabla_idx, tabla in enumerate(tablas):
+                # Procesar cada tabla
+                for tabla in tablas:
                     filas = tabla.find_all('tr')
 
                     if len(filas) < 3:
                         continue
 
-                    print(f"   📋 Procesando tabla {tabla_idx + 1} ({len(filas)} filas)")
-
+                    # Skip header
                     for fila in filas[1:]:
                         celdas = fila.find_all('td')
 
@@ -206,16 +86,132 @@ class HondurasComprasExtractor:
                         try:
                             expediente = celdas[0].text.strip() if len(celdas) > 0 else ""
                             descripcion = celdas[1].text.strip() if len(celdas) > 1 else ""
-                            institucion = celdas[2].text.strip().upper() if len(celdas) > 2 else "DESCONOCIDA"
+                            institucion_fila = celdas[2].text.strip().upper() if len(celdas) > 2 else institucion
                             monto_texto = celdas[3].text.strip() if len(celdas) > 3 else "0"
                             fecha_cierre = celdas[4].text.strip() if len(celdas) > 4 else ""
 
                             if not expediente or not fecha_cierre:
                                 continue
 
-                            # Filtrar solo compras menores (montos menores)
                             monto = self._parsear_monto(monto_texto)
-                            if monto > 500000:  # Considerar solo si es compra menor
+
+                            link = ""
+                            for celda in celdas:
+                                link_elem = celda.find('a')
+                                if link_elem and link_elem.get('href'):
+                                    link = link_elem.get('href', '')
+                                    break
+
+                            dias = 0
+                            try:
+                                cierre_date = datetime.strptime(fecha_cierre, '%d/%m/%Y')
+                                hoy = datetime.now()
+                                dias = (cierre_date - hoy).days
+                            except:
+                                continue
+
+                            if dias > 0:  # Solo vigentes
+                                proceso = {
+                                    "expediente": expediente,
+                                    "descripcion": descripcion,
+                                    "institucion": institucion_fila,
+                                    "monto": monto if monto > 0 else 5000000,
+                                    "cierre": fecha_cierre,
+                                    "contacto": self.contactos.get(institucion_fila, "contacto@honduras.gob.hn"),
+                                    "link": link,
+                                    "dias_para_cierre": dias,
+                                    "tipo_licitacion": "licitacion_normal",
+                                    "estado_proceso": "vigente",
+                                    "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
+                                }
+                                procesos.append(proceso)
+
+                        except Exception:
+                            continue
+
+                if procesos:
+                    return procesos
+
+            except requests.RequestException:
+                continue
+
+        return procesos
+
+    def extraer_licitaciones(self, tipo: str = "vigentes", max_intentos: int = 5) -> List[Dict[str, Any]]:
+        """
+        Extrae licitaciones de Honduras Compras por institución
+        tipo: 'vigentes', 'cerradas', 'adjudicadas'
+        """
+        print(f"🔍 Extrayendo licitaciones {tipo} por institución...\n")
+
+        procesos_totales = []
+
+        # Buscar por cada institución
+        for institucion in self.instituciones_buscar:
+            print(f"   🏢 Buscando en {institucion}...")
+            procesos_inst = self.extraer_licitaciones_por_institucion(institucion)
+
+            if procesos_inst:
+                procesos_totales.extend(procesos_inst)
+                print(f"      ✅ Encontrados {len(procesos_inst)} procesos")
+            else:
+                print(f"      ⚠️  Sin procesos vigentes")
+
+        if procesos_totales:
+            print(f"\n   ✅ Total extraídos: {len(procesos_totales)} procesos de licitación\n")
+            return procesos_totales
+        else:
+            print("\n❌ No se pudo extraer de SICC después de buscar todas las instituciones")
+            return self._generar_plantilla_licitaciones()
+
+    def extraer_compras_menores_por_institucion(self, institucion: str, max_intentos: int = 3) -> List[Dict[str, Any]]:
+        """Extrae compras menores de una institución específica"""
+        procesos = []
+
+        for intento in range(max_intentos):
+            try:
+                # Parámetros de búsqueda por institución y tipo
+                params = {
+                    'ctl00$ContentPlaceHolder1$ddlInstitucion': institucion,
+                    'ctl00$ContentPlaceHolder1$ddlTipo': 'compra_menor',
+                }
+
+                response = self.session.get(self.base_url, params=params, timeout=15)
+                response.raise_for_status()
+
+                soup = BeautifulSoup(response.content, 'html.parser')
+                tablas = soup.find_all('table')
+
+                if not tablas:
+                    continue
+
+                # Procesar cada tabla
+                for tabla in tablas:
+                    filas = tabla.find_all('tr')
+
+                    if len(filas) < 3:
+                        continue
+
+                    # Skip header
+                    for fila in filas[1:]:
+                        celdas = fila.find_all('td')
+
+                        if len(celdas) < 5:
+                            continue
+
+                        try:
+                            expediente = celdas[0].text.strip() if len(celdas) > 0 else ""
+                            descripcion = celdas[1].text.strip() if len(celdas) > 1 else ""
+                            institucion_fila = celdas[2].text.strip().upper() if len(celdas) > 2 else institucion
+                            monto_texto = celdas[3].text.strip() if len(celdas) > 3 else "0"
+                            fecha_cierre = celdas[4].text.strip() if len(celdas) > 4 else ""
+
+                            if not expediente or not fecha_cierre:
+                                continue
+
+                            monto = self._parsear_monto(monto_texto)
+                            # Filtrar solo compras menores
+                            if monto > 500000:
                                 continue
 
                             link = ""
@@ -233,41 +229,56 @@ class HondurasComprasExtractor:
                             except:
                                 continue
 
-                            proceso = {
-                                "nro": len(procesos) + 1,
-                                "expediente": expediente,
-                                "descripcion": descripcion,
-                                "institucion": institucion,
-                                "monto": monto if monto > 0 else 150000,
-                                "cierre": fecha_cierre,
-                                "contacto": self.contactos.get(institucion, "contacto@honduras.gob.hn"),
-                                "link": link,
-                                "dias_para_cierre": dias,
-                                "tipo_licitacion": "compra_menor",
-                                "estado_proceso": "vigente" if dias > 0 else "cerrada",
-                                "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
-                            }
-
-                            if proceso["estado_proceso"] == "vigente":
+                            if dias > 0:  # Solo vigentes
+                                proceso = {
+                                    "expediente": expediente,
+                                    "descripcion": descripcion,
+                                    "institucion": institucion_fila,
+                                    "monto": monto if monto > 0 else 150000,
+                                    "cierre": fecha_cierre,
+                                    "contacto": self.contactos.get(institucion_fila, "contacto@honduras.gob.hn"),
+                                    "link": link,
+                                    "dias_para_cierre": dias,
+                                    "tipo_licitacion": "compra_menor",
+                                    "estado_proceso": "vigente",
+                                    "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
+                                }
                                 procesos.append(proceso)
-                                contador += 1
 
                         except Exception:
                             continue
 
-                if contador > 0:
-                    print(f"   ✅ Extraídas {contador} compras menores")
+                if procesos:
                     return procesos
-                else:
-                    print("   ⚠️  No se extrajeron compras menores. Reintentando...")
-                    intentos += 1
 
-            except requests.RequestException as e:
-                print(f"   ⚠️  Error de conexión: {e}. Reintentando...")
-                intentos += 1
+            except requests.RequestException:
+                continue
 
-        print("❌ No se pudo extraer compras menores después de múltiples intentos")
-        return self._generar_plantilla_compras_menores()
+        return procesos
+
+    def extraer_compras_menores(self, max_intentos: int = 5) -> List[Dict[str, Any]]:
+        """Extrae compras menores de Honduras Compras por institución"""
+        print("🔍 Extrayendo compras menores por institución...\n")
+
+        procesos_totales = []
+
+        # Buscar por cada institución
+        for institucion in self.instituciones_buscar:
+            print(f"   🏢 Buscando en {institucion}...")
+            procesos_inst = self.extraer_compras_menores_por_institucion(institucion)
+
+            if procesos_inst:
+                procesos_totales.extend(procesos_inst)
+                print(f"      ✅ Encontradas {len(procesos_inst)} compras menores")
+            else:
+                print(f"      ⚠️  Sin compras menores vigentes")
+
+        if procesos_totales:
+            print(f"\n   ✅ Total extraídas: {len(procesos_totales)} compras menores\n")
+            return procesos_totales
+        else:
+            print("\n❌ No se pudo extraer compras menores después de buscar todas las instituciones")
+            return self._generar_plantilla_compras_menores()
 
     def _parsear_monto(self, texto: str) -> float:
         """Convierte texto de monto a número"""
@@ -324,6 +335,11 @@ class HondurasComprasExtractor:
         """Guarda procesos en JSON con metadata"""
         total = len(procesos)
         inversion_total = sum(p.get('monto', 0) for p in procesos)
+
+        # Agregar número secuencial si no existe
+        for idx, proceso in enumerate(procesos, 1):
+            if 'nro' not in proceso:
+                proceso['nro'] = idx
 
         datos = {
             "metadata": {
