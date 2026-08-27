@@ -148,6 +148,7 @@ class GeneradorReportes:
                     <td><small>${{p.cierre}}</small></td>
                     <td class="monto">L. ${{p.monto.toLocaleString('es-HN')}}</td>
                     <td>${{p.contacto ? `<a href="mailto:${{p.contacto}}" class="email-link">📧</a>` : '-'}}</td>
+                    <td>${{p.link ? `<a href="${{p.link}}" target="_blank" class="link-btn">🔗 Ver</a>` : '-'}}</td>
                 `;
                 tbody.appendChild(fila);
             }});
@@ -289,6 +290,7 @@ class GeneradorReportes:
                     <td><small>${{p.cierre}}</small></td>
                     <td class="monto">L. ${{p.monto.toLocaleString('es-HN')}}</td>
                     <td>${{p.contacto ? `<a href="mailto:${{p.contacto}}" class="email-link">📧</a>` : '-'}}</td>
+                    <td>${{p.link ? `<a href="${{p.link}}" target="_blank" class="link-btn">🔗 Ver</a>` : '-'}}</td>
                 `;
                 tbody.appendChild(fila);
             }});

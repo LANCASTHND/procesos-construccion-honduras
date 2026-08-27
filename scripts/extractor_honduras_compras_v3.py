@@ -44,17 +44,28 @@ class SICCExtractorV3:
 
     def _extraer_institucion(self, expediente: str) -> str:
         """Extrae institución del texto del expediente"""
-        expediente_upper = expediente.upper()
+        expediente_upper = expediente.upper().strip()
 
-        # Buscar siglas de instituciones
+        # Limpiar expediente de espacios en blanco extra
+        expediente_clean = ' '.join(expediente_upper.split())
+
+        # Buscar siglas de instituciones (primero exactas, luego parciales)
         for sigla in self.contactos.keys():
-            if sigla.upper() in expediente_upper:
+            sigla_upper = sigla.upper()
+            # Buscar como palabra completa o al inicio
+            if sigla_upper in expediente_clean:
+                return sigla
+            # Para siglas cortas, buscar como patrón más específico
+            if len(sigla_upper) <= 3 and sigla_upper in expediente_clean:
                 return sigla
 
         # Fallback: buscar por nombres comunes
-        if "BOMBEROS" in expediente_upper or "CUERPO" in expediente_upper:
+        if "BOMBEROS" in expediente_clean or "CUERPO" in expediente_clean:
             return "CUERPO DE BOMBEROS"
-        elif "MUNICIPAL" in expediente_upper or "MUNICIPALI" in expediente_upper:
+        elif "MUNICIPAL" in expediente_clean or "MUNICIPALI" in expediente_clean:
+            return "VARIAS MUNICIPALIDADES"
+        elif "SPE" in expediente_clean:
+            # SPE usualmente es de municipalidades
             return "VARIAS MUNICIPALIDADES"
 
         return "VARIAS"
@@ -118,40 +129,30 @@ class SICCExtractorV3:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
-            page.set_default_timeout(60000)  # Aumentado a 60s
+            page.set_default_timeout(30000)
 
             try:
                 page.goto(self.base_url, wait_until='load')
                 print("   ✅ Página SICC cargada\n")
-                time.sleep(3)
-
-                # Seleccionar modalidad: Compra Menor (2)
-                selector_modalidad = '#ctl00_cphCuerpo_wpParametros_ddlModalidad'
-                try:
-                    page.select_option(selector_modalidad, '2')
-                    print("   ✅ Filtro 'Compra Menor' seleccionado\n")
-                except:
-                    print("   ⚠️  No se pudo filtrar por Compra Menor\n")
-
-                # Hacer búsqueda
-                print("   🔍 Iniciando búsqueda...")
-                btn_buscar = '#ctl00_cphCuerpo_wpParametros_btnBuscar'
-                try:
-                    page.click(btn_buscar)
-                    page.wait_for_load_state('networkidle', timeout=45000)
-                except:
-                    print("   ⚠️  Timeout en búsqueda, continuando...")
-                print("   ✅ Búsqueda completada\n")
-
                 time.sleep(2)
 
-                # Extraer datos
-                procesos = self._extraer_procesos_de_pagina(page, "compra_menor")
+                # Intento 1: Intentar con filtro de Compra Menor
+                print("   🔍 Intento 1: Buscando compras menores con filtro...")
+                procesos = self._buscar_compras_con_filtro(page)
 
-                if procesos:
-                    print(f"   ✅ Encontradas {len(procesos)} compras menores\n")
+                if procesos and len(procesos) > 0:
+                    print(f"   ✅ Encontradas {len(procesos)} compras menores con filtro\n")
                 else:
-                    print("   ⚠️  No se encontraron procesos\n")
+                    # Intento 2: Si falla, recargar la página y buscar sin filtro
+                    print("   ⚠️  Intento con filtro falló, reintentando sin filtro...\n")
+                    page.reload(wait_until='load')
+                    time.sleep(2)
+                    procesos = self._buscar_compras_sin_filtro(page)
+
+                    if procesos:
+                        print(f"   ✅ Encontradas {len(procesos)} compras menores sin filtro\n")
+                    else:
+                        print("   ⚠️  No se encontraron procesos (usando fallback)\n")
 
             except Exception as e:
                 print(f"   ❌ Error: {e}\n")
@@ -161,13 +162,63 @@ class SICCExtractorV3:
 
         return procesos if procesos else self._generar_plantilla_compras()
 
+    def _buscar_compras_con_filtro(self, page) -> List[Dict[str, Any]]:
+        """Intenta buscar compras menores con filtro de modalidad"""
+        try:
+            # Seleccionar modalidad: Compra Menor
+            selector_modalidad = '#ctl00_cphCuerpo_wpParametros_ddlModalidad'
+            page.select_option(selector_modalidad, '2')
+            print("   ✅ Filtro 'Compra Menor' seleccionado")
+
+            # Click en buscar
+            btn_buscar = '#ctl00_cphCuerpo_wpParametros_btnBuscar'
+            page.click(btn_buscar, no_wait_after=True)
+            time.sleep(4)
+
+            # Extraer datos
+            return self._extraer_procesos_de_pagina(page, "compra_menor")
+        except Exception as e:
+            print(f"   ⚠️  Error en búsqueda con filtro: {e}")
+            return []
+
+    def _buscar_compras_sin_filtro(self, page) -> List[Dict[str, Any]]:
+        """Intenta buscar compras menores sin filtro (todas las modalidades)"""
+        try:
+            # Click en buscar sin filtro
+            btn_buscar = '#ctl00_cphCuerpo_wpParametros_btnBuscar'
+            page.click(btn_buscar, no_wait_after=True)
+            time.sleep(4)
+
+            # Extraer datos y filtrar por compras menores
+            procesos_todos = self._extraer_procesos_de_pagina(page, "compra_menor")
+
+            # Si tenemos resultados, retornarlos
+            if procesos_todos:
+                return procesos_todos
+
+            return []
+        except Exception as e:
+            print(f"   ⚠️  Error en búsqueda sin filtro: {e}")
+            return []
+
     def _extraer_procesos_de_pagina(self, page, tipo: str = "licitacion") -> List[Dict[str, Any]]:
         """Extrae procesos de la tabla de resultados actual"""
         procesos = []
 
         try:
-            # Esperar a que cargue la tabla
-            time.sleep(2)
+            # Esperar a que cargue la tabla y que el contexto se estabilice
+            max_wait = 10
+            for i in range(max_wait):
+                try:
+                    time.sleep(1)
+                    # Verificar que el contexto sigue vivo
+                    page.query_selector('body')
+                    break
+                except Exception as e:
+                    if i == max_wait - 1:
+                        print(f"   ⚠️  No se pudo recuperar el contexto después de {max_wait}s")
+                        return procesos
+                    print(f"   ⏳ Esperando contexto ({i+1}/{max_wait})...")
 
             # Buscar todas las tablas
             tablas = page.query_selector_all('table')
@@ -175,20 +226,35 @@ class SICCExtractorV3:
 
             # Buscar tabla con header "Proceso de Adquisición"
             tabla_procesos = None
-            for tabla in tablas:
+            for idx_tabla, tabla in enumerate(tablas):
                 filas = tabla.query_selector_all('tr')
                 if len(filas) > 2:
                     # Verificar si es la tabla de procesos
                     primera_fila = filas[0]
                     header_text = primera_fila.text_content()
-                    if "Proceso de Adquisición" in header_text or "Adquisición" in header_text:
+                    print(f"   🔎 Tabla {idx_tabla}: '{header_text[:60]}...' ({len(filas)} filas)")
+
+                    # Buscar indicadores de que es tabla de procesos
+                    if ("Proceso de Adquisición" in header_text or
+                        "Adquisición" in header_text or
+                        "Expediente" in header_text or
+                        "Modalidad" in header_text):
                         tabla_procesos = tabla
                         print(f"   ✅ Tabla de procesos identificada ({len(filas)} filas)")
                         break
 
             if not tabla_procesos:
                 print("   ⚠️  No se encontró tabla de procesos")
-                return procesos
+                print(f"   💡 Intentando con la tabla más grande...")
+                # Fallback: usar la tabla más grande (ignorar tablas muy pequeñas)
+                tablas_validas = [t for t in tablas if len(t.query_selector_all('tr')) > 3]
+                if tablas_validas:
+                    tabla_procesos = max(tablas_validas, key=lambda t: len(t.query_selector_all('tr')))
+                    filas = tabla_procesos.query_selector_all('tr')
+                    print(f"   ✅ Usando tabla de fallback ({len(filas)} filas)")
+                else:
+                    print(f"   ❌ No hay tablas válidas con datos")
+                    return procesos
 
             # Extraer filas (skip header)
             filas = tabla_procesos.query_selector_all('tr')
@@ -214,6 +280,13 @@ class SICCExtractorV3:
                     etapa = celdas[1].text_content().strip() if len(celdas) > 1 else ""
                     modalidad = celdas[2].text_content().strip() if len(celdas) > 2 else ""
                     vigencia_texto = celdas[3].text_content().strip() if len(celdas) > 3 else ""
+
+                    # Extraer link de celda [4] si existe
+                    link = ""
+                    if len(celdas) > 4:
+                        link_elem = celdas[4].query_selector('a')
+                        if link_elem:
+                            link = link_elem.get_attribute('href') or ""
 
                     if not expediente_texto or not vigencia_texto:
                         continue
@@ -256,7 +329,7 @@ class SICCExtractorV3:
                         "monto": 0,
                         "cierre": cierre_estimado.strftime('%d/%m/%Y'),
                         "contacto": self.contactos.get(institucion, ""),
-                        "link": "",
+                        "link": link,
                         "dias_para_cierre": dias,
                         "tipo_licitacion": tipo,
                         "etapa": etapa,
