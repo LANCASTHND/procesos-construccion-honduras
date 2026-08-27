@@ -44,6 +44,7 @@ class HondurasComprasExtractor:
             "EL RAMA": "compras@elrama.gob.hn",
             "COMAYAGUA": "compras@comayagua.gob.hn",
             "CHOLOMA": "compras@munichol.hn",
+            "CUERPO DE BOMBEROS": "compras@cuerpodbomberos.hn",
         }
 
         # Lista de instituciones a buscar (SICC con filtro por institución)
