@@ -87,23 +87,20 @@ class SICCExtractorV4:
         print(f"   📝 Extrayendo descripciones para {len(vigentes)} procesos vigentes...")
 
         contador = 0
-        for proceso in vigentes:
-            if contador >= 30:  # Limitar a 30 para evitar demora excesiva
-                break
-
+        for i, proceso in enumerate(vigentes, 1):
             try:
                 objeto = self._extraer_objeto(browser, proceso['link'])
                 if objeto:
                     proceso['objeto'] = objeto
                     contador += 1
-                    if contador % 5 == 0:
-                        print(f"      ✓ {contador} descripciones extraídas...")
+                if i % 10 == 0:
+                    print(f"      ✓ {i}/{len(vigentes)} procesados ({contador} descripciones)...")
             except:
                 pass
 
             time.sleep(0.2)
 
-        print(f"      ✓ {contador} descripciones extraídas\n")
+        print(f"      ✓ {contador}/{len(vigentes)} descripciones extraídas\n")
 
     def extraer_licitaciones_completo(self) -> List[Dict[str, Any]]:
         """Extrae TODAS las licitaciones por institución"""
