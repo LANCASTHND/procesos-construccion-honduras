@@ -290,20 +290,25 @@ class SICCExtractorV4:
                         # Buscar la etiqueta "Objeto"
                         if label_text == 'Objeto':
                             # Obtener el texto de la celda siguiente
-                            valor_celda = celdas[1].inner_text().strip()
+                            valor_celda = celdas[1].text_content().strip()
 
                             if valor_celda and len(valor_celda) > 10:
-                                # Si contiene múltiples campos, extraer solo el valor del "Objeto"
-                                # Usar regex para encontrar el patrón "Objeto" seguido de la descripción
-                                match = re.search(r'Objeto\s*(.+?)(?=\n(?:[A-Z][a-z]+|$))', valor_celda, re.DOTALL)
-                                if match:
-                                    objeto = match.group(1).strip()
-                                    # Remover saltos de línea múltiples y espacios excesivos
-                                    objeto = ' '.join(objeto.split())
-                                    if len(objeto) > 10:
-                                        return objeto[:300]
+                                # Estrategia: buscar "Objeto" en el texto y extraer todo después
+                                # Remover todas las etiquetas previas (Expediente, Entidad, etc)
+                                if 'Objeto' in valor_celda:
+                                    # Encontrar la posición de "Objeto" y extraer lo que viene después
+                                    idx = valor_celda.rfind('Objeto')
+                                    if idx != -1:
+                                        objeto = valor_celda[idx + 6:].strip()
+                                        # Limpiar caracteres especiales al inicio
+                                        objeto = objeto.lstrip('"\' :')
+                                        # Remover saltos de línea y espacios excesivos
+                                        objeto = ' '.join(objeto.split())
+                                        # Tomar los primeros 300 caracteres
+                                        if len(objeto) > 10:
+                                            return objeto[:300]
                                 else:
-                                    # Si no hay patrón, usar el valor completo si parece una descripción
+                                    # Si no hay "Objeto" como etiqueta, usar el valor completo
                                     if not any(keyword in valor_celda for keyword in ['Expediente', 'Entidad', 'Sys.', '/*', 'CDATA']):
                                         objeto = ' '.join(valor_celda.split())
                                         if len(objeto) > 10:
