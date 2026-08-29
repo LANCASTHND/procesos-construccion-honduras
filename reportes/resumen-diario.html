@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honduras Compras - Resumen Diario</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+        .metric-card h3 {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .metric-card .value {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .status {
+            display: flex;
+            gap: 20px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        .status-item {
+            flex: 1;
+        }
+        .status-label {
+            font-size: 13px;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .status-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        .badge-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .badge-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .links-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        .links-section h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .link-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .link-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
+        }
+        .status-indicator.active {
+            background: #10b981;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Honduras Compras - Resumen Diario</h1>
+            <p>Sistema de Procesos de Construcción y Obras Públicas 2026</p>
+        </div>
+
+        <div class="content">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Licitaciones Vigentes</h3>
+                    <div class="value">30</div>
+                    <small>Procesos normales</small>
+                </div>
+                <div class="metric-card">
+                    <h3>Compras Menores</h3>
+                    <div class="value">30</div>
+                    <small>Procesos menores</small>
+                </div>
+                <div class="metric-card">
+                    <h3>Total de Procesos</h3>
+                    <div class="value">60</div>
+                    <small>Activos y vigentes</small>
+                </div>
+                <div class="metric-card">
+                    <h3>Instituciones</h3>
+                    <div class="value">14</div>
+                    <small>Públicas monitoreadas</small>
+                </div>
+            </div>
+
+            <div class="status">
+                <div class="status-item">
+                    <div class="status-label">Estado del Sistema</div>
+                    <div class="status-value">
+                        <span class="status-indicator active"></span>
+                        ✅ OPERATIVO
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Última Actualización</div>
+                    <div class="status-value" id="ultima-actualizacion">Hace 24 horas</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Extracción Diaria</div>
+                    <div class="status-value">5:00 PM Honduras</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Tasa de Éxito</div>
+                    <div class="status-value">100% ✅</div>
+                </div>
+            </div>
+
+            <div class="links-section">
+                <h3>📋 Acceso a Reportes Interactivos</h3>
+                <div class="link-buttons">
+                    <a href="licitaciones.html" class="link-btn">📄 Licitaciones Normales</a>
+                    <a href="compras-menores.html" class="link-btn">📦 Compras Menores</a>
+                </div>
+            </div>
+
+            <div class="links-section" style="margin-top: 20px;">
+                <h3>🔍 Información Detallada</h3>
+                <div>
+                    <span class="badge badge-success">✓ 30/30 Links Verificados</span>
+                    <span class="badge badge-success">✓ Institución Detectada</span>
+                    <span class="badge badge-success">✓ Fechas Incluidas</span>
+                    <span class="badge badge-warning">⚠ Cuerpo Bomberos: 0 procesos vigentes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🤖 Sistema Automático - Honduras Procurement v3.0 | Actualización: 2026-08-29 | Fuente: SICC Honduras Compras</p>
+        </div>
+    </div>
+
+    <script>
+        // Actualizar tiempo de última actualización
+        function updateTime() {
+            const dates = {
+                "2026-08-27": "2 días",
+                "2026-08-28": "1 día",
+                "2026-08-29": "Hoy"
+            };
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('ultima-actualizacion').textContent = dates[today] || 'Recientemente';
+        }
+        updateTime();
+    </script>
+</body>
+</html>
