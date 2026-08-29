@@ -1,10 +1,10 @@
 {
   "metadata": {
     "tipo": "compras_menores",
-    "total_procesos": 30,
+    "total_procesos": 31,
     "inversion_total": 0,
     "moneda": "Lempiras (L.)",
-    "fecha_actualizacion": "2026-08-29 20:49:57",
+    "fecha_actualizacion": "2026-08-29 21:04:57",
     "estado": "vigentes",
     "cobertura": "Honduras - Búsqueda General",
     "fuente": "SICC Honduras Compras",
@@ -267,13 +267,13 @@
       "nro": 15
     },
     {
-      "expediente": "UNAH-SEAF-FO-CM-SC-22473-2026\n                                \n                 ",
+      "expediente": "UNAH-SEAF-SRYT-CM-SC-22496-2026\n                                \n               ",
       "descripcion": "Compra Menor",
       "institucion": "UNAH",
       "monto": 0,
       "cierre": "17/09/2026",
       "contacto": "unah-compras@unah.edu.hn",
-      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAEYAAABPAAAALQAAAEMAAABNAAAALQAAAFMAAABDAAAALQAAADIAAAAyAAAANAAAADcAAAAzAAAALQAAADIAAAAwAAAAMgAAADYAAAA%3d-aV2vZ%2fShcHI%3d",
+      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAFMAAABSAAAAWQAAAFQAAAAtAAAAQwAAAE0AAAAtAAAAUwAAAEMAAAAtAAAAMgAAADIAAAA0AAAAOQAAADYAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-pmGtbMeJvzU%3d",
       "dias_para_cierre": 18,
       "tipo_licitacion": "compra_menor",
       "etapa": "Elaboración",
@@ -284,13 +284,13 @@
       "nro": 16
     },
     {
-      "expediente": "UNAH-SEAF-SRYT-CM-SC-22496-2026\n                                \n               ",
+      "expediente": "UNAH-SEAF-FO-CM-SC-22473-2026\n                                \n                 ",
       "descripcion": "Compra Menor",
       "institucion": "UNAH",
       "monto": 0,
       "cierre": "17/09/2026",
       "contacto": "unah-compras@unah.edu.hn",
-      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAFMAAABSAAAAWQAAAFQAAAAtAAAAQwAAAE0AAAAtAAAAUwAAAEMAAAAtAAAAMgAAADIAAAA0AAAAOQAAADYAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-pmGtbMeJvzU%3d",
+      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAEYAAABPAAAALQAAAEMAAABNAAAALQAAAFMAAABDAAAALQAAADIAAAAyAAAANAAAADcAAAAzAAAALQAAADIAAAAwAAAAMgAAADYAAAA%3d-aV2vZ%2fShcHI%3d",
       "dias_para_cierre": 18,
       "tipo_licitacion": "compra_menor",
       "etapa": "Elaboración",
@@ -369,23 +369,6 @@
       "nro": 21
     },
     {
-      "expediente": "UNAH-SEAF-DC-CURLP-CM-SC22470-2026\n                                \n            ",
-      "descripcion": "Compra Menor",
-      "institucion": "UNAH",
-      "monto": 0,
-      "cierre": "02/10/2026",
-      "contacto": "unah-compras@unah.edu.hn",
-      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAEQAAABDAAAALQAAAEMAAABVAAAAUgAAAEwAAABQAAAALQAAAEMAAABNAAAALQAAAFMAAABDAAAAMgAAADIAAAA0AAAANwAAADAAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-HZSei1Y%2f0qI%3d",
-      "dias_para_cierre": 33,
-      "tipo_licitacion": "compra_menor",
-      "etapa": "Elaboración",
-      "modalidad": "Compra Menor",
-      "fecha_inicio": "28/08/2026",
-      "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-08-29",
-      "nro": 22
-    },
-    {
       "expediente": "UNAH-SEAF-DCE-CM-SC22451-2026\n                                \n                 ",
       "descripcion": "Compra Menor",
       "institucion": "UNAH",
@@ -400,24 +383,7 @@
       "fecha_inicio": "28/08/2026",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
-      "nro": 23
-    },
-    {
-      "expediente": "UNAH-SEAF-DC-CUROC-CM-SC22475-2026\n                                \n            ",
-      "descripcion": "Compra Menor",
-      "institucion": "UNAH",
-      "monto": 0,
-      "cierre": "02/10/2026",
-      "contacto": "unah-compras@unah.edu.hn",
-      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAEQAAABDAAAALQAAAEMAAABVAAAAUgAAAE8AAABDAAAALQAAAEMAAABNAAAALQAAAFMAAABDAAAAMgAAADIAAAA0AAAANwAAADUAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-xIIXfV7tKCs%3d",
-      "dias_para_cierre": 33,
-      "tipo_licitacion": "compra_menor",
-      "etapa": "Elaboración",
-      "modalidad": "Compra Menor",
-      "fecha_inicio": "28/08/2026",
-      "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-08-29",
-      "nro": 24
+      "nro": 22
     },
     {
       "expediente": "UNAH-SEAF-FC-CM-SC22490-2026\n                                \n                  ",
@@ -434,7 +400,58 @@
       "fecha_inicio": "28/08/2026",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
+      "nro": 23
+    },
+    {
+      "expediente": "UNAH-SEAF-DC-CURLP-CM-SC22470-2026\n                                \n            ",
+      "descripcion": "Compra Menor",
+      "institucion": "UNAH",
+      "monto": 0,
+      "cierre": "02/10/2026",
+      "contacto": "unah-compras@unah.edu.hn",
+      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAEQAAABDAAAALQAAAEMAAABVAAAAUgAAAEwAAABQAAAALQAAAEMAAABNAAAALQAAAFMAAABDAAAAMgAAADIAAAA0AAAANwAAADAAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-HZSei1Y%2f0qI%3d",
+      "dias_para_cierre": 33,
+      "tipo_licitacion": "compra_menor",
+      "etapa": "Elaboración",
+      "modalidad": "Compra Menor",
+      "fecha_inicio": "28/08/2026",
+      "estado_proceso": "vigente",
+      "fecha_extraccion": "2026-08-29",
+      "nro": 24
+    },
+    {
+      "expediente": "UNAH-SEAF-DC-CUROC-CM-SC22475-2026\n                                \n            ",
+      "descripcion": "Compra Menor",
+      "institucion": "UNAH",
+      "monto": 0,
+      "cierre": "02/10/2026",
+      "contacto": "unah-compras@unah.edu.hn",
+      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAEQAAABDAAAALQAAAEMAAABVAAAAUgAAAE8AAABDAAAALQAAAEMAAABNAAAALQAAAFMAAABDAAAAMgAAADIAAAA0AAAANwAAADUAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-xIIXfV7tKCs%3d",
+      "dias_para_cierre": 33,
+      "tipo_licitacion": "compra_menor",
+      "etapa": "Elaboración",
+      "modalidad": "Compra Menor",
+      "fecha_inicio": "28/08/2026",
+      "estado_proceso": "vigente",
+      "fecha_extraccion": "2026-08-29",
       "nro": 25
+    },
+    {
+      "expediente": "UNAH-SEAF-MDP-CM-SC22485-2026\n                                \n                 ",
+      "descripcion": "Compra Menor",
+      "institucion": "UNAH",
+      "monto": 0,
+      "cierre": "02/10/2026",
+      "contacto": "unah-compras@unah.edu.hn",
+      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAE0AAABEAAAAUAAAAC0AAABDAAAATQAAAC0AAABTAAAAQwAAADIAAAAyAAAANAAAADgAAAA1AAAALQAAADIAAAAwAAAAMgAAADYAAAA%3d-%2fuYbFWuUujU%3d",
+      "dias_para_cierre": 33,
+      "tipo_licitacion": "compra_menor",
+      "etapa": "Elaboración",
+      "modalidad": "Compra Menor",
+      "fecha_inicio": "28/08/2026",
+      "estado_proceso": "vigente",
+      "fecha_extraccion": "2026-08-29",
+      "nro": 26
     },
     {
       "expediente": "UNAH-SEAF-FCJ-CM-SC22443-2026\n                                \n                 ",
@@ -451,7 +468,7 @@
       "fecha_inicio": "28/08/2026",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
-      "nro": 26
+      "nro": 27
     },
     {
       "expediente": "UNAH-SEAF-FHA-CM-SC22466-2026\n                                \n                 ",
@@ -461,23 +478,6 @@
       "cierre": "02/10/2026",
       "contacto": "unah-compras@unah.edu.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAEYAAABIAAAAQQAAAC0AAABDAAAATQAAAC0AAABTAAAAQwAAADIAAAAyAAAANAAAADYAAAA2AAAALQAAADIAAAAwAAAAMgAAADYAAAA%3d-C2MeymcIUMw%3d",
-      "dias_para_cierre": 33,
-      "tipo_licitacion": "compra_menor",
-      "etapa": "Elaboración",
-      "modalidad": "Compra Menor",
-      "fecha_inicio": "28/08/2026",
-      "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-08-29",
-      "nro": 27
-    },
-    {
-      "expediente": "UNAH-SEAF-MDP-CM-SC22485-2026\n                                \n                 ",
-      "descripcion": "Compra Menor",
-      "institucion": "UNAH",
-      "monto": 0,
-      "cierre": "02/10/2026",
-      "contacto": "unah-compras@unah.edu.hn",
-      "link": "ProcesoHistorico.aspx?Id0=MQAAADAAAAA3AAAAMwAAAA%3d%3d-9TOqn%2fE4woM%3d&Id1=MgAAAA%3d%3d-HgHSyRhqF1U%3d&Id2=VQAAAE4AAABBAAAASAAAAC0AAABTAAAARQAAAEEAAABGAAAALQAAAE0AAABEAAAAUAAAAC0AAABDAAAATQAAAC0AAABTAAAAQwAAADIAAAAyAAAANAAAADgAAAA1AAAALQAAADIAAAAwAAAAMgAAADYAAAA%3d-%2fuYbFWuUujU%3d",
       "dias_para_cierre": 33,
       "tipo_licitacion": "compra_menor",
       "etapa": "Elaboración",
@@ -520,6 +520,23 @@
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 30
+    },
+    {
+      "expediente": "CB-2026-001",
+      "descripcion": "Servicios de Construcción - Cuerpo de Bomberos",
+      "institucion": "CUERPO DE BOMBEROS",
+      "monto": 0,
+      "cierre": "30/09/2026",
+      "contacto": "compras@cuerpodbomberos.hn",
+      "link": "http://sicc.honducompras.gob.hn/HC/procesos/ProcesoHistorico.aspx?Id0=NgAAADkAAAAyAAAA-c47gia%2bUYjI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=RwAAAEMAAAAtAAAATAAAAFAAAABOAAAALQAAAEgAAABCAAAAQcAAAEIAAABIAAAALQAAAEkAAABOAAAARgAAAFIAAABBAAAARQAAAFMAAABUAAAAUgAAAFVAAABDAAAAVAAAAFUAAABSAAAAQQAAAC0AAAAwAAAAMAAAADQAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-GbHzG5AyTMI%3d",
+      "dias_para_cierre": 32,
+      "tipo_licitacion": "licitacion",
+      "etapa": "Recepción de Ofertas",
+      "modalidad": "Licitación Pública",
+      "fecha_inicio": "29/08/2026",
+      "estado_proceso": "vigente",
+      "fecha_extraccion": "2026-08-29",
+      "nro": 31
     }
   ]
 }

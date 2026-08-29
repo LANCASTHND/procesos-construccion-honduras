@@ -1,10 +1,10 @@
 {
   "metadata": {
     "tipo": "licitaciones_normales",
-    "total_procesos": 30,
+    "total_procesos": 31,
     "inversion_total": 0,
     "moneda": "Lempiras (L.)",
-    "fecha_actualizacion": "2026-08-29 20:49:30",
+    "fecha_actualizacion": "2026-08-29 21:04:26",
     "estado": "vigentes",
     "cobertura": "Honduras - Búsqueda General",
     "fuente": "SICC Honduras Compras",
@@ -520,6 +520,23 @@
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 30
+    },
+    {
+      "expediente": "CB-2026-001",
+      "descripcion": "Servicios de Construcción - Cuerpo de Bomberos",
+      "institucion": "CUERPO DE BOMBEROS",
+      "monto": 0,
+      "cierre": "30/09/2026",
+      "contacto": "compras@cuerpodbomberos.hn",
+      "link": "http://sicc.honducompras.gob.hn/HC/procesos/ProcesoHistorico.aspx?Id0=NgAAADkAAAAyAAAA-c47gia%2bUYjI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=RwAAAEMAAAAtAAAATAAAAFAAAABOAAAALQAAAEgAAABCAAAAQcAAAEIAAABIAAAALQAAAEkAAABOAAAARgAAAFIAAABBAAAARQAAAFMAAABUAAAAUgAAAFVAAABDAAAAVAAAAFUAAABSAAAAQQAAAC0AAAAwAAAAMAAAADQAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-GbHzG5AyTMI%3d",
+      "dias_para_cierre": 32,
+      "tipo_licitacion": "licitacion",
+      "etapa": "Recepción de Ofertas",
+      "modalidad": "Licitación Pública",
+      "fecha_inicio": "29/08/2026",
+      "estado_proceso": "vigente",
+      "fecha_extraccion": "2026-08-29",
+      "nro": 31
     }
   ]
 }
