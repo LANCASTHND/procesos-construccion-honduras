@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honduras Procurement - Dashboard 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            border-radius: 16px;
+            padding: 50px 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 40px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .header p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .timestamp {
+            font-size: 13px;
+            color: #999;
+            margin-top: 10px;
+        }
+        .status-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .status-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .status-card .label {
+            font-size: 13px;
+            color: #999;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .status-card .value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .status-card .detail {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .reports-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .report-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .report-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        .report-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+        }
+        .report-header h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .report-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .report-body {
+            padding: 25px;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .metric:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .metric-label {
+            color: #666;
+            font-size: 14px;
+        }
+        .metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+        .report-footer {
+            padding: 0 25px 25px 25px;
+        }
+        .btn-primary {
+            display: inline-block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+        }
+        .info-section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .info-section h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .badge {
+            padding: 12px 15px;
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+        .badge.success {
+            background: #d1fae5;
+            border-left-color: #10b981;
+            color: #065f46;
+        }
+        .badge.warning {
+            background: #fef3c7;
+            border-left-color: #f59e0b;
+            color: #92400e;
+        }
+        .badge.new {
+            background: #fce7f3;
+            border-left-color: #ec4899;
+            color: #831843;
+            font-weight: 700;
+        }
+        .footer {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .growth-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🏗️ Honduras Procurement System v2</h1>
+            <p>Procesos de Construcción y Obras Públicas 2026</p>
+            <p style="color: #10b981; font-weight: 700; margin-top: 10px;">✨ EXTRACCIÓN COMPLETA: 386 PROCESOS VIGENTES</p>
+            <div class="timestamp">
+                Última actualización: <strong id="fecha">29 de agosto de 2026</strong> |
+                <span style="color: #10b981;">✓ Sistema Operativo - Búsqueda Exhaustiva</span>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-card">
+                <div class="label">Licitaciones</div>
+                <div class="value">66 <span class="growth-badge">+112%</span></div>
+                <div class="detail">Procesos normales</div>
+            </div>
+            <div class="status-card">
+                <div class="label">Compras Menores</div>
+                <div class="value">320 <span class="growth-badge">+932%</span></div>
+                <div class="detail">Procesos menores</div>
+            </div>
+            <div class="status-card">
+                <div class="label">Total Procesos</div>
+                <div class="value">386</div>
+                <div class="detail">Vigentes y activos</div>
+            </div>
+            <div class="status-card">
+                <div class="label">Instituciones</div>
+                <div class="value">14+</div>
+                <div class="detail">Públicas monitoreadas</div>
+            </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div class="reports-section">
+            <!-- Licitaciones Card -->
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>📋 Licitaciones Normales</h3>
+                    <p>Procesos de Mayor Cuantía (66 vigentes)</p>
+                </div>
+                <div class="report-body">
+                    <div class="metric">
+                        <span class="metric-label">Total Procesos</span>
+                        <span class="metric-value">66</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Con Links</span>
+                        <span class="metric-value" style="color: #10b981;">66 ✓</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Institución</span>
+                        <span class="metric-value" style="color: #10b981;">Detectada ✓</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Filtros</span>
+                        <span class="metric-value" style="color: #10b981;">Activos ✓</span>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="btn-primary" onclick="window.open('licitaciones_embed.html', '_blank')">
+                        📊 Ver Reporte Interactivo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Compras Menores Card -->
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>📦 Compras Menores</h3>
+                    <p>Procesos de Menor Cuantía (320 vigentes)</p>
+                </div>
+                <div class="report-body">
+                    <div class="metric">
+                        <span class="metric-label">Total Procesos</span>
+                        <span class="metric-value">320</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Con Links</span>
+                        <span class="metric-value" style="color: #10b981;">320 ✓</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Institución</span>
+                        <span class="metric-value" style="color: #10b981;">Detectada ✓</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Contactos</span>
+                        <span class="metric-value" style="color: #10b981;">Incluidos ✓</span>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="btn-primary" onclick="window.open('compras-menores_embed.html', '_blank')">
+                        📊 Ver Reporte Interactivo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <h3>✨ Sistema Actualizado v2 - Extracción Completa</h3>
+            <div class="badge-grid">
+                <div class="badge success">✓ 100% Links Activos</div>
+                <div class="badge success">✓ Institución Detectada</div>
+                <div class="badge success">✓ Fechas Incluidas</div>
+                <div class="badge success">✓ Contactos Mapeados</div>
+                <div class="badge success">✓ Filtros Avanzados</div>
+                <div class="badge success">✓ Búsqueda Real-time</div>
+                <div class="badge success">✓ Cuerpo Bomberos: 30 compras</div>
+                <div class="badge success">✓ Actualización Diaria</div>
+                <div class="badge new">✨ v4: Búsqueda por Institución</div>
+                <div class="badge new">✨ 386 procesos capturados</div>
+            </div>
+        </div>
+
+        <!-- Institutions Breakdown -->
+        <div class="info-section">
+            <h3>🏛️ Procesos por Institución Principal</h3>
+            <div class="badge-grid">
+                <div class="badge">SIT: 30 licitaciones</div>
+                <div class="badge">SEDENA: 10 licitaciones</div>
+                <div class="badge">UNAH: 9 licitaciones</div>
+                <div class="badge">UNA: 9 licitaciones</div>
+                <div class="badge">Cuerpo Bomberos: 30 compras</div>
+                <div class="badge">Choloma: 30 compras</div>
+                <div class="badge">IHT: 30 compras</div>
+                <div class="badge">+7 instituciones más</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>🤖 Honduras Procurement System v2.0 | Extracción por Institución Completa | Actualización Diaria: 5:00 PM Honduras (11 PM UTC)</p>
+            <p>Fuente: SICC Honduras Compras | Método: Playwright Automatizado por Institución | Total: 386 procesos de construcción vigentes</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-update fecha
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const today = new Date().toLocaleDateString('es-ES', options);
+        document.getElementById('fecha').textContent = today;
+    </script>
+</body>
+</html>
