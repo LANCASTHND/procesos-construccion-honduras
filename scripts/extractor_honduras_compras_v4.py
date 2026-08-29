@@ -222,6 +222,52 @@ class SICCExtractorV4:
 
         return procesos_totales if procesos_totales else []
 
+    def _extraer_objeto(self, page, link: str) -> str:
+        """Extrae el objeto (descripción detallada del proyecto) de la página de detalle"""
+        try:
+            if not link:
+                return ""
+
+            # Construir URL completa si es relativa
+            if link.startswith('/'):
+                link = "http://sicc.honducompras.gob.hn" + link
+            elif not link.startswith('http'):
+                link = "http://sicc.honducompras.gob.hn/HC/procesos/" + link
+
+            # Navegar a la página de detalle
+            page.goto(link, wait_until='load', timeout=30000)
+            time.sleep(1)
+
+            # Buscar el campo "Objeto" o "Proyecto"
+            try:
+                # Buscar en las filas de la tabla de detalles
+                filas = page.query_selector_all('table tr')
+                for fila in filas:
+                    celdas = fila.query_selector_all('td')
+                    if len(celdas) >= 2:
+                        label = celdas[0].text_content().strip().lower()
+                        if 'objeto' in label or 'proyecto' in label or 'descripción' in label:
+                            objeto = celdas[1].text_content().strip()
+                            if objeto and len(objeto) > 5:
+                                return objeto[:500]  # Limitar a 500 caracteres
+            except:
+                pass
+
+            # Alternativa: buscar en divs o spans
+            try:
+                elementos = page.query_selector_all('div, span, p')
+                for elem in elementos:
+                    texto = elem.text_content().strip()
+                    if len(texto) > 50 and len(texto) < 500:
+                        if any(keyword in texto.lower() for keyword in ['construcción', 'reparación', 'ampliación', 'remodelación', 'mantenimiento', 'pavimentación', 'drenaje']):
+                            return texto
+            except:
+                pass
+
+            return ""
+        except:
+            return ""
+
     def _extraer_procesos(self, page, tipo: str = "licitacion") -> List[Dict[str, Any]]:
         """Extrae procesos de la tabla actual"""
         procesos = []
@@ -305,6 +351,9 @@ class SICCExtractorV4:
 
                     institucion = self._extraer_institucion(expediente)
 
+                    # Extraer objeto de la página de detalle
+                    objeto = self._extraer_objeto(page, link) if link else ""
+
                     proceso = {
                         "expediente": expediente[:80],
                         "descripcion": modalidad,
@@ -318,6 +367,7 @@ class SICCExtractorV4:
                         "etapa": etapa,
                         "modalidad": modalidad,
                         "fecha_inicio": fecha_inicio_str,
+                        "objeto": objeto,
                         "estado_proceso": "vigente" if dias >= 0 else "próximo_cierre",
                         "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
                     }
