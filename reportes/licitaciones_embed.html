@@ -12,7 +12,7 @@
             padding: 20px;
             min-height: 100vh;
         }
-        .container { max-width: 1200px; margin: 0 auto; }
+        .container { max-width: 1400px; margin: 0 auto; }
         .header {
             background: white; border-radius: 12px; padding: 30px;
             text-align: center; margin-bottom: 20px;
@@ -39,18 +39,19 @@
             font-size: 13px; font-family: inherit;
         }
         .table-wrapper {
-            background: white; border-radius: 8px; overflow: hidden;
+            background: white; border-radius: 8px; overflow: auto;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 20px;
         }
         table { width: 100%; border-collapse: collapse; font-size: 12px; }
         thead { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        th { padding: 12px; text-align: left; font-weight: 600; }
+        th { padding: 12px; text-align: left; font-weight: 600; white-space: nowrap; }
         td { padding: 10px 12px; border-bottom: 1px solid #e0e0e0; }
         tbody tr:hover { background: #f5f7ff; }
         .status-v { background: #d1fae5; color: #065f46; padding: 3px 6px; border-radius: 4px; font-size: 11px; }
         .status-c { background: #fef3c7; color: #92400e; padding: 3px 6px; border-radius: 4px; font-size: 11px; }
         .link { color: #667eea; text-decoration: none; font-weight: 600; }
         .link:hover { text-decoration: underline; }
+        .desc { font-size: 11px; color: #666; max-width: 200px; }
     </style>
 </head>
 <body>
@@ -100,6 +101,7 @@
                     <tr>
                         <th>#</th>
                         <th>Expediente</th>
+                        <th>Tipo de Proyecto</th>
                         <th>Institución</th>
                         <th>Inicio</th>
                         <th>Cierre</th>
@@ -142,7 +144,8 @@
                     : '-';
                 row.innerHTML = `
                     <td>${i+1}</td>
-                    <td><strong>${p.expediente.trim().substring(0,30)}</strong></td>
+                    <td><strong>${p.expediente.trim().substring(0,25)}</strong></td>
+                    <td class="desc">${p.descripcion}</td>
                     <td>${p.institucion}</td>
                     <td>${p.fecha_inicio}</td>
                     <td>${p.cierre}</td>
