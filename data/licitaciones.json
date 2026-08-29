@@ -4,7 +4,7 @@
     "total_procesos": 66,
     "inversion_total": 0,
     "moneda": "Lempiras (L.)",
-    "fecha_actualizacion": "2026-08-29 21:18:12",
+    "fecha_actualizacion": "2026-08-29 22:42:47",
     "estado": "vigentes",
     "cobertura": "Honduras - Búsqueda por Institución",
     "fuente": "SICC Honduras Compras",
@@ -24,6 +24,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 1
@@ -41,6 +42,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "25/06/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 2
@@ -58,6 +60,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "19/06/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 3
@@ -75,6 +78,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "24/06/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 4
@@ -92,6 +96,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/06/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 5
@@ -109,6 +114,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "23/06/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 6
@@ -126,6 +132,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "22/06/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 7
@@ -143,6 +150,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "15/06/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 8
@@ -160,6 +168,7 @@
       "etapa": "Evaluación",
       "modalidad": "Precalificación",
       "fecha_inicio": "08/07/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 9
@@ -177,6 +186,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "28/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 10
@@ -194,6 +204,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "28/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 11
@@ -211,6 +222,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "16/07/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 12
@@ -228,6 +240,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "16/07/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 13
@@ -245,6 +258,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "25/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 14
@@ -262,6 +276,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "25/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 15
@@ -279,6 +294,7 @@
       "etapa": "Elaboración",
       "modalidad": "Precalificación",
       "fecha_inicio": "20/07/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 16
@@ -296,6 +312,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "20/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 17
@@ -313,6 +330,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "20/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 18
@@ -330,6 +348,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 19
@@ -347,6 +366,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 20
@@ -364,6 +384,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 21
@@ -381,6 +402,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 22
@@ -398,6 +420,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 23
@@ -415,6 +438,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 24
@@ -432,6 +456,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "24/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 25
@@ -449,6 +474,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "26/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 26
@@ -466,6 +492,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "26/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 27
@@ -483,6 +510,7 @@
       "etapa": "Elaboración",
       "modalidad": "Contratación directa",
       "fecha_inicio": "24/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 28
@@ -500,6 +528,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 29
@@ -517,6 +546,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 30
@@ -534,6 +564,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 31
@@ -551,6 +582,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 32
@@ -568,6 +600,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 33
@@ -585,6 +618,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 34
@@ -602,6 +636,7 @@
       "etapa": "Elaboración",
       "modalidad": "Contratación directa",
       "fecha_inicio": "22/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 35
@@ -619,6 +654,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Contratación directa",
       "fecha_inicio": "22/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 36
@@ -636,6 +672,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "26/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 37
@@ -653,6 +690,7 @@
       "etapa": "Elaboración",
       "modalidad": "Contratación directa",
       "fecha_inicio": "19/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 38
@@ -670,6 +708,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "13/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 39
@@ -687,6 +726,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "14/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 40
@@ -704,6 +744,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "30/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 41
@@ -721,6 +762,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "30/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 42
@@ -738,6 +780,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "30/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 43
@@ -755,6 +798,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "30/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 44
@@ -772,6 +816,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "06/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 45
@@ -789,6 +834,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "12/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 46
@@ -806,6 +852,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "24/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 47
@@ -823,6 +870,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "20/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 48
@@ -840,6 +888,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "14/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 49
@@ -857,6 +906,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "11/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 50
@@ -874,6 +924,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "06/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 51
@@ -891,6 +942,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "06/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 52
@@ -908,6 +960,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "03/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 53
@@ -925,6 +978,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "31/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 54
@@ -942,6 +996,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "30/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 55
@@ -959,6 +1014,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "24/07/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 56
@@ -976,6 +1032,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "27/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 57
@@ -993,6 +1050,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Concurso público nacional",
       "fecha_inicio": "21/08/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 58
@@ -1010,6 +1068,7 @@
       "etapa": "Evaluación",
       "modalidad": "Precalificación",
       "fecha_inicio": "13/07/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 59
@@ -1027,6 +1086,7 @@
       "etapa": "Evaluación",
       "modalidad": "Concurso público nacional",
       "fecha_inicio": "23/07/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 60
@@ -1044,6 +1104,7 @@
       "etapa": "Desierto",
       "modalidad": "Licitación privada",
       "fecha_inicio": "29/04/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 61
@@ -1061,6 +1122,7 @@
       "etapa": "Evaluación",
       "modalidad": "Precalificación",
       "fecha_inicio": "05/06/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 62
@@ -1078,6 +1140,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "21/05/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 63
@@ -1095,6 +1158,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "31/07/2026",
+      "objeto": "//<![CDATA[\nSys.WebForms.PageRequestManager._initialize('ctl00$tkSM', document.getElementById('aspnetForm'));\nSys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);\n//]]>\n\n\n                        \n    \n        \n            \n                    \n    \n    \n",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 64
@@ -1112,6 +1176,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/07/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 65
@@ -1129,6 +1194,7 @@
       "etapa": "Adjudicado",
       "modalidad": "Licitación privada",
       "fecha_inicio": "29/05/2026",
+      "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 66
