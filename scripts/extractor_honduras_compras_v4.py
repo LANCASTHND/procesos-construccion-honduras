@@ -77,6 +77,34 @@ class SICCExtractorV4:
 
         return "VARIAS"
 
+    def _enriquecer_con_objeto(self, procesos: List[Dict], browser) -> None:
+        """Enriquece procesos vigentes con objeto (descripción detallada)"""
+        vigentes = [p for p in procesos if p.get('estado_proceso') == 'vigente' and p.get('link')]
+
+        if not vigentes:
+            return
+
+        print(f"   📝 Extrayendo descripciones para {len(vigentes)} procesos vigentes...")
+
+        contador = 0
+        for proceso in vigentes:
+            if contador >= 30:  # Limitar a 30 para evitar demora excesiva
+                break
+
+            try:
+                objeto = self._extraer_objeto(browser, proceso['link'])
+                if objeto:
+                    proceso['objeto'] = objeto
+                    contador += 1
+                    if contador % 5 == 0:
+                        print(f"      ✓ {contador} descripciones extraídas...")
+            except:
+                pass
+
+            time.sleep(0.2)
+
+        print(f"      ✓ {contador} descripciones extraídas\n")
+
     def extraer_licitaciones_completo(self) -> List[Dict[str, Any]]:
         """Extrae TODAS las licitaciones por institución"""
         print("🔍 Extrayendo licitaciones por institución...\n")
@@ -141,6 +169,10 @@ class SICCExtractorV4:
                         continue
 
                 print(f"\n   ✅ Total licitaciones: {len(procesos_totales)}\n")
+
+                # Enriquecer con objeto
+                if procesos_totales:
+                    self._enriquecer_con_objeto(procesos_totales, browser)
 
             except Exception as e:
                 print(f"   ❌ Error: {e}\n")
@@ -214,6 +246,10 @@ class SICCExtractorV4:
 
                 print(f"\n   ✅ Total compras menores: {len(procesos_totales)}\n")
 
+                # Enriquecer con objeto
+                if procesos_totales:
+                    self._enriquecer_con_objeto(procesos_totales, browser)
+
             except Exception as e:
                 print(f"   ❌ Error: {e}\n")
 
@@ -222,51 +258,51 @@ class SICCExtractorV4:
 
         return procesos_totales if procesos_totales else []
 
-    def _extraer_objeto(self, page, link: str) -> str:
+    def _extraer_objeto(self, browser, link: str) -> str:
         """Extrae el objeto (descripción detallada del proyecto) de la página de detalle"""
+        detail_page = None
         try:
             if not link:
                 return ""
 
             # Construir URL completa si es relativa
             if link.startswith('/'):
-                link = "http://sicc.honducompras.gob.hn" + link
+                url = "http://sicc.honducompras.gob.hn" + link
             elif not link.startswith('http'):
-                link = "http://sicc.honducompras.gob.hn/HC/procesos/" + link
+                url = "http://sicc.honducompras.gob.hn/HC/procesos/" + link
+            else:
+                url = link
 
-            # Navegar a la página de detalle
-            page.goto(link, wait_until='load', timeout=30000)
-            time.sleep(1)
+            # Crear nueva página
+            detail_page = browser.new_page()
+            detail_page.set_default_timeout(10000)
 
-            # Buscar el campo "Objeto" o "Proyecto"
+            detail_page.goto(url, wait_until='domcontentloaded', timeout=10000)
+            time.sleep(0.3)
+
+            # Buscar "Objeto" o "Proyecto" en la tabla
             try:
-                # Buscar en las filas de la tabla de detalles
-                filas = page.query_selector_all('table tr')
+                filas = detail_page.query_selector_all('table tr')
                 for fila in filas:
                     celdas = fila.query_selector_all('td')
                     if len(celdas) >= 2:
                         label = celdas[0].text_content().strip().lower()
-                        if 'objeto' in label or 'proyecto' in label or 'descripción' in label:
+                        if 'objeto' in label:
                             objeto = celdas[1].text_content().strip()
-                            if objeto and len(objeto) > 5:
-                                return objeto[:500]  # Limitar a 500 caracteres
-            except:
-                pass
-
-            # Alternativa: buscar en divs o spans
-            try:
-                elementos = page.query_selector_all('div, span, p')
-                for elem in elementos:
-                    texto = elem.text_content().strip()
-                    if len(texto) > 50 and len(texto) < 500:
-                        if any(keyword in texto.lower() for keyword in ['construcción', 'reparación', 'ampliación', 'remodelación', 'mantenimiento', 'pavimentación', 'drenaje']):
-                            return texto
+                            if objeto and len(objeto) > 10:
+                                return objeto[:280]
             except:
                 pass
 
             return ""
         except:
             return ""
+        finally:
+            if detail_page:
+                try:
+                    detail_page.close()
+                except:
+                    pass
 
     def _extraer_procesos(self, page, tipo: str = "licitacion") -> List[Dict[str, Any]]:
         """Extrae procesos de la tabla actual"""
@@ -351,9 +387,6 @@ class SICCExtractorV4:
 
                     institucion = self._extraer_institucion(expediente)
 
-                    # Extraer objeto de la página de detalle
-                    objeto = self._extraer_objeto(page, link) if link else ""
-
                     proceso = {
                         "expediente": expediente[:80],
                         "descripcion": modalidad,
@@ -367,7 +400,7 @@ class SICCExtractorV4:
                         "etapa": etapa,
                         "modalidad": modalidad,
                         "fecha_inicio": fecha_inicio_str,
-                        "objeto": objeto,
+                        "objeto": "",
                         "estado_proceso": "vigente" if dias >= 0 else "próximo_cierre",
                         "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
                     }
