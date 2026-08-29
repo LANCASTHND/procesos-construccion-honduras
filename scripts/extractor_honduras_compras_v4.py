@@ -277,22 +277,42 @@ class SICCExtractorV4:
             detail_page.goto(url, wait_until='domcontentloaded', timeout=10000)
             time.sleep(0.3)
 
-            # Buscar "Objeto" o "Proyecto" en la tabla
+            # Buscar "Objeto" en la tabla
             try:
-                filas = detail_page.query_selector_all('table tr')
-                for fila in filas:
+                # Buscar todas las filas
+                objeto_rows = detail_page.query_selector_all('table tr')
+
+                for fila in objeto_rows:
                     celdas = fila.query_selector_all('td')
                     if len(celdas) >= 2:
-                        label = celdas[0].text_content().strip().lower()
-                        if 'objeto' in label:
-                            objeto = celdas[1].text_content().strip()
-                            if objeto and len(objeto) > 10:
-                                return objeto[:280]
+                        label_text = celdas[0].inner_text().strip()
+
+                        # Buscar la etiqueta "Objeto"
+                        if label_text == 'Objeto':
+                            # Obtener el texto de la celda siguiente
+                            valor_celda = celdas[1].inner_text().strip()
+
+                            if valor_celda and len(valor_celda) > 10:
+                                # Si contiene múltiples campos, extraer solo el valor del "Objeto"
+                                # Usar regex para encontrar el patrón "Objeto" seguido de la descripción
+                                match = re.search(r'Objeto\s*(.+?)(?=\n(?:[A-Z][a-z]+|$))', valor_celda, re.DOTALL)
+                                if match:
+                                    objeto = match.group(1).strip()
+                                    # Remover saltos de línea múltiples y espacios excesivos
+                                    objeto = ' '.join(objeto.split())
+                                    if len(objeto) > 10:
+                                        return objeto[:300]
+                                else:
+                                    # Si no hay patrón, usar el valor completo si parece una descripción
+                                    if not any(keyword in valor_celda for keyword in ['Expediente', 'Entidad', 'Sys.', '/*', 'CDATA']):
+                                        objeto = ' '.join(valor_celda.split())
+                                        if len(objeto) > 10:
+                                            return objeto[:300]
             except:
                 pass
 
             return ""
-        except:
+        except Exception as e:
             return ""
         finally:
             if detail_page:
