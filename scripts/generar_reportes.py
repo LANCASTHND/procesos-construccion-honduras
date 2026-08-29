@@ -119,6 +119,7 @@ class GeneradorReportes:
                         <th style="width: 85px;">Cierre</th>
                         <th style="width: 100px;">Inversión</th>
                         <th style="width: 120px;">Contacto</th>
+                        <th style="width: 100px;">Link SICC</th>
                     </tr>
                 </thead>
                 <tbody id="datos"></tbody>
