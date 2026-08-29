@@ -1,10 +1,10 @@
 {
   "metadata": {
     "tipo": "licitaciones_normales",
-    "total_procesos": 65,
+    "total_procesos": 66,
     "inversion_total": 0,
     "moneda": "Lempiras (L.)",
-    "fecha_actualizacion": "2026-08-29 23:15:50",
+    "fecha_actualizacion": "2026-08-29 23:36:46",
     "estado": "vigentes",
     "cobertura": "Honduras - Búsqueda por Institución",
     "fuente": "SICC Honduras Compras",
@@ -24,7 +24,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
-      "objeto": "ExpedienteLPN No. 08-2026-SEAPI-UNAH EntidadUniversidad Nacional Autónoma de Honduras (UNAH) Unidad de CompraSecretaría Ejecutiva de Administración de Proyectos de Infraestructura ObjetoMejoramiento Edificio No. 1 y Construcción de Edificio de Aulas y Área Administrativa, Campus UNAH-CURC, Comayagua",
+      "objeto": "Mejoramiento Edificio No. 1 y Construcción de Edificio de Aulas y Área Administrativa, Campus UNAH-CURC, Comayagua",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 1
@@ -186,7 +186,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "28/07/2026",
-      "objeto": "ExpedienteLPN-PRODESOFI-UNAG-GAP-2026-003 EntidadUniversidad Nacional de Agricultura (UNA) Unidad de CompraUnidad Central Objeto“CONSTRUCCIÓN DE EDIFICIO DE LABORATORIOS DE QUÍMICA Y BIOLOGÍA, PARA EL CENTRO REGIONAL DE MISTRUK-PUERTO LEMPIRA, DE LA UNIVERSIDAD NACIONAL DE AGRICULTURA” Fecha de Inic",
+      "objeto": "“CONSTRUCCIÓN DE EDIFICIO DE LABORATORIOS DE QUÍMICA Y BIOLOGÍA, PARA EL CENTRO REGIONAL DE MISTRUK-PUERTO LEMPIRA, DE LA UNIVERSIDAD NACIONAL DE AGRICULTURA”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 10
@@ -204,7 +204,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "28/07/2026",
-      "objeto": "ExpedienteLPN-PRODESOFI-UNAG-GAP-2026-002 EntidadUniversidad Nacional de Agricultura (UNA) Unidad de CompraUnidad Central Objeto“REACONDICIONAMIENTO DEL EDIFICIO TIPO H Y DEL EDIFICIO DE LABORATORIO PARA EL CENTRO REGIONAL DE MARCALA-LA PAZ, DE LA UNIVERSIDAD NACIONAL DE AGRICULTURA” Fecha de Inicio",
+      "objeto": "“REACONDICIONAMIENTO DEL EDIFICIO TIPO H Y DEL EDIFICIO DE LABORATORIO PARA EL CENTRO REGIONAL DE MARCALA-LA PAZ, DE LA UNIVERSIDAD NACIONAL DE AGRICULTURA”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 11
@@ -258,7 +258,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "25/08/2026",
-      "objeto": "ExpedienteNo.UNACIFOR-LPN-GC-UE15-2026-02 EntidadUniversidad Nacional de Ciencias Forestales (UNACIFOR) Unidad de CompraUnidad Central ObjetoMantenimiento Preventivo y Correctivo de la Infraestructura Institucional de la Universidad Nacional de Ciencias Forestales UNACIFOR, periodo 2026 Fecha de Ini",
+      "objeto": "Mantenimiento Preventivo y Correctivo de la Infraestructura Institucional de la Universidad Nacional de Ciencias Forestales UNACIFOR, periodo 2026",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 14
@@ -276,7 +276,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "25/08/2026",
-      "objeto": "ExpedienteNo.UNACIFOR-LPN-GC-UE15-2026-01 EntidadUniversidad Nacional de Ciencias Forestales (UNACIFOR) Unidad de CompraUnidad Central ObjetoAmpliación y Remodelación del Edificio de Carpintería Mantenimiento y Aula Taller de la Universidad Nacional de Ciencias Forestales Periodo 2026 Fecha de Inici",
+      "objeto": "Ampliación y Remodelación del Edificio de Carpintería Mantenimiento y Aula Taller de la Universidad Nacional de Ciencias Forestales Periodo 2026",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 15
@@ -312,7 +312,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "20/08/2026",
-      "objeto": "ExpedienteLPN-SIT-032-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON DOBLE TRATAMIENTO SUPERFICIAL, TRAMO No.1: RUTA CA-7 - MARCALA - SABANETAS & TRAMO No.2: RUTA 12V53400, CA-7 - CABAÑAS, APROX",
+      "objeto": "“PAVIMENTACIÓN CON DOBLE TRATAMIENTO SUPERFICIAL, TRAMO No.1: RUTA CA-7 - MARCALA - SABANETAS & TRAMO No.2: RUTA 12V53400, CA-7 - CABAÑAS, APROXIMADAMENTE 31.20 KM, DEPARTAMENTO DE LA PAZ”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 17
@@ -330,7 +330,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "20/08/2026",
-      "objeto": "ExpedienteLPN-SIT-033-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON DOBLE TRATAMIENTO SUPERFICIAL, RUTA 165, CA-7 - NAHUATERIQUE, APROXIMADAMENTE 10.50 KM, DEPARTAMENTO DE LA PAZ” Fecha de Inic",
+      "objeto": "“PAVIMENTACIÓN CON DOBLE TRATAMIENTO SUPERFICIAL, RUTA 165, CA-7 - NAHUATERIQUE, APROXIMADAMENTE 10.50 KM, DEPARTAMENTO DE LA PAZ”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 18
@@ -348,7 +348,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
-      "objeto": "ExpedienteLPR-SIT-020-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, BARRIO BUENOS AIRES, MUNICIPIO DE BALFATE, DEPARTAMENTO DE COLÓN” Fecha de Inicio28/08/2026 11:",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, BARRIO BUENOS AIRES, MUNICIPIO DE BALFATE, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 19
@@ -366,7 +366,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
-      "objeto": "ExpedienteLPR-SIT-015-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, BARRIO EL CENTRO, MUNICIPIO DE LIMÓN, DEPARTAMENTO DE COLÓN” Fecha de Inicio28/08/2026 11:21:00",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, BARRIO EL CENTRO, MUNICIPIO DE LIMÓN, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 20
@@ -384,7 +384,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
-      "objeto": "ExpedienteLPR-SIT-019-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN DE CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DOS BOCAS, MUNICIPIO DE SANTA ROSA DE AGUAN, DEPARTAMENTO DE COLÓN” Fecha de Inicio28/",
+      "objeto": "“PAVIMENTACIÓN DE CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DOS BOCAS, MUNICIPIO DE SANTA ROSA DE AGUAN, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 21
@@ -402,7 +402,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
-      "objeto": "ExpedienteLPR-SIT-018-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, BARRIO LAS ACACIAS, MUNICIPIO DE BONITO ORIENTAL, DEPARTAMENTO DE COLÓN” Fecha de Inicio28/0",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, BARRIO LAS ACACIAS, MUNICIPIO DE BONITO ORIENTAL, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 22
@@ -420,7 +420,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
-      "objeto": "ExpedienteLPR-SIT-017-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DE SALAMÁ, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN” Fecha de Inicio28/08/2026 10:10",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DE SALAMÁ, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 23
@@ -438,7 +438,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "28/08/2026",
-      "objeto": "ExpedienteLPR-SIT-016-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DE ELIXIR, MUNICIPIO DE SABÁ, DEPARTAMENTO DE COLÓN” Fecha de Inicio28/08/2026 09:48:",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DE ELIXIR, MUNICIPIO DE SABÁ, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 24
@@ -456,7 +456,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "24/08/2026",
-      "objeto": "ExpedienteLPN-SIT-035-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO MR= 650, 13S08210, RUTA 82, CA-11A, TRAMO: LAS FLORES - LEPAERA, APROXIMADAMENTE 4.00 KM, MUNICIPIO DE LE",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO MR= 650, 13S08210, RUTA 82, CA-11A, TRAMO: LAS FLORES - LEPAERA, APROXIMADAMENTE 4.00 KM, MUNICIPIO DE LEPAERA, DEPARTAMENTO DE LEMPIRA”.",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 25
@@ -474,7 +474,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "26/08/2026",
-      "objeto": "ExpedienteLPR-SIT-014-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD JUAN ANTONIO, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN” Fecha de Inicio26/08/2026",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD JUAN ANTONIO, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 26
@@ -492,7 +492,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "26/08/2026",
-      "objeto": "ExpedienteLPR-SIT-013-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD DE LA CUBANA, MUNICIPIO DE SONAGUERA, DEPARTAMENTO DE COLÓN” Fecha de Inicio26/08/",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD DE LA CUBANA, MUNICIPIO DE SONAGUERA, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 27
@@ -510,7 +510,7 @@
       "etapa": "Elaboración",
       "modalidad": "Contratación directa",
       "fecha_inicio": "24/08/2026",
-      "objeto": "ExpedienteCOT-SIT-007-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa ObjetoCONSTRUCCIÓN DE ALCANTARILLAS Y PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, CASERIO DE BABANATO, MUNICIPIO DE SANTA ANA, DEPARTAMENTO DE FRA",
+      "objeto": "CONSTRUCCIÓN DE ALCANTARILLAS Y PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, CASERIO DE BABANATO, MUNICIPIO DE SANTA ANA, DEPARTAMENTO DE FRANCISCO MORAZÁN.",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 28
@@ -528,7 +528,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
-      "objeto": "ExpedienteLPN-SIT-034-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“CONSTRUCCIÓN DE LA AMPLIACIÓN A TRES CARRILES POR SENTIDO DEL PUENTE EXISTENTE DEL ANILLO PERIFÉRICO, SECTOR UTH” Fecha de Inicio17/08/2026 09:",
+      "objeto": "“CONSTRUCCIÓN DE LA AMPLIACIÓN A TRES CARRILES POR SENTIDO DEL PUENTE EXISTENTE DEL ANILLO PERIFÉRICO, SECTOR UTH”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 29
@@ -546,7 +546,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
-      "objeto": "ExpedienteLPN-SIT-030-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa ObjetoCONSTRUCCIÓN AMPLIACION VIAL A TRES CARRILES Y EXTENSIÓN LATERAL DEL PUENTE DE LA SATELITE SOBRE CA – 5 EN EL ANILLO PERIFERICO.” Fecha de Inici",
+      "objeto": "CONSTRUCCIÓN AMPLIACION VIAL A TRES CARRILES Y EXTENSIÓN LATERAL DEL PUENTE DE LA SATELITE SOBRE CA – 5 EN EL ANILLO PERIFERICO.”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 30
@@ -564,7 +564,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
-      "objeto": "ExpedienteLPN-SIT-029-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“CONSTRUCCIÓN DE LA AMPLIACIÓN VIAL A TRES CARRILES Y EXTENSIÓN LATERAL DEL PUENTE SOBRE EL RÍO SAN JOSÉ, ANILLO PERIFÉRICO, UBICADO EN EL MUNIC",
+      "objeto": "“CONSTRUCCIÓN DE LA AMPLIACIÓN VIAL A TRES CARRILES Y EXTENSIÓN LATERAL DEL PUENTE SOBRE EL RÍO SAN JOSÉ, ANILLO PERIFÉRICO, UBICADO EN EL MUNICIPIO DISTRITO CENTRAL, DEPARTAMENTO DE FRANCISCO MORAZÁN”.",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 31
@@ -582,7 +582,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
-      "objeto": "ExpedienteLPN-SIT-027-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON DOBLE TRATAMIENTO SUPERFICIAL, 13S11670, TRAMO: EL GUAYABO – GUALCINSE Y ACCESOS 13V81400, APROXIMADAMENTE 20.30 KM, MUNICIPI",
+      "objeto": "“PAVIMENTACIÓN CON DOBLE TRATAMIENTO SUPERFICIAL, 13S11670, TRAMO: EL GUAYABO – GUALCINSE Y ACCESOS 13V81400, APROXIMADAMENTE 20.30 KM, MUNICIPIOS DE ERANDIQUE, SAN ANDRES Y GUALCINSE, DEPARTAMENTO DE LEMPIRA”.",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 32
@@ -600,7 +600,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
-      "objeto": "ExpedienteLPN-SIT-028-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“CONSTRUCCIÓN DE PUENTE CON CONCRETO REFORZADO SOBRE RÍO MARIA DE LA CRUZ, RUTA 78, SAN RAFAEL - EL TABLON, LONGITUD APROXIMADA DE 30.00 M, MUNI",
+      "objeto": "“CONSTRUCCIÓN DE PUENTE CON CONCRETO REFORZADO SOBRE RÍO MARIA DE LA CRUZ, RUTA 78, SAN RAFAEL - EL TABLON, LONGITUD APROXIMADA DE 30.00 M, MUNICIPIO DE SAN RAFAEL, DEPARTAMENTO DE LEMPIRA”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 33
@@ -618,7 +618,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "17/08/2026",
-      "objeto": "ExpedienteLPN-SIT-031-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa ObjetoCONSTRUCCION SISTEMA DE AGUA POTABLE, MUNICIPIOS DE SINUAPA Y OCOTEPEQUE, DEPARTAMENTO DE OCOTEPEQUE Fecha de Inicio17/08/2026 09:11:00 p.m. Fec",
+      "objeto": "CONSTRUCCION SISTEMA DE AGUA POTABLE, MUNICIPIOS DE SINUAPA Y OCOTEPEQUE, DEPARTAMENTO DE OCOTEPEQUE",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 34
@@ -636,7 +636,7 @@
       "etapa": "Elaboración",
       "modalidad": "Contratación directa",
       "fecha_inicio": "22/08/2026",
-      "objeto": "ExpedienteSIT-CDE-CO-017-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa ObjetoSUMINISTRO E INSTALACIÓN DE REVESTIMIENTO FLEXIBLE CEMENTICIO TIPO GEOMANTA DE CONCRETO PARA PROTECCIÓN DE BORDOS PARA EL PROYECTO DE MITIGAC",
+      "objeto": "SUMINISTRO E INSTALACIÓN DE REVESTIMIENTO FLEXIBLE CEMENTICIO TIPO GEOMANTA DE CONCRETO PARA PROTECCIÓN DE BORDOS PARA EL PROYECTO DE MITIGACIÓN DEL VALLE DE SULA ETAPA VII.",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 35
@@ -654,7 +654,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Contratación directa",
       "fecha_inicio": "22/08/2026",
-      "objeto": "ExpedienteSIT-CDE-CO-016-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa ObjetoPROYECTOS DE MITIGACIÓN DEL VALLE DE SULA ETAPA VI Fecha de Inicio22/08/2026 05:50:00 p.m. Fecha Recepción Ofertas31/08/2026 01:00:00 p.m. Fe",
+      "objeto": "PROYECTOS DE MITIGACIÓN DEL VALLE DE SULA ETAPA VI",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 36
@@ -672,7 +672,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "26/08/2026",
-      "objeto": "ExpedienteLPR-SIT-012-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD TAUJÍCA, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN” “PAVIMENTACIÓN CON CONCRETO HI",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD TAUJÍCA, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN” “PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD TAUJÍCA, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN” “PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD TAUJÍCA, M",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 37
@@ -690,7 +690,7 @@
       "etapa": "Elaboración",
       "modalidad": "Contratación directa",
       "fecha_inicio": "19/08/2026",
-      "objeto": "ExpedienteCOT-SIT-006-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“REPARACION DE PUENTE ACCESO AL AEROPUERTO VILLEDA MORALES, MUNICIPIO DE LA LIMA, DEPARTAMENTO DE CORTÉS” Fecha de Inicio19/08/2026 02:55:00 p.m",
+      "objeto": "“REPARACION DE PUENTE ACCESO AL AEROPUERTO VILLEDA MORALES, MUNICIPIO DE LA LIMA, DEPARTAMENTO DE CORTÉS”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 38
@@ -708,7 +708,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "13/08/2026",
-      "objeto": "ExpedienteLPN-SIT-026-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, LA CIRCUNVALACIÓN, TRAMO: ((PLAZA LEMPIRA - BARRIO EL OCOTILLO CA11A), ESTACIONES 0+000 - 1+30)",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, LA CIRCUNVALACIÓN, TRAMO: ((PLAZA LEMPIRA - BARRIO EL OCOTILLO CA11A), ESTACIONES 0+000 - 1+30), APROXIMADAMENTE 1.73 KM, MUNICIPIO DE LA ESPERANZA, DEPARTAMENTO DE INTIBUCÁ”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 39
@@ -726,7 +726,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "14/08/2026",
-      "objeto": "ExpedienteLPR-SIT-011-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, AVENIDA MIRADOR DE LOS ÁNGELES CONTIGUO A AVENIDA LAS UVAS, MUNICIPIO DISTRITO CENTRAL, DEPARTA",
+      "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, AVENIDA MIRADOR DE LOS ÁNGELES CONTIGUO A AVENIDA LAS UVAS, MUNICIPIO DISTRITO CENTRAL, DEPARTAMENTO DE FRANCISCO MORAZÁN”.",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 40
@@ -744,7 +744,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "30/07/2026",
-      "objeto": "ExpedienteLPN-SIT-024-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto\"CONSTRUCCIÓN DE PUENTE BAILEY SOBRE RÍO MARIA DE LA CRUZ, RUTA 78, SAN RAFAEL - EL TABLON, LONGITUD APROXIMADA DE 30.48 M., MUNICIPIO DE SAN RA",
+      "objeto": "\"CONSTRUCCIÓN DE PUENTE BAILEY SOBRE RÍO MARIA DE LA CRUZ, RUTA 78, SAN RAFAEL - EL TABLON, LONGITUD APROXIMADA DE 30.48 M., MUNICIPIO DE SAN RAFAEL, DEPARTAMENTO DE LEMPIRA”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 41
@@ -762,7 +762,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "30/07/2026",
-      "objeto": "ExpedienteLPN-SIT-022-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“CONSTRUCCIÓN DE PUENTE LOS ROBLES, SOBRE EL RIO VALLECILLO, CASCO URBANO DE LA CIUDAD DE DANLI, LONGITUD APROXIMADA DE 30.00. M, DEPARTAMENTO D",
+      "objeto": "“CONSTRUCCIÓN DE PUENTE LOS ROBLES, SOBRE EL RIO VALLECILLO, CASCO URBANO DE LA CIUDAD DE DANLI, LONGITUD APROXIMADA DE 30.00. M, DEPARTAMENTO DE EL PARAISO”.",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 42
@@ -780,7 +780,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "30/07/2026",
-      "objeto": "ExpedienteLPN-SIT-023-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“REHABILITACIÓN DEL TRAMO RUTA 160, CA-4 - SAN JOSÉ, APROXIMADAMENTE 3.50 KM, MUNICIPIO DE SAN JOSÉ, DEPARTAMENTO DE COPÁN\". Fecha de Inicio30/0",
+      "objeto": "“REHABILITACIÓN DEL TRAMO RUTA 160, CA-4 - SAN JOSÉ, APROXIMADAMENTE 3.50 KM, MUNICIPIO DE SAN JOSÉ, DEPARTAMENTO DE COPÁN\".",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 43
@@ -798,7 +798,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación pública nacional",
       "fecha_inicio": "30/07/2026",
-      "objeto": "ExpedienteLPN-SIT-025-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa ObjetoCONSTRUCCION DE PUENTE HATO VIEJO SOBRE QUEBRADA PIMIENTA. L=20 M Y CONSTRUCCION DE CAJA PUENTE SOBRE QUEBRADA EL ZAPOTE EN CASERIO SANTA CRUZ, ",
+      "objeto": "CONSTRUCCION DE PUENTE HATO VIEJO SOBRE QUEBRADA PIMIENTA. L=20 M Y CONSTRUCCION DE CAJA PUENTE SOBRE QUEBRADA EL ZAPOTE EN CASERIO SANTA CRUZ, 5.00X3.00 M. MUNICIPIO DE YORITO, DEPARTAMENTO DE YORO”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 44
@@ -816,7 +816,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "06/08/2026",
-      "objeto": "ExpedienteLPR–SIT–009–2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa ObjetoCONSTRUCCIÓN DE CUATRO SOLUCIONES VIALES: 1. Interconexión Colonia El Pedregal-Bulevar Comunidad Económica Europea, 2. Retorno en Bulevar Kuwait",
+      "objeto": "CONSTRUCCIÓN DE CUATRO SOLUCIONES VIALES: 1. Interconexión Colonia El Pedregal-Bulevar Comunidad Económica Europea, 2. Retorno en Bulevar Kuwait, debajo de puente de El Prado, 3. Ampliación de calle en aproximación a Túnel y Rotonda en Bulevar San Juan Bosco 4. Retorno en aproximación a Centro Cívic",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 45
@@ -834,7 +834,7 @@
       "etapa": "Elaboración",
       "modalidad": "Licitación privada",
       "fecha_inicio": "12/08/2026",
-      "objeto": "ExpedienteLPR-SIT-010-2026 EntidadSecretaría de Estado en los Despachos de Infraestructura y Transporte (SIT) Unidad de CompraGerencia Administrativa Objeto“PAVIMENTO DE CONCRETO HIDRAULICO 4000 PSI EN 4TA AVENIDA, 4TA CALLE, COL. AMERICA, MUNICIPIO DEL DISTRITO CENTRAL, FRANCISCO MORAZAN” Fecha de ",
+      "objeto": "“PAVIMENTO DE CONCRETO HIDRAULICO 4000 PSI EN 4TA AVENIDA, 4TA CALLE, COL. AMERICA, MUNICIPIO DEL DISTRITO CENTRAL, FRANCISCO MORAZAN”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 46
@@ -852,7 +852,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "24/08/2026",
-      "objeto": "ExpedienteOM-003-2026-EJERCITO EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEjercito ObjetoProyecto de Ampliación y reparación de los destacamentos militares del Quinto Batallón de infantería del Ejército Fecha de Inicio24/08/2026 05:04:00 p.m. Fecha Recepci",
+      "objeto": "Proyecto de Ampliación y reparación de los destacamentos militares del Quinto Batallón de infantería del Ejército",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 47
@@ -870,7 +870,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "20/08/2026",
-      "objeto": "ExpedienteMCOM-008-2026-EMC EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEstado Mayor Objetoconstrucción de una cancha de futbolito Fecha de Inicio20/08/2026 07:00:00 p.m. Fecha Recepción Ofertas07/09/2026 10:15:00 a.m. Fecha Cierre Aclaratorias28/08/2026 04",
+      "objeto": "construcción de una cancha de futbolito",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 48
@@ -888,7 +888,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "14/08/2026",
-      "objeto": "ExpedienteOM-002-2026-EJERCITO EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEjercito ObjetoProceso de Obra Menor No. OM-002-2026-EJÉRCITO Reparación y mantenimientos varios en las instalaciones de los diferentes Departamentos del Estado Mayor General del Ejé",
+      "objeto": "Proceso de Obra Menor No. OM-002-2026-EJÉRCITO Reparación y mantenimientos varios en las instalaciones de los diferentes Departamentos del Estado Mayor General del Ejército y Sala de Comandantes",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 49
@@ -906,7 +906,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "11/08/2026",
-      "objeto": "ExpedienteMCOM-007-2026-EMC EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEstado Mayor ObjetoREMODELACIÓN DE LOS DORMITORIOS FARO Y GALEÓN DE LOS CABALLEROS CADETES NAVALES DE LA ACADEMIA NAVAL DE HONDURAS Fecha de Inicio11/08/2026 04:28:00 p.m. Fecha Recepci",
+      "objeto": "REMODELACIÓN DE LOS DORMITORIOS FARO Y GALEÓN DE LOS CABALLEROS CADETES NAVALES DE LA ACADEMIA NAVAL DE HONDURAS",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 50
@@ -924,7 +924,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "06/08/2026",
-      "objeto": "ExpedienteLP-004-2026-SDN EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraUniversidad de Defensa de Honduras ObjetoCONSTRUCCION DE LA SEGUNDA FASE DEL EDIFICIO DE POSGRADO DE LA UNIVERSIDAD DE DEFENSA DE HONDURAS Fecha de Inicio06/08/2026 03:41:00 p.m. Fecha Re",
+      "objeto": "CONSTRUCCION DE LA SEGUNDA FASE DEL EDIFICIO DE POSGRADO DE LA UNIVERSIDAD DE DEFENSA DE HONDURAS",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 51
@@ -942,7 +942,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "06/08/2026",
-      "objeto": "ExpedienteMCOM-006-2026-EMC EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEstado Mayor ObjetoReparación del Club de Tropa de la Base Aérea Héctor Caraccioli Moncada Fecha de Inicio06/08/2026 07:48:00 p.m. Fecha Recepción Ofertas27/08/2026 10:15:00 a.m. Fecha ",
+      "objeto": "Reparación del Club de Tropa de la Base Aérea Héctor Caraccioli Moncada",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 52
@@ -960,7 +960,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "03/08/2026",
-      "objeto": "ExpedienteMCOM-005-2026-EMC EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEstado Mayor ObjetoSISTEMA DE TRATAMIENTO DE AGUA DE POZO PARA EL ESTADO MAYOR CONJUNTO Fecha de Inicio03/08/2026 07:37:00 p.m. Fecha Recepción Ofertas19/08/2026 10:15:00 a.m. Fecha Cie",
+      "objeto": "SISTEMA DE TRATAMIENTO DE AGUA DE POZO PARA EL ESTADO MAYOR CONJUNTO",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 53
@@ -978,7 +978,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "31/07/2026",
-      "objeto": "ExpedienteMCOM-004-2026-EMC EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEstado Mayor ObjetoCONSTRUCCION DE DORMITORIOS EN EL HOSPITAL MILITAR DE TEGUCIGALPA Fecha de Inicio31/07/2026 03:56:00 p.m. Fecha Recepción Ofertas17/08/2026 10:15:00 a.m. Fecha Cierre",
+      "objeto": "CONSTRUCCION DE DORMITORIOS EN EL HOSPITAL MILITAR DE TEGUCIGALPA",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 54
@@ -996,7 +996,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "30/07/2026",
-      "objeto": "ExpedienteMCOM-002-2026-EMC EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEstado Mayor ObjetoILUMINACION Y CIELO FALSO DEL CLUB DE TROPA Y OFICIALES DE LA 105 BRIGADA DE INFANTERIA Fecha de Inicio30/07/2026 04:56:00 p.m. Fecha Recepción Ofertas14/08/2026 10:1",
+      "objeto": "ILUMINACION Y CIELO FALSO DEL CLUB DE TROPA Y OFICIALES DE LA 105 BRIGADA DE INFANTERIA",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 55
@@ -1032,7 +1032,7 @@
       "etapa": "Evaluación",
       "modalidad": "Licitación privada",
       "fecha_inicio": "27/07/2026",
-      "objeto": "ExpedienteMCOM-003-2026-EMC EntidadSecretaría de Estado en el Despacho de Defensa Nacional SEDENA) Unidad de CompraEstado Mayor ObjetoREPARACIÓN Y MEJORAS DE LOS TECHOS DEL POLVORÍN #11 Y BARRACA DE TROPA UBICADO EN EL COMANDO DE APOYO LOGÍSTICO DE LAS FUERZAS ARMADAS (CALFFAA)” Fecha de Inicio27/07",
+      "objeto": "REPARACIÓN Y MEJORAS DE LOS TECHOS DEL POLVORÍN #11 Y BARRACA DE TROPA UBICADO EN EL COMANDO DE APOYO LOGÍSTICO DE LAS FUERZAS ARMADAS (CALFFAA)”",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 57
@@ -1050,7 +1050,7 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Concurso público nacional",
       "fecha_inicio": "21/08/2026",
-      "objeto": "ExpedienteHO-L1227-P00188 EntidadSecretaría de Estado en el Despacho de Seguridad (SESEGU) Unidad de CompraPrograma de Modernización Integral y Profesionalización Servicios de la Policía Nacional de Honduras Prestamo BID5831-BL-HO ObjetoServicios de Limpieza, Rehabilitación y Habilitación temporal d",
+      "objeto": "Servicios de Limpieza, Rehabilitación y Habilitación temporal del Sistema de Tratamiento de Aguas Residuales de la ANAPO, Proceso No. HO-L1227-P00188",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
       "nro": 58
@@ -1110,6 +1110,24 @@
       "nro": 61
     },
     {
+      "expediente": "IHT-PREC-GC-2026-02\n                                \n                           ",
+      "descripcion": "Precalificación",
+      "institucion": "IHT",
+      "monto": 0,
+      "cierre": "10/07/2026",
+      "contacto": "compras@iht.hn",
+      "link": "ProcesoHistorico.aspx?Id0=MQAAADEAAAAzAAAANgAAAA%3d%3d-Y5lxy%2bBkY68%3d&Id1=MwAAAA%3d%3d-UEhjycK6IFc%3d&Id2=SQAAAEgAAABUAAAALQAAAFAAAABSAAAARQAAAEMAAAAtAAAARwAAAEMAAAAtAAAAMgAAADAAAAAyAAAANgAAAC0AAAAwAAAAMgAAAA%3d%3d-fDmtCFcTv%2f4%3d",
+      "dias_para_cierre": -51,
+      "tipo_licitacion": "licitacion",
+      "etapa": "Evaluación",
+      "modalidad": "Precalificación",
+      "fecha_inicio": "05/06/2026",
+      "objeto": "",
+      "estado_proceso": "próximo_cierre",
+      "fecha_extraccion": "2026-08-29",
+      "nro": 62
+    },
+    {
       "expediente": "LPN-MLC-02-2026\n                                \n                               ",
       "descripcion": "Licitación pública nacional",
       "institucion": "LA CEIBA",
@@ -1125,7 +1143,7 @@
       "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
-      "nro": 62
+      "nro": 63
     },
     {
       "expediente": "LPR-AMD-UTM-001-2026\n                                \n                          ",
@@ -1140,10 +1158,10 @@
       "etapa": "Recepción de Ofertas",
       "modalidad": "Licitación privada",
       "fecha_inicio": "31/07/2026",
-      "objeto": "ExpedienteLPR-AMD-UTM-001-2026 EntidadMunicipalidad de Danli, El Paraíso Unidad de CompraAlcaldía Municipal de Danli ObjetoLa Corporación Municipal de Danlí requiere de los servicios de mano de obra y suministro de materiales para llevar a cabo la construcción de centro comercial CC0703, ubicado en ",
+      "objeto": "La Corporación Municipal de Danlí requiere de los servicios de mano de obra y suministro de materiales para llevar a cabo la construcción de centro comercial CC0703, ubicado en el barrio Abajo de la ciudad de Danlí.",
       "estado_proceso": "vigente",
       "fecha_extraccion": "2026-08-29",
-      "nro": 63
+      "nro": 64
     },
     {
       "expediente": "LPuNO-MCH-001-2026\n                                \n                            ",
@@ -1161,7 +1179,7 @@
       "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
-      "nro": 64
+      "nro": 65
     },
     {
       "expediente": "LPrNO-MCH-001-2026\n                                \n                            ",
@@ -1179,7 +1197,7 @@
       "objeto": "",
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
-      "nro": 65
+      "nro": 66
     }
   ]
 }
