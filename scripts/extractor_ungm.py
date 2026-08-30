@@ -1,136 +1,125 @@
 #!/usr/bin/env python3
 """
-Extractor de procesos de construcción desde UNGM (United Nations Global Marketplace)
-Busca procesos de Honduras relacionados con construcción, ingeniería y materiales
+Extractor UNGM - United Nations Global Marketplace
+Extrae procesos de construcción y materiales de UNGM
 """
 
 import json
-import os
+import asyncio
 from datetime import datetime
-from typing import List, Dict
-import requests
-from bs4 import BeautifulSoup
+from playwright.async_api import async_playwright
 
 class ExtractorUNGM:
-    """Extrae procesos de construcción de UNGM Honduras"""
+    """Extrae procesos de construcción de UNGM"""
 
     def __init__(self):
         self.base_url = "https://www.ungm.org/Public/Notice"
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
+        self.procesos = []
 
-    def extraer_procesos(self) -> tuple:
-        """Extrae procesos de UNGM Honduras"""
+    async def extraer_procesos(self):
+        """Extrae procesos de UNGM"""
+        async with async_playwright() as p:
+            try:
+                browser = await p.chromium.launch(headless=True)
+                page = await browser.new_page()
 
-        print("🔍 Extrayendo procesos de UNGM Honduras...\n")
+                print("⏳ Navegando a UNGM...")
+                await page.goto(
+                    self.base_url,
+                    wait_until='networkidle',
+                    timeout=30000
+                )
 
-        procesos = []
+                # Esperar a que carguen los procesos
+                await page.wait_for_selector('table tbody tr', timeout=15000)
 
-        try:
-            # Buscar procesos de Honduras con filtros
-            url = f"{self.base_url}?f=1&ctrCode=HN"
+                print("📊 Extrayendo procesos...")
 
-            print(f"📍 Accediendo a UNGM: {url}")
-            response = requests.get(url, headers=self.headers, timeout=10)
-            response.raise_for_status()
+                # Extraer todas las filas
+                rows = await page.query_selector_all('table tbody tr')
+                print(f"Found {len(rows)} rows")
 
-            soup = BeautifulSoup(response.content, 'html.parser')
+                for idx, row in enumerate(rows):
+                    try:
+                        # Extraer celdas
+                        cells = await row.query_selector_all('td')
 
-            # Buscar tabla de resultados
-            resultados = soup.find_all('div', class_='row')
+                        if len(cells) >= 6:
+                            referencia = await cells[0].text_content()
+                            titulo = await cells[1].text_content()
+                            pais = await cells[2].text_content()
+                            tipo = await cells[3].text_content()
+                            fecha_publicado = await cells[4].text_content()
+                            fecha_cierre = await cells[5].text_content()
 
-            if not resultados:
-                print("⚠️  No se encontraron procesos en UNGM")
-                return [], []
+                            # Intentar obtener link
+                            link_elem = await row.query_selector('a')
+                            url = ""
+                            if link_elem:
+                                url = await link_elem.get_attribute('href')
+                                if url and not url.startswith('http'):
+                                    url = "https://www.ungm.org" + url
 
-            print(f"📊 Encontrados {len(resultados)} registros")
+                            proceso = {
+                                "referencia": referencia.strip(),
+                                "titulo": titulo.strip(),
+                                "pais": pais.strip(),
+                                "tipo": tipo.strip(),
+                                "fecha_publicado": fecha_publicado.strip(),
+                                "fecha_cierre": fecha_cierre.strip(),
+                                "url": url
+                            }
 
-            for item in resultados[:20]:  # Primeros 20
-                try:
-                    # Extraer información
-                    titulo = item.find('a', class_='blue-link')
-                    if not titulo:
+                            # Filtrar por tipos relevantes
+                            if any(keyword in tipo.lower() for keyword in
+                                   ['construcción', 'materiales', 'remodelación',
+                                    'construction', 'materials', 'remodeling']):
+                                self.procesos.append(proceso)
+                                print(f"✅ [{idx+1}] {referencia.strip()[:30]}...")
+
+                    except Exception as e:
+                        print(f"⚠️  Error en fila {idx}: {e}")
                         continue
 
-                    desc = titulo.text.strip()
+                await browser.close()
+                print(f"\n✅ Extracción completada: {len(self.procesos)} procesos encontrados")
 
-                    # Filtrar por palabras clave de construcción
-                    palabras_construccion = [
-                        'construcción', 'construccion', 'engineering', 'ingeniería',
-                        'building', 'infrastructure', 'civil', 'obra', 'materiales'
-                    ]
+            except Exception as e:
+                print(f"❌ Error en extracción: {e}")
+                print("⚠️  UNGM puede no estar disponible o requiere JavaScript avanzado")
+                return False
 
-                    if not any(palabra.lower() in desc.lower() for palabra in palabras_construccion):
-                        continue
+        return True
 
-                    # Extraer fecha
-                    fecha_elem = item.find('span', class_='date')
-                    fecha = fecha_elem.text.strip() if fecha_elem else ""
-
-                    proceso = {
-                        "fuente": "UNGM",
-                        "titulo": desc[:150],
-                        "descripcion": desc,
-                        "pais": "Honduras",
-                        "fecha_publicacion": fecha,
-                        "link": titulo.get('href', ''),
-                        "tipo": "internacional",
-                        "fecha_extraccion": datetime.now().strftime("%Y-%m-%d")
-                    }
-
-                    procesos.append(proceso)
-                    print(f"   ✓ {desc[:60]}...")
-
-                except Exception as e:
-                    continue
-
-            print(f"\n✅ Extraídos {len(procesos)} procesos de construcción de UNGM")
-
-        except requests.ConnectionError:
-            print("❌ Error de conexión a UNGM")
-        except requests.Timeout:
-            print("⏱️  Timeout conectando a UNGM")
-        except Exception as e:
-            print(f"❌ Error: {e}")
-
-        return procesos, []
-
-    def guardar_resultados(self, procesos: List[Dict]):
-        """Guarda resultados en JSON"""
-
+    def guardar_datos(self, archivo_salida):
+        """Guarda procesos en JSON"""
         datos = {
             "metadata": {
-                "tipo": "procesos_ungm_honduras",
-                "total_procesos": len(procesos),
-                "pais": "Honduras",
                 "fuente": "UNGM - United Nations Global Marketplace",
+                "url": self.base_url,
+                "tipo": "Procesos de Construcción y Materiales",
                 "fecha_actualizacion": datetime.now().strftime("%Y-%m-%d"),
-                "hora_actualizacion": datetime.now().strftime("%H:%M:%S"),
-                "filtros": "Procesos de construcción e ingeniería"
+                "total_procesos": len(self.procesos),
+                "moneda": "USD / Local",
+                "cobertura": "Internacional - Procesos de Construcción"
             },
-            "procesos": procesos
+            "procesos": self.procesos
         }
 
-        os.makedirs('data', exist_ok=True)
-        with open('data/ungm_honduras.json', 'w', encoding='utf-8') as f:
+        with open(archivo_salida, 'w', encoding='utf-8') as f:
             json.dump(datos, f, ensure_ascii=False, indent=2)
 
-        print(f"✅ data/ungm_honduras.json - {len(procesos)} procesos")
+        print(f"💾 Datos guardados en: {archivo_salida}")
 
-def main():
-    print("\n" + "="*70)
-    print("🌐 EXTRACTOR UNGM - HONDURAS")
-    print("="*70 + "\n")
-
+async def main():
+    """Función principal"""
     extractor = ExtractorUNGM()
-    procesos, _ = extractor.extraer_procesos()
-    extractor.guardar_resultados(procesos)
 
-    print("\n" + "="*70)
-    print("✅ EXTRACCIÓN COMPLETADA")
-    print(f"📊 Procesos de UNGM: {len(procesos)}")
-    print("="*70 + "\n")
+    if await extractor.extraer_procesos():
+        extractor.guardar_datos('data/ungm-construccion.json')
+    else:
+        print("⚠️  No se pudo completar la extracción automática")
+        print("📝 Puede proporcionar los datos manualmente en data/ungm-construccion.json")
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    asyncio.run(main())

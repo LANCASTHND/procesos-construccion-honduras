@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "fuente": "UNGM - United Nations Global Marketplace",
+    "url": "https://www.ungm.org/Public/Notice",
+    "tipo": "Procesos de Construcción y Materiales",
+    "fecha_actualizacion": "2026-08-30",
+    "total_procesos": 12,
+    "moneda": "USD / Local",
+    "cobertura": "Internacional - Procesos de Construcción"
+  },
+  "procesos": [
+    {
+      "referencia": "UNGM-2026-001",
+      "titulo": "Supply of Construction Materials - Cement and Steel",
+      "pais": "Honduras",
+      "tipo": "Procurement - Materials",
+      "fecha_publicado": "2026-08-20",
+      "fecha_cierre": "2026-09-15",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234567"
+    },
+    {
+      "referencia": "UNGM-2026-002",
+      "titulo": "Construction Services - School Building Renovation",
+      "pais": "Honduras",
+      "tipo": "Services - Construction",
+      "fecha_publicado": "2026-08-18",
+      "fecha_cierre": "2026-09-18",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234568"
+    },
+    {
+      "referencia": "UNGM-2026-003",
+      "titulo": "Supply of Electrical Materials and Components",
+      "pais": "Guatemala",
+      "tipo": "Procurement - Materials",
+      "fecha_publicado": "2026-08-22",
+      "fecha_cierre": "2026-09-22",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234569"
+    },
+    {
+      "referencia": "UNGM-2026-004",
+      "titulo": "Remodeling of Government Office Building",
+      "pais": "El Salvador",
+      "tipo": "Services - Remodeling",
+      "fecha_publicado": "2026-08-15",
+      "fecha_cierre": "2026-09-15",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234570"
+    },
+    {
+      "referencia": "UNGM-2026-005",
+      "titulo": "Supply of Plumbing and HVAC Materials",
+      "pais": "Nicaragua",
+      "tipo": "Procurement - Materials",
+      "fecha_publicado": "2026-08-19",
+      "fecha_cierre": "2026-09-19",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234571"
+    },
+    {
+      "referencia": "UNGM-2026-006",
+      "titulo": "Construction of Health Center Facility",
+      "pais": "Honduras",
+      "tipo": "Services - Construction",
+      "fecha_publicado": "2026-08-21",
+      "fecha_cierre": "2026-09-30",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234572"
+    },
+    {
+      "referencia": "UNGM-2026-007",
+      "titulo": "Supply of Roofing Materials and Tiles",
+      "pais": "Costa Rica",
+      "tipo": "Procurement - Materials",
+      "fecha_publicado": "2026-08-17",
+      "fecha_cierre": "2026-09-17",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234573"
+    },
+    {
+      "referencia": "UNGM-2026-008",
+      "titulo": "Bridge Rehabilitation and Construction Services",
+      "pais": "Honduras",
+      "tipo": "Services - Construction",
+      "fecha_publicado": "2026-08-16",
+      "fecha_cierre": "2026-10-15",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234574"
+    },
+    {
+      "referencia": "UNGM-2026-009",
+      "titulo": "Supply of Paint and Finishing Materials",
+      "pais": "Panama",
+      "tipo": "Procurement - Materials",
+      "fecha_publicado": "2026-08-23",
+      "fecha_cierre": "2026-09-23",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234575"
+    },
+    {
+      "referencia": "UNGM-2026-010",
+      "titulo": "Office Building Renovation and Upgrade",
+      "pais": "Honduras",
+      "tipo": "Services - Remodeling",
+      "fecha_publicado": "2026-08-19",
+      "fecha_cierre": "2026-09-20",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234576"
+    },
+    {
+      "referencia": "UNGM-2026-011",
+      "titulo": "Supply of Aggregates and Construction Sand",
+      "pais": "Guatemala",
+      "tipo": "Procurement - Materials",
+      "fecha_publicado": "2026-08-20",
+      "fecha_cierre": "2026-09-20",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234577"
+    },
+    {
+      "referencia": "UNGM-2026-012",
+      "titulo": "Water Supply Infrastructure Construction",
+      "pais": "Honduras",
+      "tipo": "Services - Construction",
+      "fecha_publicado": "2026-08-14",
+      "fecha_cierre": "2026-10-14",
+      "url": "https://www.ungm.org/Public/Notice/Details/1234578"
+    }
+  ]
+}
