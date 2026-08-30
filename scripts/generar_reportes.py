@@ -53,7 +53,7 @@ class GeneradorReportes:
     def generar_html_licitaciones(self, datos: Dict[str, Any], archivo_salida: str):
         """Genera HTML para licitaciones normales"""
         metadata = datos['metadata']
-        procesos = datos['procesos']
+        procesos = [p for p in datos['procesos'] if p.get('estado_proceso') == 'vigente']
 
         instituciones = sorted(set(p['institucion'] for p in procesos))
 
@@ -198,7 +198,7 @@ class GeneradorReportes:
     def generar_html_compras_menores(self, datos: Dict[str, Any], archivo_salida: str):
         """Genera HTML para compras menores"""
         metadata = datos['metadata']
-        procesos = datos['procesos']
+        procesos = [p for p in datos['procesos'] if p.get('estado_proceso') == 'vigente']
 
         instituciones = sorted(set(p['institucion'] for p in procesos))
 
