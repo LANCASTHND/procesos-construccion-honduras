@@ -1198,6 +1198,24 @@
       "estado_proceso": "próximo_cierre",
       "fecha_extraccion": "2026-08-29",
       "nro": 66
+    },
+    {
+      "expediente": "GC-LPN-HBCBH-INFRAESTRUCTURA-004-2026",
+      "descripcion": "Licitación pública nacional",
+      "institucion": "CUERPO DE BOMBEROS",
+      "monto": 0,
+      "cierre": "",
+      "contacto": "compras@cuerpodbomberos.hn",
+      "link": "ProcesoHistorico.aspx?Id0=NgAAADkAAAAyAAAA-c47gia%2bUYjI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=RwAAAEMAAAAtAAAATAAAAFAAAABOAAAALQAAAEgAAABCAAAAQwAAAEIAAABIAAAALQAAAEkAAABOAAAARgAAAFIAAABBAAAARQAAAFMAAABUAAAAUgAAAFUAAABDAAAAVAAAAFUAAABSAAAAQQAAAC0AAAAwAAAAMAAAADQAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-GbHzG5AyTMI%3d",
+      "dias_para_cierre": 0,
+      "tipo_licitacion": "licitacion",
+      "etapa": "Recepción de Ofertas",
+      "modalidad": "Licitación pública nacional",
+      "fecha_inicio": "",
+      "objeto": "INCREMENTAR LA CAPACIDAD INSTALADA DE INFRAESTRUCTURA BOMBERIL, ADECUADA, SEGURA, FUNCIONAL Y TERRITORIALMENTE DISTRIBUIDA PARA BRINDAR SERVICIOS OPORTUNOS DE PREVENCION, ATENCION Y RESPUESTA ANTE EMERGENCIAS EN LOS MUNICIPIOS PRIORIZADOS DE HONDURAS. PLANIFICACION DE VISITAS LOTE # 1 El día viernes",
+      "estado_proceso": "vigente",
+      "fecha_extraccion": "2026-08-30",
+      "nro": 67
     }
   ]
 }
