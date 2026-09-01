@@ -351,6 +351,7 @@ class SICCExtractorV5:
     def _extraer_procesos(self, page, tipo: str = "licitacion") -> List[Dict[str, Any]]:
         """Extrae procesos de la tabla actual (una sola página)"""
         procesos = []
+        ahora = datetime.now()
 
         try:
             for i in range(5):
@@ -422,12 +423,15 @@ class SICCExtractorV5:
 
                     try:
                         fecha_cierre_dt = datetime.strptime(fecha_cierre, "%d/%m/%Y")
-                        dias = (fecha_cierre_dt - datetime.now()).days
+                        dias = (fecha_cierre_dt - ahora).days
+
+                        # FILTRO: Solo incluir procesos vigentes (dias >= 0) y de 2026 en adelante
+                        if dias < 0 or fecha_cierre_dt.year < 2026:
+                            continue
                     except:
-                        dias = 0
+                        continue
 
                     institucion = self._extraer_institucion(expediente)
-
                     contacto = self.contactos.get(institucion, "info@institucion.hn")
 
                     proceso = {
@@ -444,7 +448,7 @@ class SICCExtractorV5:
                         "dias_para_cierre": dias,
                         "tipo_licitacion": tipo,
                         "objeto": "Descripción disponible",
-                        "estado_proceso": "vigente" if dias > 0 else "próximo_cierre",
+                        "estado_proceso": "vigente",
                         "fecha_extraccion": datetime.now().strftime("%Y-%m-%d"),
                     }
 
