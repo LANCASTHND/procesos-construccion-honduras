@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    "fuente": "UNGM - United Nations Global Marketplace",
+    "url": "https://www.ungm.org/Public/Notice",
+    "tipo": "Procesos Honduras - Materiales y Equipamiento",
+    "fecha_actualizacion": "2026-09-01",
+    "total_procesos": 6,
+    "moneda": "USD",
+    "cobertura": "Honduras - Procesos de Materiales y Equipamiento",
+    "filtros_aplicados": "País: Honduras, Tipos: Materiales/Equipamiento"
+  },
+  "procesos": [
+    {
+      "referencia": "2026/FLHON/FLHON/137922",
+      "titulo": "ADQUISICION DE REACTIVOS PARA ANALISIS DE MUESTRAS DE SUELOS",
+      "pais": "Honduras",
+      "tipo": "Invitation to bid - Materiales",
+      "fecha_publicado": "2026-08-11",
+      "fecha_cierre": "2026-09-01",
+      "url": "https://www.ungm.org/Public/Notice/2026/FLHON/FLHON/137922",
+      "organizacion": "FAO"
+    },
+    {
+      "referencia": "2026/FLHON/FLHON/137938",
+      "titulo": "REACTIVOS PARA ANALISIS DE MUESTRAS DE SUELOS",
+      "pais": "Honduras",
+      "tipo": "Invitation to bid - Materiales",
+      "fecha_publicado": "2026-08-12",
+      "fecha_cierre": "2026-09-01",
+      "url": "https://www.ungm.org/Public/Notice/2026/FLHON/FLHON/137938",
+      "organizacion": "FAO"
+    },
+    {
+      "referencia": "2026/FLHON/FLHON/137896",
+      "titulo": "Adquisición de Envases para Muestras de Suelos de Envase 1/2 kilo polietileno de alta densidad (HDPE)",
+      "pais": "Honduras",
+      "tipo": "Invitation to bid - Materiales",
+      "fecha_publicado": "2026-08-06",
+      "fecha_cierre": "2026-09-04",
+      "url": "https://www.ungm.org/Public/Notice/2026/FLHON/FLHON/137896",
+      "organizacion": "FAO"
+    },
+    {
+      "referencia": "RFQ/2026/63875",
+      "titulo": "Adquisición de Equipos de Videoconferencia para las oficinas de UNOPS en Honduras",
+      "pais": "Honduras",
+      "tipo": "Request for quotation - Equipo",
+      "fecha_publicado": "2026-08-24",
+      "fecha_cierre": "2026-09-04",
+      "url": "https://www.ungm.org/Public/Notice/RFQ/2026/63875",
+      "organizacion": "UNOPS"
+    },
+    {
+      "referencia": "2026/FLHON/FLHON/137968",
+      "titulo": "Provisión del servicio de suministro de gases en cilindros, incluyendo el alquiler y su reposición",
+      "pais": "Honduras",
+      "tipo": "Invitation to bid - Materiales",
+      "fecha_publicado": "2026-08-14",
+      "fecha_cierre": "2026-09-11",
+      "url": "https://www.ungm.org/Public/Notice/2026/FLHON/FLHON/137968",
+      "organizacion": "FAO"
+    },
+    {
+      "referencia": "UNDP-HND-00669",
+      "titulo": "Suministro de Equipamiento de Observación Astronómica y Espectrografía",
+      "pais": "Honduras",
+      "tipo": "Request for quotation - Equipo",
+      "fecha_publicado": "2026-08-11",
+      "fecha_cierre": "2026-09-07",
+      "url": "https://www.ungm.org/Public/Notice/UNDP-HND-00669",
+      "organizacion": "UNDP"
+    }
+  ]
+}
