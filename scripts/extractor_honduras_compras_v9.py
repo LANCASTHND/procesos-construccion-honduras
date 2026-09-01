@@ -193,6 +193,7 @@ class SICCExtractorV9:
                             continue
 
                         # Licitaciones
+                        procs_lic = []
                         try:
                             page.goto(self.base_url, wait_until='load', timeout=30000)
                             time.sleep(0.3)
@@ -212,6 +213,7 @@ class SICCExtractorV9:
                             pass
 
                         # Compras menores
+                        procs_cm = []
                         try:
                             page.goto(self.base_url, wait_until='load', timeout=30000)
                             time.sleep(0.3)
