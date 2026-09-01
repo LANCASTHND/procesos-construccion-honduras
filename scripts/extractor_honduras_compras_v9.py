@@ -23,7 +23,7 @@ class SICCExtractorV9:
     def __init__(self):
         self.base_url = "http://sicc.honducompras.gob.hn/HC/procesos/busquedahistorico.aspx"
 
-        # Instituciones CORE (14)
+        # Instituciones CORE (15)
         self.instituciones_core = {
             "UNAH": {"name": "Universidad Nacional Autónoma de Honduras (UNAH)", "contact": "unah-compras@unah.edu.hn"},
             "UNA": {"name": "Universidad Nacional de Agricultura (UNA)", "contact": "compras@una.hn"},
@@ -32,6 +32,7 @@ class SICCExtractorV9:
             "SEDENA": {"name": "Secretaría de Estado en los Despachos de Defensa (SEDENA)", "contact": "compras@sedena.mil.hn"},
             "SESEGU": {"name": "Secretaría de Seguridad (SESEGU)", "contact": "compras@sesegu.gob.hn"},
             "IHT": {"name": "Instituto Hondureño de Turismo (IHT)", "contact": "compras@iht.hn"},
+            "CUERPO DE BOMBEROS": {"name": "Cuerpo de Bomberos de Honduras (CBH)", "contact": "compras@cuerpodbomberos.hn"},
             "TEGUCIGALPA": {"name": "Municipalidad de Tegucigalpa", "contact": "compras@tegucigalpa.gob.hn"},
             "SAN PEDRO SULA": {"name": "Municipalidad de San Pedro Sula", "contact": "compras@sanpedrosula.gob.hn"},
             "LA CEIBA": {"name": "Municipalidad de La Ceiba", "contact": "compras@laceiba.gob.hn"},
