@@ -388,8 +388,24 @@ class SICCExtractorV6:
                 except:
                     pass
 
+    def _es_proceso_construccion(self, expediente: str, objeto: str, descripcion: str) -> bool:
+        """Verifica si es proceso de construcción o ingeniería"""
+        palabras_clave = [
+            'construcción', 'construccion', 'obra', 'remodelación', 'remodelacion',
+            'ingeniería', 'ingenieria', 'supervisión', 'supervision', 'pavimentación',
+            'pavimentacion', 'infraestructura', 'mejoramiento', 'edificio', 'vial',
+            'carretera', 'puente', 'drenaje', 'alcantarillado', 'agua potable',
+            'proyecto constructivo', 'proyecto de obra', 'servicios de ingeniería',
+            'servicios de ingenieria', 'diseño', 'diseño y supervisión',
+            'ampliación', 'ampliacion', 'renovación', 'renovacion'
+        ]
+
+        texto = (expediente + " " + objeto + " " + descripcion).lower()
+
+        return any(palabra in texto for palabra in palabras_clave)
+
     def _extraer_procesos(self, page, tipo: str = "licitacion", ahora: datetime = None) -> List[Dict[str, Any]]:
-        """Extrae procesos de la tabla actual (una sola página)"""
+        """Extrae procesos de la tabla actual (una sola página) - SOLO CONSTRUCCIÓN E INGENIERÍA"""
         if ahora is None:
             ahora = datetime.now()
 
@@ -471,6 +487,10 @@ class SICCExtractorV6:
                         if dias < 0 or fecha_cierre_dt.year < 2026:
                             continue
                     except:
+                        continue
+
+                    # Filtro: Solo procesos de construcción e ingeniería
+                    if not self._es_proceso_construccion(expediente, modalidad, etapa):
                         continue
 
                     # Extraer institución del expediente
