@@ -206,10 +206,10 @@ class SICCExtractorV7:
 
         return procesos
 
-    def extraer_lotes(self, tam_lote: int = 50):
+    def extraer_lotes(self, tam_lote: int = 30):
         """Procesa instituciones en lotes para evitar timeout"""
         print("=" * 60)
-        print("EXTRACTOR v7 - BATCH PROCESSING")
+        print("EXTRACTOR v7 - BATCH PROCESSING (OPTIMIZADO)")
         print("=" * 60 + "\n")
 
         checkpoint = self._cargar_checkpoint()
