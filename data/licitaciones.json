@@ -1,10 +1,10 @@
 {
   "metadata": {
     "tipo": "licitaciones",
-    "total_procesos": 19,
+    "total_procesos": 18,
     "inversion_total": 0,
     "moneda": "Lempiras (L.)",
-    "fecha_actualizacion": "2026-09-02 23:10:29",
+    "fecha_actualizacion": "2026-09-04 23:13:35",
     "estado": "vigentes",
     "cobertura": "Honduras - Búsqueda por Institución",
     "fuente": "SICC Honduras Compras",
@@ -22,11 +22,11 @@
       "fecha_inicio": "17/08/2026",
       "contacto": "unah-compras@unah.edu.hn",
       "link": "ProcesoHistorico.aspx?Id0=OAAAADcAAAAyAAAA-1rKykAr89vs%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABOAAAAIAAAAE4AAABvAAAALgAAACAAAAAwAAAAOAAAAC0AAAAyAAAAMAAAADIAAAA2AAAALQAAAFMAAABFAAAAQQAAAFAAAABJAAAALQAAAFUAAABOAAAAQQAAAEgAAAA%3d-piDJmcnWSFg%3d",
-      "dias_para_cierre": 47,
+      "dias_para_cierre": 45,
       "tipo_licitacion": "licitacion",
       "objeto": "Mejoramiento Edificio No. 1 y Construcción de Edificio de Aulas y Área Administrativa, Campus UNAH-CURC, Comayagua",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "No.UNACIFOR-LPN-GC-UE15-2026-02",
@@ -39,11 +39,11 @@
       "fecha_inicio": "25/08/2026",
       "contacto": "compras@una.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADcAAAA2AAAA-996wituEjIA%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TgAAAG8AAAAuAAAAVQAAAE4AAABBAAAAQwAAAEkAAABGAAAATwAAAFIAAAAtAAAATAAAAFAAAABOAAAALQAAAEcAAABDAAAALQAAAFUAAABFAAAAMQAAADUAAAAtAAAAMgAAADAAAAAyAAAANgAAAC0AAAAwAAAAMgAAAA%3d%3d-2t8DbPeG0yU%3d",
-      "dias_para_cierre": 21,
+      "dias_para_cierre": 19,
       "tipo_licitacion": "licitacion",
       "objeto": "Mantenimiento Preventivo y Correctivo de la Infraestructura Institucional de la Universidad Nacional de Ciencias Forestales UNACIFOR, periodo 2026",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "No.UNACIFOR-LPN-GC-UE15-2026-01",
@@ -56,11 +56,11 @@
       "fecha_inicio": "25/08/2026",
       "contacto": "compras@una.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADcAAAA2AAAA-996wituEjIA%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TgAAAG8AAAAuAAAAVQAAAE4AAABBAAAAQwAAAEkAAABGAAAATwAAAFIAAAAtAAAATAAAAFAAAABOAAAALQAAAEcAAABDAAAALQAAAFUAAABFAAAAMQAAADUAAAAtAAAAMgAAADAAAAAyAAAANgAAAC0AAAAwAAAAMQAAAA%3d%3d-7xJb5f7DElQ%3d",
-      "dias_para_cierre": 21,
+      "dias_para_cierre": 19,
       "tipo_licitacion": "licitacion",
       "objeto": "Ampliación y Remodelación del Edificio de Carpintería Mantenimiento y Aula Taller de la Universidad Nacional de Ciencias Forestales Periodo 2026",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPN-SIT-036-2026",
@@ -73,11 +73,11 @@
       "fecha_inicio": "31/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABOAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMwAAADYAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-vjOSIpHhAZs%3d",
-      "dias_para_cierre": 14,
+      "dias_para_cierre": 12,
       "tipo_licitacion": "licitacion",
       "objeto": "“CONSTRUCCIÓN MEJORAMIENTO VIAL DE LA INTERSECCIÓN CA-05 – LOARQUE MEDIANTE PASO A DESNIVEL Y RECONFIGURACIÓN FUNCIONAL PARA FLUJO CONTINUO, TEGUCIGALPA, HONDURAS”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPN-SIT-032-2026",
@@ -90,11 +90,11 @@
       "fecha_inicio": "20/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABOAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMwAAADIAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-yNgRsXU6%2b%2bI%3d",
-      "dias_para_cierre": 8,
+      "dias_para_cierre": 6,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON DOBLE TRATAMIENTO SUPERFICIAL, TRAMO No.1: RUTA CA-7 - MARCALA - SABANETAS & TRAMO No.2: RUTA 12V53400, CA-7 - CABAÑAS, APROXIMADAMENTE 31.20 KM, DEPARTAMENTO DE LA PAZ”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPN-SIT-033-2026",
@@ -107,11 +107,11 @@
       "fecha_inicio": "20/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABOAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMwAAADMAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-3hC2P4PIbxk%3d",
-      "dias_para_cierre": 8,
+      "dias_para_cierre": 6,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON DOBLE TRATAMIENTO SUPERFICIAL, RUTA 165, CA-7 - NAHUATERIQUE, APROXIMADAMENTE 10.50 KM, DEPARTAMENTO DE LA PAZ”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPR-SIT-020-2026",
@@ -124,11 +124,11 @@
       "fecha_inicio": "28/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABSAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMgAAADAAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-KqBrMDyEOz4%3d",
-      "dias_para_cierre": 7,
+      "dias_para_cierre": 5,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD BARRIO BUENOS AIRES, MUNICIPIO BALFATE, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPR-SIT-015-2026",
@@ -141,11 +141,11 @@
       "fecha_inicio": "28/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABSAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMQAAADUAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-S0UDP8zmWJc%3d",
-      "dias_para_cierre": 7,
+      "dias_para_cierre": 5,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, BARRIO EL CENTRO, MUNICIPIO DE LIMÓN, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPR-SIT-019-2026",
@@ -158,11 +158,11 @@
       "fecha_inicio": "28/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABSAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMQAAADkAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-1ItDoLIHKOA%3d",
-      "dias_para_cierre": 7,
+      "dias_para_cierre": 5,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN DE CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DOS BOCAS, MUNICIPIO DE SANTA ROSA DE AGUAN, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPR-SIT-018-2026",
@@ -175,11 +175,11 @@
       "fecha_inicio": "28/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABSAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMQAAADgAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-eyETdxNmOyU%3d",
-      "dias_para_cierre": 7,
+      "dias_para_cierre": 5,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, BARRIO LAS ACACIAS, MUNICIPIO DE BONITO ORIENTAL, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "SIT-CDE-C0-018-2026",
@@ -192,11 +192,11 @@
       "fecha_inicio": "31/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=UwAAAEkAAABUAAAALQAAAEMAAABEAAAARQAAAC0AAABDAAAAMAAAAC0AAAAwAAAAMQAAADgAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-RxElGjkpUgE%3d",
-      "dias_para_cierre": 7,
+      "dias_para_cierre": 5,
       "tipo_licitacion": "licitacion",
       "objeto": "OBRAS DE EMERGENCIA PARA LIMPIEZA Y BACHEO TEMPORAL PALIATIVO.",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPR-SIT-017-2026",
@@ -209,11 +209,11 @@
       "fecha_inicio": "28/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABSAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMQAAADcAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-YIbXqYge5gA%3d",
-      "dias_para_cierre": 7,
+      "dias_para_cierre": 5,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DE SALAMÁ, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPR-SIT-016-2026",
@@ -226,11 +226,11 @@
       "fecha_inicio": "28/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABSAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMQAAADYAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-G5dcK0CRzF0%3d",
-      "dias_para_cierre": 7,
+      "dias_para_cierre": 5,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO 4000 PSI, COMUNIDAD DE ELIXIR, MUNICIPIO DE SABÁ, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPN-SIT-035-2026",
@@ -243,11 +243,11 @@
       "fecha_inicio": "24/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABOAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMwAAADUAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-LIGqn%2bU3iyw%3d",
-      "dias_para_cierre": 7,
+      "dias_para_cierre": 5,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO MR= 650, 13S08210, RUTA 82, CA-11A, TRAMO: LAS FLORES - LEPAERA, APROXIMADAMENTE 4.00 KM, MUNICIPIO DE LEPAERA, DEPARTAMENTO DE LEMPIRA”.",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPR-SIT-014-2026",
@@ -260,11 +260,11 @@
       "fecha_inicio": "26/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABSAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMQAAADQAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-Z%2f1k%2bcQlSuA%3d",
-      "dias_para_cierre": 4,
+      "dias_para_cierre": 2,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD JUAN ANTONIO, MUNICIPIO DE TOCOA, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "LPR-SIT-013-2026",
@@ -277,28 +277,11 @@
       "fecha_inicio": "26/08/2026",
       "contacto": "licitaciones@sit.gob.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TAAAAFAAAABSAAAALQAAAFMAAABJAAAAVAAAAC0AAAAwAAAAMQAAADMAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-BJB7henEIUQ%3d",
-      "dias_para_cierre": 4,
+      "dias_para_cierre": 2,
       "tipo_licitacion": "licitacion",
       "objeto": "“PAVIMENTACIÓN CON CONCRETO HIDRÁULICO DE 4000 PSI, COMUNIDAD DE LA CUBANA, MUNICIPIO DE SONAGUERA, DEPARTAMENTO DE COLÓN”",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
-    },
-    {
-      "expediente": "SIT-CDE-CO-019-2026",
-      "descripcion": "Proceso Licitacion",
-      "institucion": "SIT",
-      "etapa": "Elaboración",
-      "modalidad": "Contratación directa",
-      "monto": 0,
-      "cierre": "04/09/2026",
-      "fecha_inicio": "31/08/2026",
-      "contacto": "licitaciones@sit.gob.hn",
-      "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAAxAAAAMQAAAA%3d%3d-%2b0e3mO0qvNI%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=UwAAAEkAAABUAAAALQAAAEMAAABEAAAARQAAAC0AAABDAAAATwAAAC0AAAAwAAAAMQAAADkAAAAtAAAAMgAAADAAAAAyAAAANgAAAA%3d%3d-z2Xa01TC9R0%3d",
-      "dias_para_cierre": 1,
-      "tipo_licitacion": "licitacion",
-      "objeto": "“SUMINISTRO E INSTALACIÓN DE REVESTIMIENTO FLEXIBLE CEMENTICIO TIPO GEOMANTA DE CONCRETO PARA PROTECCIÓN DE BORDOS, PARA EL PROYECTO DE MITIGACIÓN DEL VALLE DE SULA ETAPA VII, SEGUNDO PROCESO”",
-      "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "OM-003-2026-EJERCITO",
@@ -311,11 +294,11 @@
       "fecha_inicio": "24/08/2026",
       "contacto": "info@institucion.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAA4AAAA-mwsukjPBH3g%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TwAAAE0AAAAtAAAAMAAAADAAAAAzAAAALQAAADIAAAAwAAAAMgAAADYAAAAtAAAARQAAAEoAAABFAAAAUgAAAEMAAABJAAAAVAAAAE8AAAA%3d-epDLPAj3KXs%3d",
-      "dias_para_cierre": 4,
+      "dias_para_cierre": 2,
       "tipo_licitacion": "licitacion",
       "objeto": "Proyecto de Ampliación y reparación de los destacamentos militares del Quinto Batallón de infantería del Ejército",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     },
     {
       "expediente": "MCOM-008-2026-EMC",
@@ -328,11 +311,11 @@
       "fecha_inicio": "20/08/2026",
       "contacto": "info@institucion.hn",
       "link": "ProcesoHistorico.aspx?Id0=MQAAADIAAAA5AAAA-4LCRMlk1ShQ%3d&Id1=MQAAAA%3d%3d-OFoziWLXW%2fg%3d&Id2=TQAAAEMAAABPAAAATQAAAC0AAAAwAAAAMAAAADgAAAAtAAAAMgAAADAAAAAyAAAANgAAAC0AAABFAAAATQAAAEMAAAA%3d-oOqq7Q%2fVUCw%3d",
-      "dias_para_cierre": 4,
+      "dias_para_cierre": 2,
       "tipo_licitacion": "licitacion",
       "objeto": "construcción de una cancha de futbolito",
       "estado_proceso": "vigente",
-      "fecha_extraccion": "2026-09-02"
+      "fecha_extraccion": "2026-09-04"
     }
   ]
 }
