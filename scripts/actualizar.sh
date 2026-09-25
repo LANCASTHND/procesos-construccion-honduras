@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script de actualización de reportes procesos construcción Honduras
-# Ejecuta extracción de datos y generación de reportes
+# Ejecuta extracción de datos v16 (Playwright) y generación de reportes
 # Soporta: ejecución automática + ejecución manual on-demand
 
 set -e
@@ -25,7 +25,7 @@ show_header() {
 show_menu() {
     echo -e "${YELLOW}Opciones de Ejecución:${NC}"
     echo ""
-    echo "  ${GREEN}1${NC} - Extracción Completa (extractor + reportes + git)"
+    echo "  ${GREEN}1${NC} - Extracción Completa (extractor v16 + reportes + git)"
     echo "  ${GREEN}2${NC} - Solo Extracción de Datos (sin reportes ni git)"
     echo "  ${GREEN}3${NC} - Solo Generación de Reportes (sin extracción)"
     echo "  ${GREEN}4${NC} - Verificar Estado del Sistema"
@@ -34,10 +34,15 @@ show_menu() {
     echo ""
 }
 
-# Función para extracción de datos
+# Función para extracción de datos con v16
 extract_data() {
-    echo -e "${BLUE}📥 Extrayendo datos de Honduras Compras...${NC}"
-    python3 scripts/extractor_honduras_compras_v3.py
+    echo -e "${BLUE}📥 Extrayendo datos con v16 (Playwright)...${NC}"
+
+    # Verificar dependencias
+    echo -e "${BLUE}📦 Verificando dependencias Python...${NC}"
+    pip install -q -r scripts/requirements.txt 2>/dev/null || true
+
+    python3 scripts/extractor_v16.py
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}✅ Extracción completada${NC}"
         return 0
@@ -53,12 +58,19 @@ generate_reports() {
     echo -e "${BLUE}📊 Generando reportes HTML...${NC}"
     python3 scripts/generar_reportes.py
 
+    # Generar reporte de contactos si existe
+    if [ -f "scripts/generar_contactos_compradores.py" ]; then
+        echo ""
+        echo -e "${BLUE}📇 Generando tabla de contactos...${NC}"
+        python3 scripts/generar_contactos_compradores.py
+    fi
+
     echo ""
     echo -e "${BLUE}📋 Verificando archivos generados...${NC}"
     if [ -f "reportes/licitaciones.html" ] && [ -f "reportes/compras-menores.html" ]; then
         echo -e "${GREEN}✅ Reportes generados exitosamente:${NC}"
-        echo "   • reportes/licitaciones.html ($(wc -c < reportes/licitaciones.html | numfmt --to=iec-i --suffix=B 2>/dev/null || echo 'N/A'))"
-        echo "   • reportes/compras-menores.html ($(wc -c < reportes/compras-menores.html | numfmt --to=iec-i --suffix=B 2>/dev/null || echo 'N/A'))"
+        echo "   • reportes/licitaciones.html"
+        echo "   • reportes/compras-menores.html"
         return 0
     else
         echo -e "${RED}❌ Error: No todos los reportes fueron generados${NC}"
@@ -77,13 +89,13 @@ sync_git() {
         return 0
     else
         CHANGES=$(git diff --cached --name-only | wc -l)
-        git commit -m "🔄 Actualización on-demand de procesos construcción Honduras - $(date '+%Y-%m-%d %H:%M')"
+        git commit -m "🔄 Actualización automática de procesos construcción Honduras - $(date '+%Y-%m-%d %H:%M:%S UTC')"
 
-        if git push origin claude/honduras-procurement-report-hv200y; then
+        if git push -u origin claude/honduras-procurement-report-hv200y 2>/dev/null; then
             echo -e "${GREEN}✅ Git sincronizado ($CHANGES archivos)${NC}"
             return 0
         else
-            echo -e "${YELLOW}⚠️  Advertencia: Push a Git falló (posible red)${NC}"
+            echo -e "${YELLOW}⚠️  Advertencia: Push a Git falló (posible red/permisos)${NC}"
             return 0  # No es error crítico
         fi
     fi
@@ -148,6 +160,7 @@ fi
 # Crear directorios si no existen
 mkdir -p data
 mkdir -p reportes
+mkdir -p scripts
 
 # Procesar argumentos o mostrar menú interactivo
 if [ $# -eq 0 ]; then
